@@ -88,7 +88,6 @@ var/global/datum/emergency_shuttle_controller/emergency_shuttle
 		if(istype(A, /area/hallway))
 			A.readyalert()
 
-	atc.reroute_traffic(yes = 1)
 
 //calls the shuttle for a routine crew transfer
 /datum/emergency_shuttle_controller/proc/call_transfer()
@@ -104,7 +103,6 @@ var/global/datum/emergency_shuttle_controller/emergency_shuttle
 	shuttle.move_time = SHUTTLE_TRANSIT_DURATION
 
 	priority_announcement.Announce(replacetext(replacetext(using_map.shuttle_called_message, "%dock_name%", "[using_map.dock_name]"),  "%ETA%", "[estimated_time] minute\s"))
-	atc.shift_ending()
 
 //recalls the shuttle
 /datum/emergency_shuttle_controller/proc/recall()
