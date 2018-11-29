@@ -1,7 +1,6 @@
 /decl/hierarchy/outfit/job/security
 	hierarchy_type = /decl/hierarchy/outfit/job/security
 	glasses = /obj/item/clothing/glasses/sunglasses/sechud
-	l_ear = /obj/item/device/radio/headset/headset_sec
 	gloves = /obj/item/clothing/gloves/black
 	shoes = /obj/item/clothing/shoes/boots/jackboots
 	backpack = /obj/item/weapon/storage/backpack/security
@@ -12,7 +11,7 @@
 
 /decl/hierarchy/outfit/job/security/hos
 	name = OUTFIT_JOB_NAME("Chief of Police")
-	l_ear = /obj/item/device/radio/headset/heads/hos
+	l_ear = /obj/item/device/radio/headset/headset_sec
 	uniform = /obj/item/clothing/under/rank/head_of_security
 	id_type = /obj/item/weapon/card/id/security/head
 	r_pocket = /obj/item/device/communicator
@@ -50,6 +49,7 @@
 /decl/hierarchy/outfit/job/security/officer
 	name = OUTFIT_JOB_NAME("Police Officer")
 	uniform = /obj/item/clothing/under/rank/security
+	l_ear = /obj/item/device/radio/headset/headset_sec
 	l_pocket = /obj/item/device/flash
 	r_pocket = /obj/item/device/communicator
 	id_type = /obj/item/weapon/card/id/security/officer
@@ -58,6 +58,7 @@
 /decl/hierarchy/outfit/job/security/traffic
 	name = OUTFIT_JOB_NAME("Traffic Warden")
 	uniform = /obj/item/clothing/under/rank/security/traffic
+	l_ear = /obj/item/device/radio/headset/headset_sec
 	suit = /obj/item/clothing/suit/storage/toggle/marshal_jacket
 	l_pocket = /obj/item/device/flash
 	r_pocket = /obj/item/device/communicator

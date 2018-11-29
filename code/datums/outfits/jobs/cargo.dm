@@ -1,5 +1,4 @@
 /decl/hierarchy/outfit/job/cargo
-	l_ear = /obj/item/device/radio/headset/headset_cargo
 	hierarchy_type = /decl/hierarchy/outfit/job/cargo
 	r_pocket = /obj/item/device/communicator
 
@@ -21,7 +20,6 @@
 /decl/hierarchy/outfit/job/cargo/mining
 	name = OUTFIT_JOB_NAME("Shaft miner")
 	uniform = /obj/item/clothing/under/rank/miner
-	l_ear = /obj/item/device/radio/headset/headset_mine
 	backpack = /obj/item/weapon/storage/backpack/industrial
 	satchel_one  = /obj/item/weapon/storage/backpack/satchel/eng
 	id_type = /obj/item/weapon/card/id/cargo/mining

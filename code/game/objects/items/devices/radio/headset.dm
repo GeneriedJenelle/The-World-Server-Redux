@@ -104,25 +104,29 @@
 	name = "police radio headset"
 	desc = "This is used by your elite police force."
 	icon_state = "sec_headset"
-	ks2type = /obj/item/device/encryptionkey/headset_sec
+	frequency = SEC_FREQ
+//	ks2type = /obj/item/device/encryptionkey/headset_sec
 
 /obj/item/device/radio/headset/headset_sec/alt
 	name = "police bowman headset"
 	desc = "This is used by your elite police force."
 	icon_state = "sec_headset_alt"
-	ks2type = /obj/item/device/encryptionkey/headset_sec
+	frequency = SEC_FREQ
+//	ks2type = /obj/item/device/encryptionkey/headset_sec
 
 /obj/item/device/radio/headset/headset_eng
 	name = "engineering radio headset"
 	desc = "When the engineers wish to chat like girls."
 	icon_state = "eng_headset"
-	ks2type = /obj/item/device/encryptionkey/headset_eng
+	frequency = ENG_FREQ
+//	ks2type = /obj/item/device/encryptionkey/headset_eng
 
 /obj/item/device/radio/headset/headset_eng/alt
 	name = "engineering bowman headset"
 	desc = "When the engineers wish to chat like girls."
 	icon_state = "eng_headset_alt"
-	ks2type = /obj/item/device/encryptionkey/headset_eng
+	frequency = ENG_FREQ
+//	ks2type = /obj/item/device/encryptionkey/headset_eng
 
 /obj/item/device/radio/headset/headset_rob
 	name = "robotics radio headset"
@@ -132,21 +136,24 @@
 
 /obj/item/device/radio/headset/headset_med
 	name = "medical radio headset"
-	desc = "A headset for the trained staff of the medbay."
+	desc = "A headset for the trained staff of the hospital."
 	icon_state = "med_headset"
-	ks2type = /obj/item/device/encryptionkey/headset_med
+	frequency = MED_FREQ
+//	ks2type = /obj/item/device/encryptionkey/headset_med
 
 /obj/item/device/radio/headset/headset_med/alt
 	name = "medical bowman headset"
-	desc = "A headset for the trained staff of the medbay."
+	desc = "A headset for the trained staff of the hospital."
 	icon_state = "med_headset_alt"
-	ks2type = /obj/item/device/encryptionkey/headset_med
+	frequency = MED_FREQ
+//	ks2type = /obj/item/device/encryptionkey/headset_med
 
 /obj/item/device/radio/headset/headset_sci
 	name = "science radio headset"
 	desc = "A sciency headset. Like usual."
 	icon_state = "com_headset"
-	ks2type = /obj/item/device/encryptionkey/headset_sci
+	frequency = SCI_FREQ
+//	ks2type = /obj/item/device/encryptionkey/headset_sci
 
 /obj/item/device/radio/headset/headset_medsci
 	name = "medical research radio headset"
@@ -269,13 +276,13 @@
 
 /obj/item/device/radio/headset/headset_cargo
 	name = "supply radio headset"
-	desc = "A headset used by the QM and his slaves."
+	desc = "A headset used by the factory manager and his slaves."
 	icon_state = "cargo_headset"
 	ks2type = /obj/item/device/encryptionkey/headset_cargo
 
 /obj/item/device/radio/headset/headset_cargo/alt
 	name = "supply bowman headset"
-	desc = "A bowman headset used by the QM and his slaves."
+	desc = "A bowman headset used by the factory manager and his slaves."
 	icon_state = "cargo_headset_alt"
 	ks2type = /obj/item/device/encryptionkey/headset_cargo
 

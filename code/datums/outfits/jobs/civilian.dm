@@ -14,7 +14,6 @@
 	uniform = /obj/item/clothing/under/color/white
 
 /decl/hierarchy/outfit/job/service
-	l_ear = /obj/item/device/radio/headset/headset_service
 	hierarchy_type = /decl/hierarchy/outfit/job/service
 
 /decl/hierarchy/outfit/job/service/bartender
@@ -108,7 +107,6 @@
 
 /decl/hierarchy/outfit/job/judge
 	name = OUTFIT_JOB_NAME("Judge")
-	l_ear = /obj/item/device/radio/headset/ia
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
 	head = /obj/item/clothing/head/powdered_wig
 	suit = /obj/item/clothing/suit/judgerobe
@@ -120,7 +118,6 @@
 
 /decl/hierarchy/outfit/job/defense
 	name = OUTFIT_JOB_NAME("Defense Attorney")
-	l_ear = /obj/item/device/radio/headset/ia
 	uniform = /obj/item/clothing/under/lawyer/blue
 	suit = /obj/item/clothing/suit/storage/toggle/lawyer/bluejacket
 	shoes = /obj/item/clothing/shoes/black
@@ -132,7 +129,6 @@
 
 /decl/hierarchy/outfit/job/prosecution
 	name = OUTFIT_JOB_NAME("District Prosecutor")
-	l_ear = /obj/item/device/radio/headset/ia
 	uniform = /obj/item/clothing/under/lawyer/purpsuit
 	suit = /obj/item/clothing/suit/storage/toggle/lawyer/purpjacket
 	shoes = /obj/item/clothing/shoes/brown

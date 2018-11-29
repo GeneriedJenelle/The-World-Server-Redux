@@ -2,7 +2,6 @@
 	name = OUTFIT_JOB_NAME("Mayor")
 	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/rank/captain
-	l_ear = /obj/item/device/radio/headset/heads/captain
 	shoes = /obj/item/clothing/shoes/brown
 	backpack = /obj/item/weapon/storage/backpack/captain
 	satchel_one = /obj/item/weapon/storage/backpack/satchel/cap
@@ -32,18 +31,18 @@
 /decl/hierarchy/outfit/job/hop
 	name = OUTFIT_JOB_NAME("City Supervisor")
 	uniform = /obj/item/clothing/under/rank/head_of_personnel_whimsy
-	l_ear = /obj/item/device/radio/headset/heads/hop
 	shoes = /obj/item/clothing/shoes/brown
 	id_type = /obj/item/weapon/card/id/silver/hop
 	pda_type = /obj/item/device/pda/heads/hop
 
 /decl/hierarchy/outfit/job/secretary
 	name = OUTFIT_JOB_NAME("City Hall Guard")
-	l_ear = /obj/item/device/radio/headset/headset_com
-	shoes = /obj/item/clothing/shoes/brown
+	shoes = /obj/item/clothing/shoes/laceup
+	glasses = /obj/item/clothing/glasses/sunglasses
 	id_type = /obj/item/weapon/card/id/silver/secretary
 	pda_type = /obj/item/device/pda/heads/hop
 	r_hand = /obj/item/weapon/clipboard
+	r_pocket = /obj/item/device/flash
 
 /decl/hierarchy/outfit/job/secretary/pre_equip(mob/living/carbon/human/H)
 	..()

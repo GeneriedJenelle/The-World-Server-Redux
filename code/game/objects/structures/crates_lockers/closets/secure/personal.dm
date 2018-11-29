@@ -11,7 +11,6 @@
 			new /obj/item/weapon/storage/backpack(src)
 		else
 			new /obj/item/weapon/storage/backpack/satchel/norm(src)
-		new /obj/item/device/radio/headset( src )
 	return
 
 
@@ -58,7 +57,6 @@
 		for(var/atom/movable/AM in contents)
 			qdel(AM)
 		new /obj/item/weapon/storage/backpack/satchel/withwallet( src )
-		new /obj/item/device/radio/headset( src )
 	return
 
 /obj/structure/closet/secure_closet/personal/attackby(obj/item/weapon/W as obj, mob/user as mob)
