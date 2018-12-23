@@ -26,11 +26,3 @@
 	uniform = /obj/item/clothing/under/rank/engineer
 	id_type = /obj/item/weapon/card/id/engineering/engineer
 	pda_type = /obj/item/device/pda/engineering
-
-/decl/hierarchy/outfit/job/engineering/atmos
-	name = OUTFIT_JOB_NAME("Firefighter")
-	uniform = /obj/item/clothing/under/rank/atmospheric_technician
-	belt = /obj/item/weapon/storage/belt/utility/atmostech
-	id_type = /obj/item/weapon/card/id/engineering/atmos
-	pda_type = /obj/item/device/pda/atmos
-	suit = /obj/item/clothing/suit/fire/firefighter

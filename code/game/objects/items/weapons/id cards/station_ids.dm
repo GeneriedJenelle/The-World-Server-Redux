@@ -131,15 +131,15 @@
 	icon_state = "silver"
 	item_state = "silver_id"
 
-/obj/item/weapon/card/id/silver/secretary
+/obj/item/weapon/card/id/silver/guard
 	assignment = "City Hall Guard"
 	rank = "City Hall Guard"
-	job_access_type = /datum/job/secretary
+	job_access_type = /datum/job/guard
 
-/obj/item/weapon/card/id/silver/hop
-	assignment = "City Supervisor"
-	rank = "City Supervisor"
-	job_access_type = /datum/job/hop
+/obj/item/weapon/card/id/silver/secretary
+	assignment = "City Hall Secretary"
+	rank = "City Hall Secretary"
+	job_access_type = /datum/job/secretary
 
 /obj/item/weapon/card/id/gold
 	name = "identification card"
@@ -285,11 +285,6 @@
 	rank = "City Engineer"
 	job_access_type = /datum/job/engineer
 
-/obj/item/weapon/card/id/engineering/atmos
-	assignment = "Firefighter"
-	rank = "Firefighter"
-	job_access_type = /datum/job/atmos
-
 /obj/item/weapon/card/id/engineering/head
 	name = "identification card"
 	desc = "A card which represents creativity and ingenuity."
@@ -343,11 +338,6 @@
 	assignment = "Factory Worker"
 	rank = "Factory Worker"
 	job_access_type = /datum/job/cargo_tech
-
-/obj/item/weapon/card/id/cargo/mining
-	assignment = "Miner"
-	rank = "Miner"
-	job_access_type = /datum/job/mining
 
 /obj/item/weapon/card/id/cargo/head
 	name = "identification card"
@@ -423,6 +413,11 @@
 	assignment = "Librarian"
 	rank = "Librarian"
 	job_access_type = /datum/job/librarian
+
+/obj/item/weapon/card/id/civilian/journalist
+	assignment = "Journalist"
+	rank = "Journalist"
+	job_access_type = /datum/job/journalist
 
 /obj/item/weapon/card/id/civilian/head //This is not the HoP. There's no position that uses this right now.
 	name = "identification card"

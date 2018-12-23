@@ -29,15 +29,15 @@
 			else
 				qdel(medal)
 
-/decl/hierarchy/outfit/job/hop
-	name = OUTFIT_JOB_NAME("City Supervisor")
+/decl/hierarchy/outfit/job/secretary
+	name = OUTFIT_JOB_NAME("City Hall Secretary")
 	uniform = /obj/item/clothing/under/rank/head_of_personnel_whimsy
 	l_ear = /obj/item/device/radio/headset/heads/hop
 	shoes = /obj/item/clothing/shoes/brown
-	id_type = /obj/item/weapon/card/id/silver/hop
+	id_type = /obj/item/weapon/card/id/silver/secretary
 	pda_type = /obj/item/device/pda/heads/hop
 
-/decl/hierarchy/outfit/job/secretary
+/decl/hierarchy/outfit/job/guard
 	name = OUTFIT_JOB_NAME("City Hall Guard")
 	l_ear = /obj/item/device/radio/headset/headset_com
 	shoes = /obj/item/clothing/shoes/brown
@@ -45,7 +45,7 @@
 	pda_type = /obj/item/device/pda/heads/hop
 	r_hand = /obj/item/weapon/clipboard
 
-/decl/hierarchy/outfit/job/secretary/pre_equip(mob/living/carbon/human/H)
+/decl/hierarchy/outfit/job/guard/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.gender == FEMALE)
 		uniform = /obj/item/clothing/under/suit_jacket/female/skirt

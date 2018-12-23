@@ -7,7 +7,7 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the city supervisor"
+	supervisors = "yourself"
 	selection_color = "#515151"
 	idtype = /obj/item/weapon/card/id/civilian/bartender
 	access = list(access_hydroponics, access_bar, access_kitchen)
@@ -26,7 +26,7 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the city supervisor"
+	supervisors = "yourself"
 	selection_color = "#515151"
 	idtype = /obj/item/weapon/card/id/civilian/chef
 	access = list(access_hydroponics, access_bar, access_kitchen)
@@ -37,25 +37,25 @@
 	alt_titles = list("Cook","Restaurant Host")
 
 /datum/job/hydro
-	title = "Botanist"
+	title = "Grocer"
 	flag = BOTANIST
 	department = "Civilian"
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 1
-	supervisors = "the city supervisor"
+	supervisors = "yourself"
 	selection_color = "#515151"
 	idtype = /obj/item/weapon/card/id/civilian/botanist
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	minimal_access = list(access_hydroponics)
 	minimum_character_age = 18
 	outfit_type = /decl/hierarchy/outfit/job/service/gardener
-	alt_titles = list("Hydroponicist", "Gardener","Farmer")
+	alt_titles = list("Botanist", "Hydroponicist", "Gardener","Farmer")
 
 //Cargo
 /datum/job/qm
-	title = "Factory Manager"
+	title = "Operations Manager"
 	flag = QUARTERMASTER
 	department = "Cargo"
 	head_position = 1
@@ -63,7 +63,7 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the city supervisor"
+	supervisors = "the city council"
 	selection_color = "#7a4f33"
 	idtype = /obj/item/weapon/card/id/cargo/head
 	economic_modifier = 5
@@ -76,14 +76,14 @@
 	alt_titles = list("Supply Chief")
 
 /datum/job/cargo_tech
-	title = "Factory Worker"
+	title = "Distribution Service Officer"
 	flag = CARGOTECH
 	department = "Cargo"
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the factory manager and city supervisor"
+	supervisors = "the operations manager"
 	selection_color = "#9b633e"
 	idtype = /obj/item/weapon/card/id/cargo/cargo_tech
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_mining, access_mining_station)
@@ -92,43 +92,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
 	alt_titles = list("Delivery Assistant")
 
-/datum/job/mining
-	title = "Miner"
-	flag = MINER
-	department = "Cargo"
-	department_flag = CIVILIAN
-	faction = "Station"
-	total_positions = 3
-	spawn_positions = 3
-	supervisors = "the factory manager and city supervisor"
-	selection_color = "#9b633e"
-	idtype = /obj/item/weapon/card/id/cargo/mining
-	economic_modifier = 5
-	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_mining, access_mining_station)
-	minimal_access = list(access_mining, access_mining_station, access_mailsorting)
-	minimum_character_age = 18
-	outfit_type = /decl/hierarchy/outfit/job/cargo/mining
-	alt_titles = list("Drill Technician","Prospector")
-
 //Service
-/datum/job/janitor
-	title = "Janitor"
-	flag = JANITOR
-	department = "Civilian"
-	department_flag = CIVILIAN
-	faction = "Station"
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the city supervisor"
-	selection_color = "#515151"
-	idtype = /obj/item/weapon/card/id/civilian/janitor
-	access = list(access_janitor, access_maint_tunnels)
-	minimal_access = list(access_janitor, access_maint_tunnels)
-	minimum_character_age = 18
-	outfit_type = /decl/hierarchy/outfit/job/service/janitor
-	alt_titles = list("Custodian", "Sanitation Technician")
-
-//More or less assistants
 /datum/job/librarian
 	title = "Librarian"
 	flag = LIBRARIAN
@@ -137,14 +101,31 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the city supervisor"
+	supervisors = "the ministry of culture and heritage"
 	selection_color = "#515151"
 	idtype = /obj/item/weapon/card/id/civilian/librarian
 	access = list(access_library, access_maint_tunnels)
 	minimal_access = list(access_library)
 
 	outfit_type = /decl/hierarchy/outfit/job/librarian
-	alt_titles = list("Journalist", "Professor", "Historian", "Writer")
+	alt_titles = list("Historian", "Tour Guide", "Curator")
+
+/datum/job/journalist
+	title = "Journalist"
+	flag = CIVILIAN
+	department = "Civilian"
+	department_flag = CIVILIAN
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "yourself"
+	selection_color = "#515151"
+	idtype = /obj/item/weapon/card/id/civilian/journalist
+	access = list(access_maint_tunnels)
+	minimal_access = list(access_maint_tunnels)
+
+	outfit_type = /decl/hierarchy/outfit/job/journalist
+	alt_titles = list("Reporter", "Writer")
 
 //var/global/lawyer = 0//Checks for another lawyer //This changed clothes on 2nd lawyer, both IA get the same dreds.
 /datum/job/defense
@@ -155,7 +136,7 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the city supervisor"
+	supervisors = "yourself"
 	selection_color = "#515151"
 	idtype = /obj/item/weapon/card/id/civilian/defense
 	economic_modifier = 7
@@ -175,7 +156,7 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the city supervisor"
+	supervisors = "the Pollux Law"
 	selection_color = "#515151"
 	idtype = /obj/item/weapon/card/id/civilian/judge
 	economic_modifier = 13
@@ -203,7 +184,7 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the city supervisor"
+	supervisors = "yourself"
 	selection_color = "#515151"
 	idtype = /obj/item/weapon/card/id/civilian/barber
 	minimum_character_age = 18

@@ -13,8 +13,18 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	selection_color = "#1D1D4F"
 	idtype = /obj/item/weapon/card/id/gold
 	req_admin_notify = 1
-	access = list() 			//See get_access()
-	minimal_access = list() 	//See get_access()
+	access = list(access_security, access_sec_doors,
+			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
+			            access_maint_tunnels, access_janitor, access_construction, access_morgue,
+			            access_crematorium, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_lawyer,
+			            access_library, access_research, access_mining, access_heads_vault, access_mining_station,
+			            access_hop, access_RC_announce, access_keycard_auth, access_gateway) 			//See get_access()
+	minimal_access = list(access_security, access_sec_doors,
+			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
+			            access_maint_tunnels, access_janitor, access_construction, access_morgue,
+			            access_crematorium, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_lawyer,
+			            access_library, access_research, access_mining, access_heads_vault, access_mining_station,
+			            access_hop, access_RC_announce, access_keycard_auth, access_gateway) 	//See get_access()
 	minimal_player_age = 14
 	economic_modifier = 20
 
@@ -30,9 +40,6 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	if(.)
 		H.implant_loyalty(src)
 */
-/datum/job/captain/get_access()
-	return get_all_station_access()
-
 
 /datum/job/president
 	title = "President"
@@ -47,8 +54,18 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	selection_color = "#1D1D4F"
 	idtype = /obj/item/weapon/card/id/centcom/station/president
 	req_admin_notify = 1
-	access = list() 			//See get_access()
-	minimal_access = list() 	//See get_access()
+	access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
+			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
+			            access_all_personal_lockers, access_maint_tunnels, access_janitor, access_construction, access_morgue,
+			            access_crematorium, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_lawyer,
+			            access_library, access_research, access_mining, access_heads_vault, access_mining_station,
+			            access_hop, access_RC_announce, access_keycard_auth, access_gateway) 			//See get_access()
+	minimal_access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
+			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
+			            access_all_personal_lockers, access_maint_tunnels, access_janitor, access_construction, access_morgue,
+			            access_crematorium, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_lawyer,
+			            access_library, access_research, access_mining, access_heads_vault, access_mining_station,
+			            access_hop, access_RC_announce, access_keycard_auth, access_gateway) 	//See get_access()
 	minimal_player_age = 14
 	economic_modifier = 20
 
@@ -56,13 +73,9 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/president
 
-/datum/job/president/get_access()
-	get_all_station_access()
-	get_all_centcom_access()
-	return
 
-/datum/job/hop
-	title = "City Supervisor"
+/datum/job/secretary
+	title = "City Hall Secretary"
 	flag = HOP
 	department = "Command"
 	head_position = 1
@@ -72,7 +85,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	spawn_positions = 1
 	supervisors = "the Mayor"
 	selection_color = "#2F2F7F"
-	idtype = /obj/item/weapon/card/id/silver/hop
+	idtype = /obj/item/weapon/card/id/silver/secretary
 	req_admin_notify = 1
 	minimal_player_age = 10
 	economic_modifier = 10
@@ -80,25 +93,18 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	minimum_character_age = 25
 	ideal_character_age = 40
 
-	outfit_type = /decl/hierarchy/outfit/job/hop
+	outfit_type = /decl/hierarchy/outfit/job/secretary
+	alt_titles = list("Mayor's Assistant")
 
-	access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
-			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
-			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
-			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
-			            access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
-			            access_hop, access_RC_announce, access_keycard_auth, access_gateway)
-	minimal_access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers,
-			            access_medical, access_engine, access_change_ids, access_ai_upload, access_eva, access_heads,
-			            access_all_personal_lockers, access_maint_tunnels, access_bar, access_janitor, access_construction, access_morgue,
-			            access_crematorium, access_kitchen, access_cargo, access_cargo_bot, access_mailsorting, access_qm, access_hydroponics, access_lawyer,
-			            access_chapel_office, access_library, access_research, access_mining, access_heads_vault, access_mining_station,
-			            access_hop, access_RC_announce, access_keycard_auth, access_gateway)
+	access = list(access_sec_doors, access_change_ids, access_eva, access_heads,
+			            access_maint_tunnels, access_heads_vault, access_hop, access_keycard_auth, access_gateway)
+	minimal_access = list(access_sec_doors, access_change_ids, access_eva, access_heads,
+			            access_maint_tunnels, access_heads_vault, access_hop, access_keycard_auth, access_gateway)
 
-/datum/job/secretary
+/datum/job/guard
 	title = "City Hall Guard"
 	flag = BRIDGE
-	department = "Security"
+	department = "Command"
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 2
@@ -113,5 +119,5 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	access = list(access_heads, access_keycard_auth, access_security, access_sec_doors)
 	minimal_access = list(access_heads, access_keycard_auth, access_security, access_sec_doors)
 
-	outfit_type = /decl/hierarchy/outfit/job/secretary
+	outfit_type = /decl/hierarchy/outfit/job/guard
 	alt_titles = list("Mayor's Bodyguard", "City Hall Security", "Bailiff")

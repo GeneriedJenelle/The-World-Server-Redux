@@ -7,15 +7,15 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Mayor"
+	supervisors = "the city council"
 	selection_color = "#8E2929"
 	idtype = /obj/item/weapon/card/id/security/head
 	req_admin_notify = 1
 	economic_modifier = 10
-	access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory,
+	access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory, access_morgue,
 			            access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 			            access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_external_airlocks)
-	minimal_access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory,
+	minimal_access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory, access_morgue,
 			            access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 			            access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_external_airlocks)
 	minimum_character_age = 25
@@ -89,7 +89,7 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the chief of police and city supervisor"
+	supervisors = "the mayor and the city council"
 	selection_color = "#601C1C"
 	idtype = /obj/item/weapon/card/id/security/prosecutor
 	economic_modifier = 7

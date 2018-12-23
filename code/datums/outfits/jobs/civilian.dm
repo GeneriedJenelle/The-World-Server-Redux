@@ -74,6 +74,22 @@
 	id_type = /obj/item/weapon/card/id/civilian/librarian
 	pda_type = /obj/item/device/pda/librarian
 
+/decl/hierarchy/outfit/job/journalist
+	name = OUTFIT_JOB_NAME("Journalist")
+	uniform = /obj/item/clothing/under/suit_jacket/checkered
+	r_pocket = /obj/item/device/communicator
+	id_type = /obj/item/weapon/card/id/civilian/journalist
+	pda_type = /obj/item/device/pda/librarian
+	r_pocket = /obj/item/device/taperecorder
+	l_pocket = /obj/item/device/camera
+
+/decl/hierarchy/outfit/job/journalist/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(H.gender == FEMALE)
+		uniform = /obj/item/clothing/under/suit_jacket/checkered/skirt
+	else
+		uniform = /obj/item/clothing/under/suit_jacket/checkered
+
 /decl/hierarchy/outfit/job/chaplain
 	name = OUTFIT_JOB_NAME("Chaplain")
 	uniform = /obj/item/clothing/under/rank/chaplain

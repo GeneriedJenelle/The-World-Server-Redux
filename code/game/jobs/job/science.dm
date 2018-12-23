@@ -13,7 +13,7 @@
 	req_admin_notify = 1
 	economic_modifier = 15
 	access = list(access_rd, access_heads, access_tox, access_genetics, access_morgue,
-			            access_tox_storage, access_teleporter, access_sec_doors,
+			            access_tox_storage, access_teleporter,
 			            access_research, access_robotics, access_xenobiology, access_ai_upload, access_tech_storage,
 			            access_RC_announce, access_keycard_auth, access_tcomsat, access_gateway, access_xenoarch)
 	minimal_access = list(access_rd, access_heads, access_tox, access_genetics, access_morgue,
@@ -76,7 +76,7 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "research director"
+	supervisors = "yourself"
 	selection_color = "#633D63"
 	idtype = /obj/item/weapon/card/id/science/roboticist
 	economic_modifier = 5
