@@ -49,6 +49,7 @@ var/const/BRIDGE				=(1<<12)
 var/const/PROSECUTOR			=(1<<13)
 var/const/JUDGE				=(1<<14)
 var/const/BARBER				=(1<<15)
+var/const/JOURNALIST		=(1<<16)
 
 
 var/list/assistant_occupations = list(
@@ -58,7 +59,6 @@ var/list/assistant_occupations = list(
 var/list/command_positions = list(
 	"President",
 	"Mayor",
-	"City Supervisor",
 	"Chief of Police",
 	"Chief Engineer",
 	"Research Director",
@@ -69,14 +69,12 @@ var/list/command_positions = list(
 var/list/engineering_positions = list(
 	"Chief Engineer",
 	"Station Engineer",
-	"Firefighter"
 )
 
 
 var/list/medical_positions = list(
 	"Chief Medical Officer",
 	"Doctor",
-	"Geneticist",
 	"Psychiatrist",
 	"Chemist",
 	"Paramedic"
@@ -86,7 +84,6 @@ var/list/medical_positions = list(
 var/list/science_positions = list(
 	"Research Director",
 	"Scientist",
-	"Geneticist",	//Part of both medical and science
 	"Roboticist",
 	"Xenobiologist"
 )
@@ -99,12 +96,13 @@ var/list/cargo_positions = list(
 )
 
 var/list/civilian_positions = list(
-	"City Supervisor",
+	"City Hall Secretary",
 	"Bartender",
 	"Botanist",
 	"Chef",
 	"Janitor",
 	"Librarian",
+	"Journalist",
 	"Defense Attorney",
 	"Judge",
 	"Chaplain",
