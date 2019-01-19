@@ -818,8 +818,6 @@
 /obj/item/weapon/reagent_containers/food/snacks/slice/creamcheesebread
 	price_tag = 1
 
-/obj/item/weapon/reagent_containers/food/snacks/potbrownie/
-	price_tag = 20
 
 // Soups //
 
