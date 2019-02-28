@@ -40,7 +40,7 @@
 	selection_color = "#633D63"
 	idtype = /obj/item/weapon/card/id/science/scientist
 	economic_modifier = 7
-	access = list(access_robotics, access_tox, access_tox_storage, access_research, access_xenobiology, access_xenoarch)
+	access = list(access_robotics, access_tox, access_tox_storage, access_research, access_xenoarch)
 	minimal_access = list(access_tox, access_tox_storage, access_research, access_xenoarch)
 	minimum_character_age = 20
 	minimal_player_age = 3
@@ -54,7 +54,7 @@
 	faction = "City"
 	department = "Science"
 	department_flag = MEDSCI
-	total_positions = 3
+	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the research director"
 	selection_color = "#633D63"

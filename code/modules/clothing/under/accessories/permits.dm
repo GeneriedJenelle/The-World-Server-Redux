@@ -34,6 +34,10 @@
 	name = "bar shotgun permit"
 	desc = "A card indicating that the owner is allowed to carry a shotgun in the bar."
 
+/obj/item/clothing/accessory/permit/gun/research
+	name = "xenobiological base permit"
+	desc = "A card indicating that the owner is allowed to carry a firearm in the xenobiological base."
+
 /obj/item/clothing/accessory/permit/gun/planetside
 	name = "planetside gun permit"
 	desc = "A card indicating that the owner is allowed to carry a firearm while on the surface."

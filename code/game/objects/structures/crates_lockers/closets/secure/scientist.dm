@@ -58,3 +58,28 @@
 		new /obj/item/clothing/suit/storage/hooded/wintercoat/science(src)
 		new /obj/item/clothing/shoes/boots/winter/science(src)
 		return
+
+
+
+/obj/structure/closet/secure_closet/xenobiologist
+	name = "xenobiologist's locker"
+	req_access = list(access_xenobiology)
+	icon_state = "secureres1"
+	icon_closed = "secureres"
+	icon_locked = "secureres1"
+	icon_opened = "secureresopen"
+	icon_broken = "secureresbroken"
+	icon_off = "secureresoff"
+
+	New()
+		..()
+		new /obj/item/clothing/under/rank/scientist(src)
+		new /obj/item/clothing/suit/storage/toggle/labcoat(src)
+		new /obj/item/clothing/shoes/white(src)
+		new /obj/item/device/radio/headset/headset_sci(src)
+		new /obj/item/clothing/mask/gas/explorer(src)
+		new /obj/item/clothing/suit/storage/hooded/wintercoat/science(src)
+		new /obj/item/clothing/shoes/boots/winter/science(src)
+		new /obj/item/clothing/suit/browncoat(src)
+		new /obj/item/device/binoculars(src)
+		new /obj/item/weapon/tank/oxygen/yellow(src)

@@ -308,3 +308,14 @@
 	name = "\improper Geminus City - Park"
 	icon_state = "yellow"
 
+/area/planets/Geminus/outdoor/exploration
+	name = "\improper Xenobiological Research Site"
+	dynamic_lighting = 1
+	sound_env = FOREST
+	flags = null
+
+/area/planets/Geminus/indoor/exploration
+	name = "\improper Xenobiological Research Base"
+	icon_state = "yellow"
+	dynamic_lighting = 1
+	flags = RAD_SHIELDED
