@@ -53,4 +53,3 @@
 		else
 			overlays += icon(src.icon,"open")
 
-
