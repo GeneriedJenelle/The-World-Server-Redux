@@ -139,3 +139,20 @@
 	access = list(access_medical)
 	minimal_access = list(access_medical, access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/medical/intern
+
+	/datum/job/nurse
+	title = "Medical Nurse"
+	flag = MEDICALNURSE
+	department_flag = MEDSCI
+	department = "Medical"
+	faction = "City"
+	total_positions = 5
+	spawn_positions = 3
+	supervisors = "the chief medical officer"
+	selection_color = "#013D3B"
+	idtype = /obj/item/weapon/card/id/medical/intern
+	economic_modifier = 1
+	minimum_character_age = 18 //Excuse me electric, what.
+	access = list(access_medical)
+	minimal_access = list(access_medical, access_maint_tunnels)
+	outfit_type = /decl/hierarchy/outfit/job/medical/intern
