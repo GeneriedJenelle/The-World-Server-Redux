@@ -1,5 +1,5 @@
 var/list/admin_ranks = list()								//list of all ranks with associated rights
-
+#define TESTING
 //load our rank - > rights associations
 /proc/load_admin_ranks()
 	admin_ranks.Cut()

@@ -130,7 +130,8 @@
 
 /mob/new_player/Topic(href, href_list[])
 	if(!client)	return 0
-
+	tos_consent = 1
+/*
 	if(href_list["consent_signed"])
 		var/sqltime = time2text(world.realtime, "YYYY-MM-DD hh:mm:ss")
 		var/DBQuery/query = dbcon.NewQuery("REPLACE INTO erro_privacy (ckey, datetime, consent) VALUES ('[ckey]', '[sqltime]', 1)")
@@ -144,7 +145,7 @@
 		var/sqltime = time2text(world.realtime, "YYYY-MM-DD hh:mm:ss")
 		var/DBQuery/query = dbcon.NewQuery("REPLACE INTO erro_privacy (ckey, datetime, consent) VALUES ('[ckey]', '[sqltime]', 0)")
 		query.Execute()
-
+*/
 
 	if(href_list["show_preferences"])
 		client.prefs.ShowChoices(src)
@@ -452,7 +453,7 @@
 		AnnounceArrival(character, rank, join_message)
 	else
 		AnnounceCyborg(character, rank, join_message)
-		
+
 	qdel(src)
 
 /mob/new_player/proc/AnnounceCyborg(var/mob/living/character, var/rank, var/join_message)
