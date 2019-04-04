@@ -156,7 +156,7 @@
 
 //Cargo
 /datum/job/qm
-	title = "Factory Manager"
+	title = "Aoki Manager"
 	flag = QUARTERMASTER
 	department = "Cargo"
 	department_flag = CIVILIAN
@@ -164,7 +164,7 @@
 	head_position = 1
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the mayor"
+	supervisors = "Aoki Incorporated and the law"
 	selection_color = "#7a4f33"
 	idtype = /obj/item/weapon/card/id/cargo/head
 	economic_modifier = 5
@@ -174,10 +174,10 @@
 	ideal_character_age = 35
 
 	outfit_type = /decl/hierarchy/outfit/job/cargo/qm
-	alt_titles = list("Supply Chief")
+	alt_titles = list("Aoki Supervisor")
 
 /datum/job/cargo_tech
-	title = "Factory Worker"
+	title = "Aoki Associate"
 	flag = CARGOTECH
 	faction = "City"
 	department = "Cargo"
@@ -192,10 +192,10 @@
 	minimum_character_age = 13
 
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
-	alt_titles = list("Delivery Assistant")
+	alt_titles = list("Delivery Assistant", "Shipping Technician")
 
 /datum/job/mining
-	title = "Miner"
+	title = "Mining Technican"
 	flag = MINER
 	faction = "City"
 	department = "Cargo"
@@ -211,4 +211,4 @@
 	minimum_character_age = 18
 
 	outfit_type = /decl/hierarchy/outfit/job/cargo/mining
-	alt_titles = list("Drill Technician","Prospector")
+	alt_titles = list("Drill Technician")

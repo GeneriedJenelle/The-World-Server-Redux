@@ -23,8 +23,8 @@
 	icon_state = "mayorf"
 
 /obj/item/clothing/under/rank/cargo
-	name = "factory manager's jumpsuit"
-	desc = "It's a jumpsuit worn by the quartermaster. It's specially designed to prevent back injuries caused by pushing paper."
+	name = "Aoki manager's smock"
+	desc = "It's a smock worn by Aoki's management. It's specially designed to prevent back injuries caused by pushing paper."
 	icon_state = "qm"
 	item_state_slots = list(slot_r_hand_str = "cargo", slot_l_hand_str = "cargo")
 	rolled_sleeves = 0
@@ -41,8 +41,8 @@
 	rolled_sleeves = -1
 
 /obj/item/clothing/under/rank/cargotech
-	name = "factory worker's jumpsuit"
-	desc = "Shooooorts! They're comfy and easy to wear!"
+	name = "Aoki associate's uniform"
+	desc = "The uniform worn by Aoki Inc's front-line workers."
 	icon_state = "cargo"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	rolled_sleeves = 0
@@ -200,8 +200,8 @@
 	icon_state = "mime"
 
 /obj/item/clothing/under/rank/miner
-	desc = "It's a snappy jumpsuit with a sturdy set of overalls. It is very dirty."
-	name = "shaft miner's jumpsuit"
+	desc = "It's a snappy set of coveralls worn by miners working for Aoki Inc. It is very dirty."
+	name = "Aoki miner's jumpsuit"
 	icon_state = "miner"
 	rolled_sleeves = 0
 
