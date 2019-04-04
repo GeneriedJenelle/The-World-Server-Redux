@@ -1,0 +1,83 @@
+<h1>Paperwork Repository</h1>
+<span>This is a database of all paperwork available to download. Please choose from the following options below.</span>
+{{:helper.link('Upload new paperwork', 'file-upload', {'upload' : 1})}}
+<div class='item'>
+    <div class='itemLabel'>
+        <b>Search by title</b>
+    </div>
+    <div class='itemContent'>
+        <form name='search' action='?src={{:data.src}}' method='get'>
+            <input type='hidden' name='src' value='{{:data.src}}'>
+            <input type='hidden' name='search_type' value='title'>
+            <input type='text' id='searchtitle_content' name='searchtitle_content'>
+            <input type='submit' value='Search'>
+        </form>
+    </div>
+</div>
+<div class='item'>
+    <div class='itemLabel'>
+        <b>Search by author</b>
+    </div>
+    <div class='itemContent'>
+        <form name='search' action='?src={{:data.src}}' method='get'>
+            <input type='hidden' name='src' value='{{:data.src}}'>
+            <input type='hidden' name='search_type' value='author'>
+            <input type='text' id='searchauthor_content' name='searchauthor_content'>
+            <input type='submit' value='Search'>
+        </form>
+    </div>
+</div>
+<div class='item'>
+    <div class='itemLabel'>
+        <b>Search by id</b>
+    </div>
+    <div class='itemContent'>
+        <form name='search' action='?src={{:data.src}}' method='get'>
+            <input type='hidden' name='src' value='{{:data.src}}'>
+            <input type='hidden' name='search_type' value='id'>
+            <input type='text' id='searchid_content' name='searchid_content'>
+            <input type='submit' value='Search'>
+        </form>
+    </div>
+</div>
+
+
+<span>Filter by category</span>
+{{for data.category}}
+    {{:helper.link('{{:value}}', null, {'category' : value})}}
+{{/for}}
+<div class="display tabular">
+    <div class="candystripe">
+        <div class="cell bold">
+            Id
+        </div>
+        <div class="cell bold">
+            Title
+        </div>
+        <div class="cell bold">
+            Category
+        </div>
+        <div class="cell bold">
+            Author
+        </div>
+    </div>
+    {{for data.contents}}
+        <div class="candystripe">
+            <div class="cell">
+                {{:value.id}}
+            </div>
+            <div class="cell" align='right'>
+                {{:value.title}}
+            </div>
+            <div class="cell" align='right'>
+                {{:value.author}}
+            </div>
+            <div class="cell" align='right'>
+                {{:value.category}}
+            </div>
+            <div class="cell" align='right'>
+                {{:helper.link('Download', 'file-upload', {'download' : 1, 'id' : value.id})}}
+            </div>
+        </div>
+    {{/for}}
+</div>

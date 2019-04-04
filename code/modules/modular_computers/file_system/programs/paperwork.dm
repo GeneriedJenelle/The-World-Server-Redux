@@ -21,8 +21,10 @@
 	var/selected_category
 	var/static/list/all_categories = list(CAT_GENERAL, CAT_MEDICAL, CAT_LAW, CAT_POLICE, CAT_ENGINEERING, CAT_SCIENCE, CAT_COMMAND)
 
-/datum/nano_module/paperwork/ui_data()
+/datum/nano_module/paperwork/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 0, datum/topic_state/state = default_state)
 	var/list/data = list()
+	if(program)
+		data = program.get_header_data()
 	establish_db_connection()
 	if(!dbcon.IsConnected())
 		world << "fuck"
@@ -39,24 +41,24 @@
 		paperwork_data["category"] = query.item[5]
 		entries += list(paperwork_data)
 	data["paperwork_data"] = entries
-	return data
 
-/datum/nano_module/paperwork/tg_ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = 0, datum/tgui/master_ui = null, datum/ui_state/state = tg_default_state)
-	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
+	ui = nanomanager.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
-		ui = new(user, src, ui_key, "paperwork", "Paperwork Program", 575, 700, state = state)
+		ui = new(user, src, ui_key, "paperwork.tmpl", "Paperwork Program", 575, 700, state = state)
+		ui.auto_update_layout = 1
+		ui.set_initial_data(data)
 		ui.open()
 
-/datum/nano_module/paperwork/ui_act(action, params)
+/datum/nano_module/paperwork/Topic(href, href_list)
 	if(..())
 		return
-	if(action["filter"])
-		if(!(params["category"] in all_categories))
+	if(href_list["filter"])
+		if(!(href_list["category"] in all_categories))
 			return // bad value
-		selected_category = selected_category == params["category"] ? null : params["category"] // Resets filter to null if the user clicks the currently selected category, otherwise sets it to it
+		selected_category = selected_category == href_list["category"] ? null : href_list["category"] // Resets filter to null if the user clicks the currently selected category, otherwise sets it to it
 		return TRUE
-	if(action["download"])
-		var/id = text2num(params["id"]) // if you see this comment do not fucking merge this pr, i need to sanitize this properly for the query to be safe
+	if(href_list["download"])
+		var/id = text2num(href_list["id"]) // if you see this comment do not fucking merge this pr, i need to sanitize this properly for the query to be safe
 		if(!id)
 			return FALSE
 		establish_db_connection()
