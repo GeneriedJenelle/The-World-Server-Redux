@@ -185,7 +185,7 @@
 "adC" = (/obj/machinery/light/colored/orange{tag = "icon-orange1 (EAST)"; icon_state = "orange1"; dir = 4},/turf/simulated/floor/tiled,/area/quartermaster/delivery)
 "adD" = (/obj/machinery/light/colored,/obj/machinery/button/remote/blast_door{id = "qm_warehouse"; name = "Warehouse Door Control"; pixel_x = 26; pixel_y = 0; req_access = list(31)},/obj/effect/floor_decal/corner/paleblue{color = "#00EAA0"; dir = 6; name = "pale green corner"},/turf/simulated/floor/tiled/techfloor,/area/quartermaster/warehouse)
 "adE" = (/turf/simulated/wall,/area/quartermaster/office)
-"adF" = (/obj/machinery/door/airlock/glass_mining{door_color = "#00EAA0"; name = "Quartermaster"; req_access = list(41)},/turf/simulated/floor/tiled,/area/quartermaster/office)
+"adF" = (/obj/machinery/door/airlock/glass_mining{door_color = "#009465"; name = "Aoki Manager"; req_access = list(41)},/turf/simulated/floor/tiled,/area/quartermaster/office)
 "adG" = (/obj/structure/holostool,/obj/effect/floor_decal/corner/grey/diagonal,/turf/simulated/floor/tiled/dark,/area/chapel/main)
 "adH" = (/turf/simulated/floor/carpet,/area/chapel/main)
 "adI" = (/obj/effect/landmark/start{name = "Chaplain"},/obj/structure/holostool,/turf/simulated/floor/carpet,/area/chapel/main)
@@ -273,7 +273,7 @@
 "afm" = (/obj/machinery/conveyor{dir = 9; id = "QMLoad"},/turf/simulated/floor,/area/quartermaster/delivery)
 "afn" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/turf/simulated/floor/tiled,/area/quartermaster/delivery)
 "afo" = (/obj/machinery/camera/network/civilian{c_tag = "CIV - Chapel Office"; dir = 4},/obj/machinery/power/apc{cell_type = /obj/item/weapon/cell/super; dir = 8; name = "west bump"; pixel_x = -24},/obj/effect/floor_decal/corner/paleblue{color = "#00EAA0"; dir = 9; name = "pale green corner"},/turf/simulated/floor/tiled/techfloor,/area/quartermaster/storage)
-"afp" = (/obj/machinery/door/airlock/glass_mining{name = "Delivery Office"; req_access = list(50)},/turf/simulated/floor/tiled/techfloor,/area/quartermaster/storage)
+"afp" = (/obj/machinery/door/airlock/glass_mining{door_color = "#009465"; name = "Delivery Office"; req_access = list(50)},/turf/simulated/floor/tiled/techfloor,/area/quartermaster/storage)
 "afq" = (/obj/effect/floor_decal/corner/paleblue{color = "#00EAA0"; dir = 6; name = "pale green corner"},/turf/simulated/floor/tiled/dark,/area/quartermaster/office)
 "afr" = (/obj/effect/landmark/start{name = "Aoki Associate"},/turf/simulated/floor/carpet,/area/quartermaster/office)
 "afs" = (/obj/effect/floor_decal/corner/paleblue{color = "#00EAA0"; dir = 9; name = "pale green corner"},/obj/effect/landmark/start{name = "Aoki Associate"},/turf/simulated/floor/tiled/dark,/area/quartermaster/office)
@@ -338,7 +338,7 @@
 "agz" = (/obj/structure/sign/warning/mail_delivery,/turf/simulated/wall,/area/quartermaster/office)
 "agA" = (/obj/structure/plasticflaps{opacity = 0},/obj/machinery/conveyor{id = "cargoserve"; name = "cargo service belt"},/turf/simulated/floor/tiled,/area/quartermaster/office)
 "agB" = (/obj/structure/disposalpipe/segment,/turf/simulated/wall,/area/quartermaster/office)
-"agC" = (/obj/machinery/door/airlock/glass_mining{id_tag = "cargodoor"; name = "Cargo Office"; req_access = list(50)},/turf/simulated/floor/tiled,/area/quartermaster/office)
+"agC" = (/obj/machinery/door/airlock/glass_mining{door_color = "#009465"; id_tag = "cargodoor"; name = "Aoki Shipping Office"; req_access = list(50)},/turf/simulated/floor/tiled,/area/quartermaster/office)
 "agD" = (/obj/machinery/light/small{dir = 8},/turf/simulated/floor/tiled/dark,/area/chapel/main)
 "agE" = (/turf/simulated/floor/tiled/dark,/area/chapel/main)
 "agF" = (/obj/machinery/door/morgue{tag = "icon-door1"; icon_state = "door1"; dir = 2},/turf/simulated/floor/tiled/dark,/area/chapel/main)
@@ -356,7 +356,7 @@
 "agR" = (/obj/structure/closet/crate,/obj/effect/floor_decal/industrial/warning{icon_state = "warning"; dir = 8},/turf/simulated/floor/tiled,/area/outpost/mining_main/refinery)
 "agS" = (/obj/structure/closet/crate,/turf/simulated/floor/tiled,/area/outpost/mining_main/refinery)
 "agT" = (/obj/machinery/conveyor{dir = 2; id = "mining_internal"},/obj/machinery/mineral/output,/turf/simulated/floor/tiled/dark,/area/outpost/mining_main/refinery)
-"agU" = (/obj/machinery/door/airlock/glass_mining{name = "Delivery Office"; req_access = list(50)},/turf/simulated/floor/tiled/techfloor,/area/quartermaster/delivery)
+"agU" = (/obj/machinery/door/airlock/glass_mining{door_color = "#009465"; name = "Delivery Office"; req_access = list(50)},/turf/simulated/floor/tiled/techfloor,/area/quartermaster/delivery)
 "agV" = (/obj/effect/floor_decal/corner/paleblue{color = "#00EAA0"; dir = 9; name = "pale green corner"},/turf/simulated/floor/road/garage,/area/quartermaster/storage)
 "agW" = (/turf/simulated/floor/road/garage,/area/quartermaster/storage)
 "agX" = (/obj/effect/floor_decal/corner/paleblue{color = "#00EAA0"; dir = 6; name = "pale green corner"},/turf/simulated/floor/road/garage,/area/quartermaster/storage)
@@ -376,7 +376,7 @@
 "ahl" = (/obj/effect/floor_decal/industrial/warning/dust/corner,/obj/effect/floor_decal/industrial/warning/dust,/turf/simulated/floor/tiled/asteroid_steel,/area/mine/explored)
 "ahm" = (/obj/effect/floor_decal/industrial/warning/dust,/turf/simulated/floor/tiled/asteroid_steel,/area/mine/explored)
 "ahn" = (/obj/effect/floor_decal/industrial/warning/dust{icon_state = "warning_dust"; dir = 6},/turf/simulated/floor/tiled/asteroid_steel,/area/mine/explored)
-"aho" = (/obj/machinery/door/airlock/mining{id_tag = "cargodoor"; name = "Mining Dock"; req_access = list(50)},/turf/simulated/floor/tiled,/area/outpost/mining_main/west_hall)
+"aho" = (/obj/machinery/door/airlock/mining{door_color = "#009465"; id_tag = "cargodoor"; name = "Mining Dock"; req_access = list(50)},/turf/simulated/floor/tiled,/area/outpost/mining_main/west_hall)
 "ahp" = (/obj/machinery/door/window/westleft{name = "Production Area"},/turf/simulated/floor/tiled,/area/outpost/mining_main/refinery)
 "ahq" = (/turf/simulated/floor/tiled/dark,/area/outpost/mining_main/refinery)
 "ahr" = (/obj/machinery/mineral/stacking_unit_console,/turf/simulated/wall,/area/outpost/mining_main/refinery)
@@ -4283,6 +4283,7 @@
 "bEs" = (/turf/simulated/wall,/area/planets/Geminus/outdoor/south)
 "bEt" = (/turf/unsimulated/wall/planetary/normal,/area/planets/Geminus/outdoor/west)
 "bEu" = (/turf/unsimulated/wall/planetary/normal,/area/planets/Geminus/outdoor/south)
+"bEv" = (/obj/machinery/door/airlock/mining{door_color = "#009465"; id_tag = "cargodoor"; name = "Aoki Mining"; req_access = list(50)},/turf/simulated/floor/tiled,/area/outpost/mining_main/west_hall)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -4311,7 +4312,7 @@ aaaaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaa
 aaaaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaafaajaajaafaahaahaahadmadmadmadmadnagGaesafCafDafEadnaeZagcagHagIagJagKagLagLagMagNagOagOagPadtagQagRagSadtaezagTaaHacxabMabMabMabMabMabMabMabNabvabPagpafnachachabRachachachagUaeNaeNagVagWagWagXaeNagYaaHagZahaahbahcahdaheahfahgahgacKahhafwadHadHadHafxafyacKahiabIabIabIahjabIabIabJaazaajaajaafaadaadaadaadaadaadaadaadaadaadaadaahaaZaahaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaaeaafaabaaa
 aaaaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaafaajaajaafaadaadaadadnadmadmadnadnahkahlahmahmahnadnadnahoagLagLahoagLagLagLagLahpagOagOagPadtahqaezaezahraezaeAaaHabsabNabMabMabMabMabMabNabNahsaaHahtahuahvaeCabRahwahwahwabyaeHaeNagVahxahyagXaeNahzaaHahAagZahBaheaheaheahCahgahDacKafXafYadHadHadHafZahEacKadlabIabIabIabIabIahFabJaazaajaajaafaadaadaadaadaadaadaadaadaadaadaadaadaahaahaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaaeaafaabaaa
 aaaaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaafaajaamaafaadaadaadadpadpadpadmadmahGadmadmadmadoadmahHagcahIahJagJahKahLagLahMahNahOahPafgadtahQahRahSahTahUahVaaHacxahWahXahWahXahWahXahWahXabvaaHahYahZaiaaibaicaidaieaifabyaeHaeNagVagWagWagXaeNafOaaHagZagZaigaheaheaheaihahgahgacKaiiaijaikadHaikaijaiiacKabIabIabIabIabIabIabIacgaazaajaajaafaadaadaadaahaahaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaaeaafaabaaa
-aaaaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaafaajaajaafaadaadailaimadpadpadpadOainaioaipaiqaiqaiqadOagcagcagcagcagcairahoagcaisaitaiuaivaisadsadsadsadsadsadsaiwaaHaaHaaHaaHaaHaaHaaHaaHaaHaaHaaHabyabyabyabyabwabyabyabyabyaaHaaHaixaiyaiyaizaaHaiwaaHaiAaiAaiAaiBaiBaiBaiCaiAaiAacKacKaiDacKaiEacKaiDacKacKaiFaiGaiGaiGaiFaiHaiIaiIaazaasaajaafaadaadaadaadaanaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaaeaafaabaaa
+aaaaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaafaajaajaafaadaadailaimadpadpadpadOainaioaipaiqaiqaiqadOagcagcagcagcagcairbEvagcaisaitaiuaivaisadsadsadsadsadsadsaiwaaHaaHaaHaaHaaHaaHaaHaaHaaHaaHaaHabyabyabyabyabwabyabyabyabyaaHaaHaixaiyaiyaizaaHaiwaaHaiAaiAaiAaiBaiBaiBaiCaiAaiAacKacKaiDacKaiEacKaiDacKacKaiFaiGaiGaiGaiFaiHaiIaiIaazaasaajaafaadaadaadaadaanaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaaeaafaabaaa
 aaaaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaafaajaajaafaadaiJaiJaiJaiJaiJaiJaiJaiKaiLaiLaiLaiLaiLaiMaiLaiLaiLaiMaiLaiLaiNaiLaiLaiLaiLaiLaiLaiLaiMaiLaiLaiLaiLaiLaiLaiLaiLaiLaiLaiMaiLaiLaiLaiLaiLaiLaiLaiLaiMaiOaiPaiPaiPaiPaiQaiRaiSaiSaiSaiSaiTaiPaiPaiUaiVaiWaiXaiXaiXaiYaiZaiUaiQajaaiPaiPaiXaiPaiPajaaiQaiFajbajcajdaiFajeajfaiIajgaajaajaafaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaaeaafaabaaa
 aaaaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaahaahaahaahaahaahaadaadaafaajaajaafaadaiJajhajiajjajkajlaiJajmaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXajnaiXaiXaiXaiXaiXajoajpajpajpajpajqaiXaiXaiXaiXaiXaiXaiXaiXajnaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXajrajrajrajdaiFajeajeajeaaqaajaajaafaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaaeaafaabaaa
 aaaaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaahaahaahaahaahaahaadaadaafaajaajaafaadaiJajsajsajsajsajtajuajmaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXajnaiXaiXaiXaiXaiXajoajpajpajpajpajqaiXaiXaiXaiXaiXaiXaiXaiXajnaiXaiXaiXaiXaiXaiXaiXaiXaiXaiXaiPaiFajvajcajdaiFajeajeajeaaqaajaajaafaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaadaaeaafaabaaa
