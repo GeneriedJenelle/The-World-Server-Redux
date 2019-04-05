@@ -350,13 +350,13 @@
 	secondary_color = rgb(191,159,95)
 
 /obj/item/weapon/card/id/cargo/cargo_tech
-	assignment = "Factory Worker"
-	rank = "Factory Worker"
+	assignment = "Aoki Associate"
+	rank = "Aoki Associate"
 	job_access_type = /datum/job/cargo_tech
 
 /obj/item/weapon/card/id/cargo/mining
-	assignment = "Miner"
-	rank = "Miner"
+	assignment = "Mining Technician"
+	rank = "Mining Technician"
 	job_access_type = /datum/job/mining
 
 /obj/item/weapon/card/id/cargo/head
@@ -365,8 +365,8 @@
 	icon_state = "cargoGold"
 	primary_color = rgb(142,94,0)
 	secondary_color = rgb(255,223,127)
-	assignment = "Factory Manager"
-	rank = "Factory Manager"
+	assignment = "Aoki Manager"
+	rank = "Aoki Manager"
 	job_access_type = /datum/job/qm
 
 /obj/item/weapon/card/id/assistant

@@ -284,6 +284,11 @@
 /obj/structure/sign/double/city/court/right
 	icon_state = "court2"
 
+/obj/structure/sign/double/city/aoki/left
+	icon_state = "aoki1"
+/obj/structure/sign/double/city/aoki/right
+	icon_state = "aoki2"
+
 
 
 /*|	                                             */
@@ -308,3 +313,8 @@
 	name = "\improper techshop"
 	desc = "A sign which reads 'tech shop'."
 	icon_state = "techshop"
+
+/obj/structure/sign/city/aokilogo
+	name = "Aoki Inc."
+	desc = "A sign with Aoki Incorporated's logo."
+	icon_state = "aoki3"

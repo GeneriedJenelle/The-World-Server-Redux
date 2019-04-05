@@ -3,7 +3,7 @@
 	hierarchy_type = /decl/hierarchy/outfit/job/cargo
 
 /decl/hierarchy/outfit/job/cargo/qm
-	name = OUTFIT_JOB_NAME("Cargo")
+	name = OUTFIT_JOB_NAME("Aoki Manager")
 	uniform = /obj/item/clothing/under/rank/cargo
 	shoes = /obj/item/clothing/shoes/black
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -12,14 +12,14 @@
 	pda_type = /obj/item/device/pda/quartermaster
 
 /decl/hierarchy/outfit/job/cargo/cargo_tech
-	name = OUTFIT_JOB_NAME("Factory Worker")
+	name = OUTFIT_JOB_NAME("Aoki Associate")
 	uniform = /obj/item/clothing/under/rank/cargotech
 	shoes = /obj/item/clothing/shoes/black
 	id_type = /obj/item/weapon/card/id/cargo/cargo_tech
 	pda_type = /obj/item/device/pda/cargo
 
 /decl/hierarchy/outfit/job/cargo/mining
-	name = OUTFIT_JOB_NAME("Shaft miner")
+	name = OUTFIT_JOB_NAME("Mining Technician")
 	uniform = /obj/item/clothing/under/rank/miner
 	shoes = /obj/item/clothing/shoes/black
 	l_ear = /obj/item/device/radio/headset/headset_mine

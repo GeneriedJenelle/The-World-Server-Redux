@@ -184,7 +184,7 @@
 	department_flag = CIVILIAN
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the factory manager"
+	supervisors = "the Aoki manager"
 	selection_color = "#9b633e"
 	idtype = /obj/item/weapon/card/id/cargo/cargo_tech
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_mining, access_mining_station)
@@ -202,7 +202,7 @@
 	department_flag = CIVILIAN
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the factory manager"
+	supervisors = "the Aoki manager"
 	selection_color = "#9b633e"
 	idtype = /obj/item/weapon/card/id/cargo/mining
 	economic_modifier = 5
