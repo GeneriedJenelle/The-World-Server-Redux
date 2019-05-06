@@ -103,7 +103,7 @@
 						/obj/item/device/radio/headset/headset_sci, \
 						/obj/item/device/radio/headset/headset_cargo)
 		ears = new headset(src)
-
+	hear_radio_list += src
 	parrot_sleep_dur = parrot_sleep_max //In case someone decides to change the max without changing the duration var
 
 	verbs.Add(/mob/living/simple_animal/parrot/proc/steal_from_ground, \
@@ -118,6 +118,10 @@
 		held_item = null
 	walk(src,0)
 	..()
+
+/mob/living/simple_animal/parrot/Destroy()
+	hear_radio_list -= src
+	return ..()
 
 /mob/living/simple_animal/parrot/Stat()
 	..()

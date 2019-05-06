@@ -179,3 +179,44 @@ proc/AStar(var/start, var/end, var/proc/adjacent, var/proc/dist, var/max_nodes, 
 				open.Remove(open.Length())
 
 	return path
+
+//wrapper that returns an empty list if A* failed to find a path
+/proc/get_path_to(caller, end, dist, maxnodes, maxnodedepth = 30, mintargetdist, adjacent = /turf/proc/reachableAdjacentTurfs, id=null, turf/exclude=null, simulated_only = 1)
+	var/list/path = AStar(caller, end, dist, maxnodes, maxnodedepth, mintargetdist, adjacent, id, exclude, simulated_only)
+	if(!path)
+		path = list()
+	return path
+
+//Returns adjacent turfs in cardinal directions that are reachable
+//simulated_only controls whether only simulated turfs are considered or not
+/turf/proc/reachableAdjacentTurfs(caller, ID, simulated_only)
+	var/list/L = new()
+	var/turf/simulated/T
+
+	for(var/dir in cardinal)
+		T = get_step(src,dir)
+		if(!T || (simulated_only && !istype(T)))
+			continue
+		if(!T.density && !LinkBlockedWithAccess(T,caller, ID))
+			L.Add(T)
+	return L
+
+//Returns adjacent turfs in cardinal directions that are reachable via atmos
+/turf/proc/reachableAdjacentAtmosTurfs()
+	return Adjacent(src)
+
+/turf/proc/LinkBlockedWithAccess(turf/T, caller, ID)
+	var/adir = get_dir(src, T)
+	var/rdir = get_dir(T, src)
+
+	for(var/obj/structure/window/W in src)
+		if(!W.CanAStarPass(ID, adir))
+			return 1
+	for(var/obj/machinery/door/window/W in src)
+		if(!W.CanAStarPass(ID, adir))
+			return 1
+	for(var/obj/O in T)
+		if(!O.CanAStarPass(ID, rdir, caller))
+			return 1
+
+	return 0

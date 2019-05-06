@@ -504,6 +504,11 @@
 	..()
 	if(!mind.assigned_role)	mind.assigned_role = "Civilian"	//defualt
 
+
+/mob/living/proc/sync_mind()
+	mind_initialize()  //updates the mind (or creates and initializes one if one doesn't exist)
+	mind.active = 1    //indicates that the mind is currently synced with a client
+
 //slime
 /mob/living/simple_animal/slime/mind_initialize()
 	. = ..()
@@ -556,3 +561,4 @@
 	. = ..()
 	mind.assigned_role = "Juggernaut"
 	mind.special_role = "Cultist"
+

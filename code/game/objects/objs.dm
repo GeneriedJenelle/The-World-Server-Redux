@@ -211,3 +211,6 @@
 		user << "<span class='notice'>This looks incredibly alien to you, and doesn't have brains.</span>"
 		return
 	..()
+
+/obj/proc/CanAStarPass()
+	. = !density

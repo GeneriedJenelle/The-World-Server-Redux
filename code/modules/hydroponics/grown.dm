@@ -336,6 +336,9 @@
 /obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris
 	plantname = "ambrosia"
 
+/obj/item/weapon/reagent_containers/food/snacks/grown/banana
+	plantname = "banana"
+
 /obj/item/weapon/reagent_containers/food/snacks/fruit_slice
 	name = "fruit slice"
 	desc = "A slice of some tasty fruit."

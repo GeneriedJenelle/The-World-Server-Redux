@@ -673,3 +673,55 @@ var/global/image/backplane
 			if(!mob.mind)
 				return
 			return mob.mind.initial_email_login["login"]
+
+/mob/proc/rename_character(oldname, newname)
+	if(!newname)
+		return 0
+	real_name = newname
+	name = newname
+	if(mind)
+		mind.name = newname
+	if(dna)
+		dna.real_name = real_name
+
+	if(oldname)
+		//update the datacore records! This is goig to be a bit costly.
+		for(var/list/L in list(data_core.general,data_core.medical,data_core.security,data_core.locked))
+			for(var/datum/data/record/R in L)
+				if(R.fields["name"] == oldname)
+					R.fields["name"] = newname
+					break
+
+		//update our pda and id if we have them on our person
+		var/list/searching = GetAllContents(searchDepth = 3)
+		var/search_id = 1
+		var/search_pda = 1
+
+		for(var/A in searching)
+			if( search_id && istype(A,/obj/item/weapon/card/id) )
+				var/obj/item/weapon/card/id/ID = A
+				if(ID.registered_name == oldname)
+					ID.registered_name = newname
+					ID.name = "[newname]'s ID Card ([ID.assignment])"
+					ID.set_id_photo(src)
+					if(!search_pda)	break
+					search_id = 0
+
+			else if( search_pda && istype(A,/obj/item/device/communicator) )
+				var/obj/item/device/communicator/PDA = A
+				if(PDA.owner == oldname)
+					PDA.owner = newname
+					PDA.name = "[newname]'s communicator"
+					if(!search_id)	break
+					search_pda = 0
+
+		//Fixes renames not being reflected in objective text
+		var/length
+		var/pos
+		for(var/datum/objective/objective in all_objectives)
+			if(!mind || objective.target != mind)
+				continue
+			length = lentext(oldname)
+			pos = findtextEx(objective.explanation_text, oldname)
+			objective.explanation_text = copytext(objective.explanation_text, 1, pos)+newname+copytext(objective.explanation_text, pos+length)
+	return 1

@@ -7,6 +7,7 @@ var/list/admin_verbs_default = list(
 	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
 	/client/proc/cmd_check_new_players,	//allows us to see every new player
+	/client/proc/show_snpc_verbs
 //	/client/proc/check_antagonists,		//shows all antags,
 //	/client/proc/cmd_mod_say,
 //	/client/proc/deadchat				//toggles deadchat on/off,
@@ -395,6 +396,13 @@ var/list/admin_verbs_event_manager = list(
 	/datum/admins/proc/call_drop_pod
 )
 
+var/list/admin_verbs_snpc = list(
+	/client/proc/resetSNPC,
+	/client/proc/toggleSNPC,
+	/client/proc/customiseSNPC,
+	/client/proc/hide_snpc_verbs
+)
+
 /client/proc/add_admin_verbs()
 	if(holder)
 		verbs += admin_verbs_default
@@ -433,6 +441,28 @@ var/list/admin_verbs_event_manager = list(
 		admin_verbs_spawn,
 		debug_verbs
 		)
+
+/client/proc/show_snpc_verbs()
+	set name = "Show SNPC Verbs"
+	set category = "Admin"
+
+	if(!holder)
+		return
+
+	verbs += admin_verbs_snpc
+	verbs -= /client/proc/show_snpc_verbs
+	to_chat(src, "<span class='interface'>SNPC verbs on.</span>")
+
+/client/proc/hide_snpc_verbs()
+	set name = "Hide SNPC Verbs"
+	set category = "Admin"
+
+	if(!holder)
+		return
+
+	verbs -= admin_verbs_snpc
+	verbs += /client/proc/show_snpc_verbs
+	to_chat(src, "<span class='interface'>SNPC verbs off.</span>")
 
 /client/proc/hide_most_verbs()//Allows you to keep some functionality while hiding some verbs
 	set name = "Adminverbs - Hide Most"

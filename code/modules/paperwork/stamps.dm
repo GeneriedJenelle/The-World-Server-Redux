@@ -69,6 +69,14 @@
 	name = "\improper Sol Government rubber stamp"
 	icon_state = "stamp-sg"
 
+/obj/item/weapon/stamp/centcom
+	name = "nanotrasen representative's rubber stamp"
+	icon_state = "stamp-cap"
+
+/obj/item/weapon/stamp/law
+	name = "judge's rubber stamp"
+	icon_state = "stamp-hop"
+
 
 // Syndicate stamp to forge documents.
 /obj/item/weapon/stamp/chameleon/attack_self(mob/user as mob)
