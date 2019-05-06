@@ -24,6 +24,10 @@
 	var/time_died_as_mouse = null //when the client last died as a mouse
 	var/datum/tooltip/tooltips 	= null
 
+	// Their chat window, sort of important.
+	// See /goon/code/datums/browserOutput.dm
+	var/datum/chatOutput/chatOutput
+
 	var/adminhelped = 0
 
 		///////////////

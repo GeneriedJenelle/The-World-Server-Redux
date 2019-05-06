@@ -41,6 +41,9 @@
 		//del(usr)
 		return
 
+	if(href_list["_src_"] == "chat")
+		return chatOutput.Topic(href, href_list)
+
 	//Admin PM
 	if(href_list["priv_msg"])
 		var/client/C = locate(href_list["priv_msg"])
@@ -68,6 +71,10 @@
 			return
 
 		ticket.close(client_repository.get_lite_client(usr.client))
+
+	switch(href_list["action"])
+		if ("openLink")
+			src << link(href_list["link"])
 
 	//Logs all hrefs
 	if(config && config.log_hrefs && href_logfile)
@@ -100,6 +107,7 @@
 	//CONNECT//
 	///////////
 /client/New(TopicData)
+	chatOutput = new /datum/chatOutput(src) // Right off the bat.
 	TopicData = null							//Prevent calls to client.Topic from connect
 
 	if(!(connection in list("seeker", "web")))					//Invalid connection type.
@@ -134,6 +142,7 @@
 
 	. = ..()	//calls mob.Login()
 	prefs.sanitize_preferences()
+	chatOutput.start()
 
 	if(custom_event_msg && custom_event_msg != "")
 		src << "<h1 class='alert'>Custom Event</h1>"

@@ -97,15 +97,6 @@ var/list/chatResources = list(
 	messageQueue = null
 	src.sendClientData()
 
-	pingLoop()
-
-/datum/chatOutput/proc/pingLoop()
-	set waitfor = FALSE
-
-	while(owner)
-		ehjax_send(data = owner.is_afk(29 SECONDS) ? "softPang" : "pang")
-		sleep(30 SECONDS)
-
 /datum/chatOutput/proc/ehjax_send(var/client/C = owner, var/window = "browseroutput", var/data)
 	if(islist(data))
 		data = json_encode(data)
@@ -197,16 +188,33 @@ var/list/chatResources = list(
 /proc/bi(obj)
 	bicon(obj)
 
-/proc/to_chat(target, message)
-	if(istype(message, /image) || istype(message, /sound) || istype(target, /savefile) || !(ismob(target) || islist(target) || isclient(target) || target == world))
+/proc/is_valid_tochat_message(message)
+	return !(istype(message, /image) || istype(message, /sound))
+
+/proc/is_valid_tochat_target(target)
+	return !istype(target, /savefile) && (ismob(target) || islist(target) || isclient(target) || target == world)
+
+var/to_chat_filename
+var/to_chat_line
+var/to_chat_src
+// Call using macro: to_chat(target, message)
+/proc/__to_chat(target, message)
+	if(!is_valid_tochat_message(message) || !is_valid_tochat_target(target))
 		target << message
-		if (!isatom(target)) // Really easy to mix these up, and not having to make sure things are mobs makes the code cleaner.
-			CRASH("DEBUG: Boutput called with invalid message")
+		if(!istext(message))
+			message = "(non-text type)"
+		var/targetstring = "\'[target]\'"
+		if(istype(target, /datum))
+			var/datum/D = target
+			targetstring += ", [D.type]"
+		world.Error(new/exception("DEBUG: to_chat called with invalid message/target: Message: \'[message]\', Target: [targetstring]", to_chat_filename, to_chat_line), e_src = to_chat_src)
 		return
 
 	else if(istext(message))
 		if(istext(target))
 			return
+
+		message = replacetext(message, "\n", "<br>")
 
 		message = macro2html(message)
 		if(findtext(message, "\improper"))
@@ -229,6 +237,5 @@ var/list/chatResources = list(
 				C.chatOutput.messageQueue.Add(message)
 				return
 
-		message = replacetext(message, "\n", "<br>")
 
 		target << output(url_encode(message), "browseroutput:output")

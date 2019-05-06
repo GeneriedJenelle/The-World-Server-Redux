@@ -1128,12 +1128,12 @@ var/list/admin_verbs_event_manager = list(
 		if(config.canonicity)
 			config.canonicity = 0
 			for (var/mob/T as mob in mob_list)
-				T << "<br><center><b><font size=4>This round is no longer canon.<br> Character data will not be saved this round.</font></b><br></center><br>"
+				to_chat(T, "<br><center><b><font size=4>This round is no longer canon.<br> Character data will not be saved this round.</font></b><br></center><br>")
 			message_admins("Admin [key_name_admin(usr)] has made the round non-canon and disabled saving.", 1)
 		else
 			config.canonicity = 1
 			for (var/mob/T as mob in mob_list)
-				T << "<br><center><span class='notice'><b><font size=4>This round is now canon.<br> Character data will be saved.</font></b><br></span></center><br>"
+				to_chat(T, "<br><center><span class='notice'><b><font size=4>This round is now canon.<br> Character data will be saved.</font></b><br></span></center><br>")
 			message_admins("Admin [key_name_admin(usr)] has made the round canon and enabled end-round saving.", 1)
 
 /client/proc/save_all_characters()
