@@ -776,3 +776,8 @@ proc/dd_sortedTextList(list/incoming)
 /proc/get_initial_name(var/atom/atom_type)
 	var/atom/A = atom_type
 	return initial(A.name)
+
+/proc/popleft(list/L)
+	if(L.len)
+		. = L[1]
+		L.Cut(1,2)
