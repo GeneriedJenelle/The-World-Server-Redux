@@ -3,6 +3,8 @@
 
 GLOBAL_LIST_EMPTY(radial_menus)
 
+// Ported from TG
+
 /obj/screen/radial
 	icon = 'icons/mob/radial.dmi'
 	layer = LAYER_HUD_ABOVE
