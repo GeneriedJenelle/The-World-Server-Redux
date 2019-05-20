@@ -3,6 +3,11 @@
 /datum/vehicle_dummy_load
 	var/name = "dummy load"
 	var/actual_load
+	
+#define TAKES_MOBS   
+#define STORES_OBJECTS   
+#define IS_LOCKABLE    
+#define ESCAPEABLE      
 
 /obj/vehicle
 	name = "vehicle"
@@ -37,6 +42,16 @@
 	var/paint_color = "#666666" //For vehicles with special paint overlays.
 
 	var/atom/movable/load		//all vehicles can take a load, since they should all be a least drivable
+	
+	// TRUNKS
+	var/atom/movable/trunk		//a trunk. not all vehicles have this...
+
+	// POTENTIAL trunk_flags:  TAKES_MOBS | STORES_OBJECTS | IS_LOCKABLE | ESCAPEABLE
+	
+	var/has_trunk = 0			//does this vehicle have a trunk?
+	var/trunk_flags = TAKES_MOBS | STORES_OBJECTS
+	var/trunk_open = 0 //current toggle state of the trunk	
+	
 	var/load_item_visible = 1	//set if the loaded item should be overlayed on the vehicle sprite
 	var/load_offset_x = 0		//pixel_x offset for item overlay
 	var/load_offset_y = 0		//pixel_y offset for item overlay
