@@ -58,7 +58,7 @@
 	say_got_target = list("ENGAGING!!!","CONTACT!!!","TARGET SPOTTED!","FOUND ONE!")
 	reactions = list("Hey guys, you ready?" = "Fuck yeah!")
 
-	var/corpse = /obj/effect/landmark/mobcorpse/syndicatesoldier
+	corpse = /obj/effect/landmark/mobcorpse/syndicatesoldier
 
 /mob/living/simple_animal/hostile/syndicate/death()
 	..()

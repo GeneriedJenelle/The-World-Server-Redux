@@ -209,6 +209,11 @@
 				break
 
 		avatar = new(S, "Virtual Reality Avatar")
+
+		var/obj/effect/landmark/virtual_reality/vr_land = S
+
+		if(vr_land.spawn_outfit)
+			dressup_human(avatar, vr_land.spawn_outfit)
 		// If the user has a non-default (Human) bodyshape, make it match theirs.
 		if(occupant.species.name != "Promethean" && occupant.species.name != "Human")
 			avatar.shapeshifter_change_shape(occupant.species.name)

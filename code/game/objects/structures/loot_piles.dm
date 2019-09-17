@@ -40,6 +40,9 @@ Loot piles can be depleted, if loot_depleted is turned on.  Note that players wh
 	var/list/uncommon_loot = list()	// Uncommon is actually maybe some useful items, usually the reason someone bothers looking inside.
 	var/list/rare_loot = list()		// Rare is really powerful, or at least unique items.
 
+	var/min_time = 4
+	var/max_time = 6
+
 /obj/structure/loot_pile/attack_hand(mob/user)
 	//Human mob
 	if(isliving(user))
@@ -903,6 +906,9 @@ Loot piles can be depleted, if loot_depleted is turned on.  Note that players wh
 	loot_depletion = FALSE
 	density = TRUE
 	desc = "This isn't real, is it?"
+
+	min_time = 0.1
+	max_time = 1
 
 /obj/structure/loot_pile/VR/firstaid
 	name = "VR First Aid Kit"

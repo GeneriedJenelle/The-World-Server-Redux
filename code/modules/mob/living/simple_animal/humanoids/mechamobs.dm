@@ -119,3 +119,9 @@
 
 /mob/living/simple_animal/hostile/mecha/malf_drone/speech_bubble_appearance()
 	return "synthetic_evil"
+
+/mob/living/simple_animal/hostile/mecha/vr
+	virtual_reality = TRUE
+
+/mob/living/simple_animal/hostile/mecha/malf_drone/vr
+	virtual_reality = TRUE

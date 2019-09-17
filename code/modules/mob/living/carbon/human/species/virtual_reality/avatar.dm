@@ -40,6 +40,7 @@
 
 
 /datum/species/shapeshifter/promethean/avatar/handle_death(var/mob/living/carbon/human/H)
+	H.gib()
 	return
 
 /datum/species/shapeshifter/promethean/avatar/handle_environment_special(var/mob/living/carbon/human/H)
@@ -68,6 +69,9 @@
 	if(!istype(avatar))
 		return
 
+	var/area/vr_area = avatar.lastarea
+	vr_area.vr_activator_all()
+
 	// Link the two mobs for client transfer
 	avatar.vr_holder = src
 	src.teleop = avatar
@@ -76,7 +80,7 @@
 	// Move the mind
 	avatar.Sleeping(1)
 	src.mind.transfer_to(avatar)
-	to_chat(avatar, "<b>You have enterred Virtual Reality!\nAll normal gameplay rules still apply.\nWounds you suffer here won't persist when you leave VR, but some of the pain will.\nYou can leave VR at any time by using the \"Exit Virtual Reality\" verb in the Abilities tab, or by ghosting.\nYou can modify your appearance by using various \"Change \[X\]\" verbs in the Abilities tab.</b>")
+	to_chat(avatar, "<b>You have entered Virtual Reality!\nAll normal gameplay rules still apply, but here you roleplay being inside a video game.\nYou can leave VR at any time by using the \"Exit Virtual Reality\" verb in the Abilities tab, or by ghosting.\nYou can modify your appearance by using various \"Change \[X\]\" verbs in the Abilities tab.</b>")
 	to_chat(avatar, "<span class='notice'> You black out for a moment, and wake to find yourself in a new body in virtual reality.</span>") // So this is what VR feels like?
 
 // exit_vr is called on the vr mob, and puts the mind back into the original mob
@@ -88,6 +92,10 @@
 		return
 	if(!mind)
 		return
+
+	var/area/vr_area = lastarea
+	vr_area.vr_cleanup()
+
 /*
 	var/total_damage
 	// Tally human damage
@@ -111,6 +119,7 @@
 	// Maintain a link with the mob, but don't use teleop
 	vr_holder.vr_link = src
 	vr_holder.teleop = null
+
 
 	if(istype(vr_holder.loc, /obj/machinery/vr_sleeper))
 		var/obj/machinery/vr_sleeper/V = vr_holder.loc

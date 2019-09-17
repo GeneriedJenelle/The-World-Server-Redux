@@ -19,7 +19,7 @@
 		BP_L_FOOT = list("path" = /obj/item/organ/external/foot),
 		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right)
 		)
-
+/*
 /datum/species/shapeshifter/promethean/avatar/unathi
 	name = "Virtual Reality Unathi"
 	icobase = 'icons/mob/human_races/r_lizard.dmi'
@@ -119,3 +119,4 @@
 		BP_R_FOOT = list("path" = /obj/item/organ/external/diona/foot/right)
 		)
 
+*/

@@ -42,6 +42,8 @@
 	var/global/global_uid = 0
 	var/uid
 
+	var/virtual_reality = FALSE		// Is this a virtual reality area? Yay or nay?
+
 /area/New()
 	icon_state = ""
 	uid = ++global_uid
@@ -399,3 +401,68 @@ var/list/ghostteleportlocs = list()
 	ghostteleportlocs = sortAssoc(ghostteleportlocs)
 
 	return 1
+
+/area/proc/vr_activator(var/key)
+	if(!virtual_reality)
+		return
+
+	var/peep_count
+
+	for(var/mob/living/M in src) // if there's no one here...
+		peep_count++
+		break
+
+	if(!peep_count)	//then there's no point making mobs.
+		return
+
+	for(var/obj/effect/landmark/vr_spawner/VR in src)
+		if(key == VR.key)
+			VR.vr_spawn()
+
+
+/area/proc/vr_activator_all()
+	if(!virtual_reality)
+		return
+
+	var/peep_count
+
+	for(var/mob/living/M in src) // if there's no one here...
+		peep_count++
+		break
+
+	if(!peep_count)	//then there's no point making mobs.
+		return
+
+	for(var/obj/effect/landmark/vr_spawner/VR in src)
+		VR.vr_spawn()
+
+
+/area/proc/vr_del(var/key)	// delete certain VR mobs
+	if(!virtual_reality)
+		return
+
+	for(var/mob/living/simple_animal/SA in src)
+		if(SA.virtual_reality && SA.VR_key == key)
+			SA.death()
+
+
+/area/proc/vr_cleanup()	// delete all VR mobs.
+	if(!virtual_reality)
+		return
+
+	var/peep_count
+
+	for(var/mob/living/M in src) // if there's no one here...
+		peep_count++
+		break
+
+	if(peep_count)	//then let's clean up, otherwise, return
+		return
+
+	for(var/mob/living/simple_animal/SA in src)
+		if(SA.virtual_reality)
+			SA.death()
+
+	for(var/obj/effect/decal/cleanable/blood/B in src)
+		qdel(B)	// let's cleanup
+

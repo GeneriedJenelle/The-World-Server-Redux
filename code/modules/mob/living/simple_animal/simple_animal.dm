@@ -180,6 +180,11 @@
 	var/annoyed = 0					// Do people keep distract-kiting us?
 	////// ////// //////
 
+	var/corpse						// does this leave a "corpse"?
+
+	var/virtual_reality					// is this a virtual reality mob? IE: will fade if killed
+	var/VR_key 						// if they are spawned, they'll get a key
+
 /mob/living/simple_animal/New()
 	..()
 	verbs -= /mob/verb/observe
@@ -741,6 +746,19 @@
 
 	spawn(3) //We'll update our icon in a sec
 		update_icon()
+
+	if(virtual_reality)
+		filters += filter(type = "blur", size = 0)
+		animate(filters[filters.len], size = 5, color = "green", time = 10, easing = ELASTIC_EASING)
+
+		lastarea.vr_activator(VR_key)
+
+		qdel(src)
+		return ..(gibbed,deathmessage)
+
+	if(corpse)
+		new corpse (src.loc)
+		qdel(src)
 
 	return ..(gibbed,deathmessage)
 

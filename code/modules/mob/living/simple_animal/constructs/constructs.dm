@@ -486,3 +486,22 @@
 					healths.icon_state = "[construct_type]_health6"
 		else
 			healths.icon_state = "[construct_type]_health7"
+
+
+/mob/living/simple_animal/construct/vr
+	virtual_reality = TRUE
+
+/mob/living/simple_animal/construct/armoured/vr
+	virtual_reality = TRUE
+
+/mob/living/simple_animal/construct/harvester/vr
+	virtual_reality = TRUE
+
+/mob/living/simple_animal/construct/behemoth/vr
+	virtual_reality = TRUE
+
+/mob/living/simple_animal/construct/wraith/vr
+	virtual_reality = TRUE
+
+/mob/living/simple_animal/construct/behemoth/vr
+	virtual_reality = TRUE

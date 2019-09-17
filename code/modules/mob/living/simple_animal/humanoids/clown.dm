@@ -46,3 +46,7 @@
 	speak_chance = 1
 	speak = list("HONK", "Honk!", "Welcome to clown planet!")
 	emote_see = list("honks")
+
+
+/mob/living/simple_animal/hostile/clown/vr
+	virtual_reality = TRUE

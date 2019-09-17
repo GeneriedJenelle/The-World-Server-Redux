@@ -47,7 +47,7 @@
 
 	loot_list = list(/obj/item/weapon/melee/energy/sword/pirate = 100)
 
-	var/corpse = /obj/effect/landmark/mobcorpse/pirate
+	corpse = /obj/effect/landmark/mobcorpse/pirate
 
 /mob/living/simple_animal/hostile/pirate/ranged
 	name = "Pirate Gunner"
@@ -69,3 +69,7 @@
 		new corpse (src.loc)
 	qdel(src)
 	return
+
+
+/mob/living/simple_animal/hostile/pirate/vr
+	virtual_reality = TRUE

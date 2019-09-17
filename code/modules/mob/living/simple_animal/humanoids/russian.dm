@@ -44,7 +44,7 @@
 
 	loot_list = list(/obj/item/weapon/material/knife = 100)
 
-	var/corpse = /obj/effect/landmark/mobcorpse/russian
+	corpse = /obj/effect/landmark/mobcorpse/russian
 
 /mob/living/simple_animal/hostile/russian/ranged
 	icon_state = "russianranged"
@@ -59,9 +59,9 @@
 
 	corpse = /obj/effect/landmark/mobcorpse/russian/ranged
 
-/mob/living/simple_animal/hostile/russian/death()
-	..()
-	if(corpse)
-		new corpse (src.loc)
-	qdel(src)
-	return
+
+/mob/living/simple_animal/hostile/russian/vr
+	virtual_reality = TRUE
+
+/mob/living/simple_animal/hostile/russian/ranged/vr
+	virtual_reality = TRUE
