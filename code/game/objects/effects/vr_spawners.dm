@@ -32,6 +32,7 @@
 
 /obj/effect/landmark/vr_spawner/proc/vr_spawn()
 	sleep(spawn_time)
+
 	var/spawned = new spawn_type(src)
 
 	if(istype(spawned, /mob/living/simple_animal))
@@ -39,4 +40,4 @@
 		SA.VR_key = key
 		SA.virtual_reality = TRUE
 
-	return 1
+	return spawned
