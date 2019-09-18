@@ -32,7 +32,7 @@
 			CC.use(5)
 			use(1)
 			user << "<span class='notice'>You attach wire to the [name].</span>"
-//			new /obj/item/stack/light_w(user.loc)
+			new /obj/item/stack/light_w(user.loc)
 		else if(istype(W, /obj/item/stack/rods))
 			var/obj/item/stack/rods/V  = W
 			if (V.get_amount() < 1 || get_amount() < 1)
@@ -51,57 +51,7 @@
 				user.put_in_hands(RG)
 
 
-/obj/item/stack/material/glass/proc/construct_window(mob/user as mob)
-	if(!user || !src)	return 0
-	if(!istype(user.loc,/turf)) return 0
-	if(!user.IsAdvancedToolUser())
-		user << "\red You don't have the dexterity to do this!"
-		return 0
-	var/title = "Sheet-Glass"
-	title += " ([src.amount] sheet\s left)"
-	switch(alert(title, "Would you like full tile glass or one direction?", "one direct", "full (2 sheets)", "cancel", null))
-		if("one direct")
-			if(!src)	return 1
-			if(src.loc != user)	return 1
-			var/list/directions = new/list(cardinal)
-			for (var/obj/structure/window/win in user.loc)
-				directions-=win.dir
-				if(!(win.ini_dir in cardinal))
-					user << "\red Can't let you do that."
-					return 1
-			var/dir_to_set = 2
-			//yes, this could probably be done better but hey... it works...
-			for(var/obj/structure/window/WT in user.loc)
-				if (WT.dir == dir_to_set)
-					dir_to_set = 4
-			for(var/obj/structure/window/WT in user.loc)
-				if (WT.dir == dir_to_set)
-					dir_to_set = 1
-			for(var/obj/structure/window/WT in user.loc)
-				if (WT.dir == dir_to_set)
-					dir_to_set = 8
-			for(var/obj/structure/window/WT in user.loc)
-				if (WT.dir == dir_to_set)
-					dir_to_set = 2
-			var/obj/structure/window/W
-			W = new /obj/structure/window/basic( user.loc, 0 )
-			W.dir = dir_to_set
-			W.ini_dir = W.dir
-			W.anchored = 0
-			src.use(1)
-		if("full (2 sheets)")
-			if(!src)	return 1
-			if(src.loc != user)	return 1
-			if(locate(/obj/structure/window) in user.loc)
-				user << "\red There is a window in the way."
-				return 1
-			var/obj/structure/window/W
-			W = new /obj/structure/window/basic( user.loc, 0 )
-			W.dir = SOUTHWEST
-			W.ini_dir = SOUTHWEST
-			W.anchored = 0
-			src.use(2)
-	return 0
+
 
 /*
  * Reinforced glass sheets
