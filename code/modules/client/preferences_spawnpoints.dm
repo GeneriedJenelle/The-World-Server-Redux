@@ -33,6 +33,15 @@ var/list/spawntypes = list()
 	..()
 	turfs = latejoin
 
+/datum/spawnpoint/prison
+	display_name = "Prison"
+	msg = "will continue serving their sentence in police custody"
+	restrict_job = list("Prisoner")
+
+/datum/spawnpoint/prison/New()
+	..()
+	turfs = latejoin_prison
+
 /datum/spawnpoint/gateway
 	display_name = "Gateway"
 	msg = "has completed translation from offsite gateway"
