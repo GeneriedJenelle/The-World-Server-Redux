@@ -3,6 +3,12 @@
 	id_type = /obj/item/weapon/card/id/assistant
 	uniform = /obj/item/clothing/under/rank/orderly
 
+/decl/hierarchy/outfit/job/assistant/prisoner
+	name = OUTFIT_JOB_NAME("Prisoner")
+	id_pda_assignment = "Prisoner"
+	uniform = /obj/item/clothing/under/color/orange
+	shoes = /obj/item/clothing/shoes/orange
+	
 /decl/hierarchy/outfit/job/assistant/visitor
 	name = OUTFIT_JOB_NAME("Visitor")
 	id_pda_assignment = "Visitor"
