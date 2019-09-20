@@ -25,13 +25,11 @@
 					"Unemployed",
 					"Homeless",
 					"Visitor" = /decl/hierarchy/outfit/job/assistant/visitor,
-					"Resident" = /decl/hierarchy/outfit/job/assistant/resident)
+					"Resident" = /decl/hierarchy/outfit/job/assistant/resident,
+					"Prisoner" = /decl/hierarchy/outfit/job/assistant/prisoner)
 
 /datum/job/assistant/get_access()
 	if(config.assistant_maint)
 		return list(access_maint_tunnels)
 	else
 		return list()
-
-
-
