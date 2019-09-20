@@ -62,6 +62,7 @@ var/list/newplayer_start = list()
 
 //Spawnpoints.
 var/list/latejoin          = list()
+var/list/latejoin_prison  = list()
 var/list/latejoin_gateway  = list()
 var/list/latejoin_elevator = list()
 var/list/latejoin_cryo     = list()
