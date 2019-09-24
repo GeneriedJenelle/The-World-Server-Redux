@@ -45,3 +45,10 @@
 	Nanotrasen or Presidential-level classified information and organized."
 
 	death_penalty = 1
+	
+/datum/law/capital/sociocide
+	name = "Sociocide"
+	description = "Threats to civilized society, especially those which would destabilize it, 
+	including extreme or excessive violence, crime sprees or unstable non-repentant criminals."
+
+	death_penalty = 1
