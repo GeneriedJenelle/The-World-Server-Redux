@@ -34,18 +34,19 @@
 	return get_all_centcom_access()
 
 /datum/job/nanotrasen/ceo
-	title = "Nanotrasen CEO"
+	title = "NanoTrasen Sector Administrator"
 	total_positions = 1
 	spawn_positions = 1
 	flag = CEO
-	alt_titles = list("NanoTrasen Chairman", "NanoTrasen COO")
+	alt_titles = list("NanoTrasen Regional Director")
 	wage = 10000
 	outfit_type = /decl/hierarchy/outfit/job/nanotrasen/captain
 	idtype = /obj/item/weapon/card/id/nanotrasen/ceo
 
 /datum/job/nanotrasen/cbia
-	title = "CBIA Agent"
+	title = "PDSI Agent"
 	flag = CBIA
+	alt_titles = list("PSDI Director")
 	department = "City Council"
 	head_position = 0
 	department_flag = GOVLAW
@@ -89,5 +90,3 @@
 	minimum_character_age = 30
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/heads/president
-
-
