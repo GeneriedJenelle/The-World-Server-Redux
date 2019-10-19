@@ -24,6 +24,9 @@ var/global/list/sparring_attack_cache = list()
 		return sparring_attack_cache[sparring_variant_type]
 
 /datum/unarmed_attack/proc/is_usable(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target, var/zone)
+	if(target == user)
+		return 0
+
 	if(user.restrained())
 		return 0
 
@@ -45,9 +48,6 @@ var/global/list/sparring_attack_cache = list()
 
 	var/stun_chance = rand(0, 100)
 	var/datum/gender/TT = gender_datums[target.get_visible_gender()]
-	
-	if(target == user)
-		return
 
 	if(attack_damage >= 5 && armour < 2 && !(target == user) && stun_chance <= attack_damage * 5) // 25% standard chance
 		switch(zone) // strong punches can have effects depending on where they hit
