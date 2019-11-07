@@ -153,3 +153,9 @@
 		uniform = /obj/item/clothing/under/suit_jacket/checkered/skirt
 	else
 		uniform = /obj/item/clothing/under/suit_jacket/checkered
+
+/decl/hierarchy/outfit/job/assistant/prisoner
+	name = OUTFIT_JOB_NAME("Prisoner")
+	id_pda_assignment = "Prisoner"
+	uniform = /obj/item/clothing/under/color/orange
+	shoes = /obj/item/clothing/shoes/orange
