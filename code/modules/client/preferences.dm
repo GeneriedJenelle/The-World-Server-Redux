@@ -77,6 +77,12 @@ datum/preferences
 	var/religion = "None"               //Religious association.
 	var/antag_faction = "None"			//Antag associated faction.
 	var/antag_vis = "Shared"			//How visible antag association is to others.
+	
+	// Antag and Prison stuff
+	
+	var/criminal_status = "None"
+	var/prison_date				//date someone was put in prison
+	var/prison_release_date			//date someone is due to be released from prison
 
 		//Mob preview
 	var/icon/preview_icon = null
@@ -159,6 +165,7 @@ datum/preferences
 	var/loadprefcooldown
 	var/savecharcooldown
 	var/loadcharcooldown
+
 
 /datum/preferences/New(client/C)
 	player_setup = new(src)
