@@ -113,7 +113,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
  * Library Computer
  */
 // TODO: Make this an actual /obj/machinery/computer that can be crafted from circuit boards and such
-// It is August 22nd, 2012... This TODO has already been here for months.. I wonder how long it'll last before someone does something about it.
+// It is August 22nd, 2012... This TODO has already been here for months.. I wonder how long it'll last before someone does something about it. // Nov 2019. Nope.
 /obj/machinery/librarycomp
 	name = "Check-In/Out Computer"
 	icon = 'icons/obj/library.dmi'
@@ -132,6 +132,8 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 	var/obj/machinery/libraryscanner/scanner // Book scanner that will be used when uploading books to the Archive
 
 	var/bibledelay = 0 // LOL NO SPAM (1 minute delay) -- Doohl
+
+
 
 /obj/machinery/librarycomp/attack_hand(var/mob/user as mob)
 	usr.set_machine(src)
