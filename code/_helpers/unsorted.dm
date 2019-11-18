@@ -1677,3 +1677,36 @@ var/mob/dview/dview_mob = new
 			else
 				return "\[[url_encode(thing.tag)]\]"
 	return "\ref[input]"
+	
+/proc/get_turfs_square(x, y, z, dimx, dimy)
+//Needs: x and y coordinates, square dimensions
+//Returns: List of turfs
+	var/minx = x - (1/2) * dimx
+	var/maxx = x + (1/2) * dimx
+	var/miny = y - (1/2) * dimy
+	var/maxy = y + (1/2) * dimy
+
+	//Solving rounding problems
+
+
+	var/list/turfs = new/list()
+	//Actual tile storing
+	var/i = 1
+	for(i=minx+1 ,i <= maxx, i++)
+		var/j = 1
+		for(j=miny+1, j <= maxy, j++)
+			turfs += locate(i,j,z)
+
+	return turfs
+
+/proc/get_turfs(xmin, xmax, ymin, ymax, z = 3)
+//Needs: two sets of coordinates, lower left and high right.
+//Returns: List of turfs
+
+	var/list/turfs = new/list()
+	var/x = 1
+	for(x=xmin+1 ,x <= xmax, x++)
+		var/y = 1
+		for(y=ymin+1, y <= ymax, y++)
+			turfs += locate(x,y,z)
+	return turfs
