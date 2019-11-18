@@ -398,6 +398,7 @@
 		data["mode"] = 1
 		data["product"] = currently_vending.item_name
 		data["price"] = currently_vending.price
+		data["product_icon"] = currently_vending.product_icon
 		data["message_err"] = 0
 		data["message"] = status_message
 		data["message_err"] = status_error
@@ -416,6 +417,7 @@
 				"name" = I.item_name,
 				"price" = I.price,
 				"color" = I.display_color,
+				"product_icon" = I.product_icon,
 				"amount" = I.get_amount())))
 
 		data["products"] = listed_products
