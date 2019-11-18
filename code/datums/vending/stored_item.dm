@@ -15,7 +15,8 @@
 	src.item_path = path
 	
 	if(!product_icon)
-		var/icon/i = new(stored_item.icon, stored_item.icon_state)
+		var/atom/tmp = path
+		var/icon/i = new(initial(tmp.icon), initial(tmp.icon_state))
 
 	if(!name)
 		var/atom/tmp = path
