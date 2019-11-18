@@ -8,9 +8,14 @@
 		var/amount = 0
 		var/list/instances		//What items are actually stored
 		var/stored				//The thing holding it is
-
+		var/icon/product_icon
+		
+		
 /datum/stored_item/New(var/stored, var/path, var/name = null, var/amount = 0)
 	src.item_path = path
+	
+	if(!product_icon)
+		var/icon/i = new(stored_item.icon, stored_item.icon_state)
 
 	if(!name)
 		var/atom/tmp = path
