@@ -16,7 +16,9 @@
 	
 	if(!product_icon)
 		var/atom/tmp = path
-		var/icon/i = new(initial(tmp.icon), initial(tmp.icon_state))
+		var/icon/I  = icon(initial(tmp.icon), initial(tmp.icon_state))
+		
+		product_icon = I
 
 	if(!name)
 		var/atom/tmp = path
