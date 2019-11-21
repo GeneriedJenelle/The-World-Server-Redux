@@ -104,7 +104,7 @@
 	get_temp_effects()
 	
 /datum/weather_holder/proc/get_temp_effects()
-	for(turf/T in our_planet.expected_z_levels)
+	for(var/turf/T in our_planet.expected_z_levels)
 		if(!T.outdoors)
 			continue
 
