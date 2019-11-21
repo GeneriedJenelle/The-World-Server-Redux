@@ -101,6 +101,17 @@
 /datum/weather_holder/proc/update_temperature()
 	temperature = Interpolate(current_weather.temp_low, current_weather.temp_high, weight = our_planet.sun_position)
 	our_planet.needs_work |= PLANET_PROCESS_TEMP
+	get_temp_effects()
+	
+/datum/weather_holder/proc/get_temp_effects()
+	for(turf/T in our_planet.expected_z_levels)
+		if(!T.outdoors)
+			continue
+
+		var/datum/gas_mixture/env = T.return_air()
+		if(env)
+			env.temperature = temperature
+			env.update_values()
 
 /datum/weather_holder/proc/get_weather_datum(desired_type)
 	return allowed_weather_types[desired_type]
