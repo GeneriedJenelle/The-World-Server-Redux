@@ -393,12 +393,17 @@
 /obj/machinery/vending/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
 	user.set_machine(src)
 
+	if(currently_vending && currently_vending.product_icon)
+		var/icon/i = new(currently_vending.product_icon)
+		user << browse_rsc(i, "[currently_vending.item_name]_vend.png")
+
+
 	var/list/data = list()
 	if(currently_vending)
 		data["mode"] = 1
 		data["product"] = currently_vending.item_name
 		data["price"] = currently_vending.price
-		data["product_icon"] = currently_vending.product_icon
+		data["product_icon"] = "<img src='[currently_vending.item_name]_vend.png' style='width: 32px; height: 32px;'>"
 		data["message_err"] = 0
 		data["message"] = status_message
 		data["message_err"] = status_error
@@ -412,12 +417,16 @@
 			if(!(I.category & categories))
 				continue
 
+			if(I && I.product_icon)
+				var/icon/i = new(I.product_icon)
+				user << browse_rsc(i, "[I.item_name]_vend.png")
+
 			listed_products.Add(list(list(
 				"key" = key,
 				"name" = I.item_name,
 				"price" = I.price,
 				"color" = I.display_color,
-				"product_icon" = I.product_icon,
+				"product_icon" = "<img src='[I.item_name]_vend.png' style='width: 32px; height: 32px;'>",
 				"amount" = I.get_amount())))
 
 		data["products"] = listed_products
