@@ -1,5 +1,5 @@
 /datum/business
-	var/name = "Unnamed Business"
+  var/name = "Unnamed Business"
   var/owner_name = "Unknown"
   var/owner_uid = ""
   
@@ -10,3 +10,6 @@
   
   var/list/datum/job/specific_jobs = list()
   
+  var/associated_account_no
+  
+ 
