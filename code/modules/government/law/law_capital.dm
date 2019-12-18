@@ -36,5 +36,4 @@
 	
 /datum/law/capital/sociocide
 	name = "Sociocide"
-	description = "Threats to civilized society, such as extreme or excessively violent acts committed by \
-	unstable non-repentant criminals, especially those that seek to destabilize Pollux."
+	description = "Threats to civilized society, including extreme or excessive violence, crime sprees or unstable non-repentant criminals."
