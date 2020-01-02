@@ -359,7 +359,7 @@ obj/item/clothing/suit/kamishimo
 	index = 1
 
 /obj/item/clothing/suit/storage/toggle/hartcoat
-	name = "fur-lined greatcoa"
+	name = "fur-lined greatcoat"
 	desc = "A fancy fur-lined greatcoat with golden buttons. It keeps you warm... in style."
 	icon_state = "hartcoat"
 	item_state_slots = list(slot_r_hand_str = "hartcoat", slot_l_hand_str = "hartcoat")
