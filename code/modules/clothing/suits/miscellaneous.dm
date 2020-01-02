@@ -358,6 +358,12 @@ obj/item/clothing/suit/kamishimo
 	flags_inv = HIDEHOLSTER
 	index = 1
 
+/obj/item/clothing/suit/storage/toggle/hartcoat
+	name = "fur-lined greatcoa"
+	desc = "A fancy fur-lined greatcoat with golden buttons. It keeps you warm... in style."
+	icon_state = "hartcoat"
+	item_state_slots = list(slot_r_hand_str = "hartcoat", slot_l_hand_str = "hartcoat")
+	flags_inv = HIDEHOLSTER
 
 /obj/item/clothing/suit/storage/trench
 	name = "brown trenchcoat"

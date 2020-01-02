@@ -146,6 +146,10 @@
 	desc = "A neosilk clip-on tie. This one is disgusting."
 	icon_state = "horribletie"
 
+/obj/item/clothing/accessory/tie/neckerchief
+	name = "black neckerchief"
+	desc = "A neosilk neckerchief for the fashion-inclined."
+	icon_state = "neckerchief"
 
 /obj/item/clothing/accessory/tie/sash
 	name = "red sash"

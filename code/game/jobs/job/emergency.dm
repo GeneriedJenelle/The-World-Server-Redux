@@ -72,7 +72,7 @@
 	minimum_character_age = 18
 
 	outfit_type = /decl/hierarchy/outfit/job/engineering/atmos
-
+	alt_titles = list("Civil Engineer")
 // Popping Paramedic In right here.
 
 /datum/job/paramedic
