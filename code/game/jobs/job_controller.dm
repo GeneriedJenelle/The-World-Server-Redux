@@ -715,9 +715,9 @@ var/global/datum/controller/occupations/job_master
 		var/spawning = pick(latejoin)
 		.["turf"] = get_turf(spawning)
 		.["msg"] = "has arrived to the city"
-
-/datum/species/human/equip_passport(var/mob/living/carbon/human/H)
-	var/obj/item/weapon/passport/pass = new/obj/item/weapon/passport(get_turf(H))
+		
+/proc/equip_passport(var/mob/living/carbon/human/H)
+	var/obj/item/weapon/passport/pass = new /obj/item/weapon/passport(get_turf(H))
 	
 	if(!H.mind || !H.mind.prefs) return
 	
