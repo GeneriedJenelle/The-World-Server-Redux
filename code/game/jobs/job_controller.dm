@@ -717,7 +717,7 @@ var/global/datum/controller/occupations/job_master
 		.["msg"] = "has arrived to the city"
 		
 /proc/equip_passport(var/mob/living/carbon/human/H)
-	var/obj/item/weapon/passport/pass = new /obj/item/weapon/passport(get_turf(H))
+	var/obj/item/weapon/passport/pass = new/obj/item/weapon/passport(get_turf(H))
 	
 	if(!H.mind || !H.mind.prefs) return
 	
