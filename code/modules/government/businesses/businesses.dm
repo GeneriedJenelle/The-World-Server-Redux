@@ -1,4 +1,8 @@
 var/global/list/businesses = list()
+var/global/list/datum/job/business_jobs = list()
+
+
+var/global/list/business_categories =
 
 /datum/business
 	var/name = "Unnamed Business"
@@ -15,7 +19,7 @@ var/global/list/businesses = list()
 
 	var/status = "Active"
 
-	var/associated_account_no
+	var/associated_account_no				// account no of owner
 
 	var/gets_business_tax = TRUE                // no one is safe.
 
@@ -26,8 +30,9 @@ var/global/list/businesses = list()
 
 	var/list/datum/job/specific_jobs = list()
 
-	var/list/employees = list()
-	var/list/applicants = list()
+	var/datum/money_account/business/business_account			// account for the business
+	var/datum/computer_file/data/email_account/email
+
 
 /proc/get_all_businesses(mob/user) //Displays all businesses in a table.
 	var/dat = list()
@@ -41,10 +46,10 @@ var/global/list/businesses = list()
 
 			dat += "<table style=\"width: 85%;\" border=1>"
 			dat += "<thead><tr>"
-			dat += "<th style=\"text-align: center; padding: 10px; background-color: [B.primary_color];\">"
-			dat += "<span style=\"font-family: Tahoma, Geneva, sans-serif; font-size: 24px; color: [B.secondary_color];\">[B.name]</span></th></tr>"
-			dat += "</thead><tbody><tr><td style=\"width: 100.0000%; padding: 10px;\">"
-			dat += "<p style=\"text-align: center;\"><em><span style=\"font-size: 18px; color: [B.secondary_color]; font-family: Georgia, serif;\">[B.slogan]</span></em></p>"
+			dat += "<th style=\"text-align: center; padding: 5px; background-color: [B.primary_color];\">"
+			dat += "<span style=\"font-family: Tahoma, Geneva, sans-serif; font-size: 15px; color: [B.secondary_color];\">[B.name]</span></th></tr>"
+			dat += "</thead><tbody><tr><td style=\"width: 100.0000%; padding: 3px;\">"
+			dat += "<p style=\"text-align: center;\"><em><span style=\"font-size: 12px; color: [B.secondary_color]; font-family: Georgia, serif;\">[B.slogan]</span></em></p>"
 			dat += "<hr>"
 
 			dat += "<p>[B.description]</p>"
@@ -62,7 +67,6 @@ var/global/list/businesses = list()
 /proc/check_business_name_exist(var/name) //Compares a business 'B' to the master list to see if it exists.
 	for(var/datum/business/B in businesses)
 		if(name == B.name)
-			message_admins("Found [B.name].")
 			return 1
 	return 0
 
@@ -77,7 +81,7 @@ var/global/list/businesses = list()
 		return 1
 	return 0
 
-/proc/create_new_business(var/name, var/description, var/slogan, var/pass, var/category, var/owner_uid, var/owner_name) // Makes a new business
+/proc/create_new_business(var/name, var/description, var/slogan, var/pass, var/category, var/owner_uid, var/owner_name, var/acc_no) // Makes a new business
 
 	var/datum/business/B = new()
 	B.name = name
@@ -87,18 +91,26 @@ var/global/list/businesses = list()
 	B.password = pass
 	B.owner_uid = owner_uid
 	B.owner_name = owner_name
-	B.uid = md5("[B.name]")
+	B.uid = generate_gameid()
 	B.email = get_business_email(B)
+	B.associated_account_no = acc_no
+	B.business_account = new/datum/money_account/business()
+	B.business_account.business_id = B.uid
 
-	var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account()
-	EA.password = GenerateKey()
-	EA.login = 	B.email
+	email = new/datum/computer_file/data/email_account()
+	email.password = GenerateKey()
+	email.login = B.email
 
-	B.creation_time = current_date_string
+	B.creation_time = full_game_time()
 
 	businesses += B
 
 	return B
+
+/datum/business/proc/make_job(title)
+	var/datum/job/business/B = new/datum/money_account/business()
+	B.title = title
+	B.supervisors = owner_name
 
 /*************************
 

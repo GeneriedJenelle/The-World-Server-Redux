@@ -380,6 +380,23 @@
 		if(current_business)
 			current_business.password = new_pass
 
+
+	//job creation mechnanics
+	if(href_list["create_job"])
+		. = 1
+		if(!current_business)
+			return
+
+		var/job_name
+		job_name = Capitalize(sanitize(copytext(input(usr, "Enter a job title", "New Job")  as text,1,15)))
+		if(!job_name)
+			return
+
+		current_business.make_job(job_name)
+
+
+
+
 /***************************************************
 
 	Temporarily commented out.

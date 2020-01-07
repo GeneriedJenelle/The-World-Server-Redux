@@ -15,6 +15,9 @@
 
 	var/fingerprint
 
+/datum/money_account/business
+	var/business_id
+
 /datum/transaction
 	var/target_name = ""
 	var/purpose = ""
