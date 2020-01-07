@@ -388,7 +388,7 @@
 			return
 
 		var/job_name
-		job_name = Capitalize(sanitize(copytext(input(usr, "Enter a job title", "New Job")  as text,1,15)))
+		job_name = capitalize(sanitize(copytext(input(usr, "Enter a job title", "New Job")  as text,1,15)))
 		if(!job_name)
 			return
 
