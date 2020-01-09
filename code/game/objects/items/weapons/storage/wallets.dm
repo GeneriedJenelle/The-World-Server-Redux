@@ -35,6 +35,7 @@
 		/obj/item/weapon/reagent_containers/dropper,
 		/obj/item/weapon/sample,
 		/obj/item/weapon/screwdriver,
+		/obj/item/weapon/passport,
 		/obj/item/weapon/stamp,
 		/obj/item/clothing/accessory/permit,
 		/obj/item/clothing/accessory/badge,
