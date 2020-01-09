@@ -18,6 +18,24 @@
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender
 	alt_titles = list("Waiting Staff","Barkeep","Mixologist","Barista" = /decl/hierarchy/outfit/job/service/bartender/barista)
 
+/datum/job/barista
+	title = "Barista"
+	flag = BARISTA
+	faction = "City"
+	department "Bar"
+	department_flag = CIVILIAN
+	total_positions = 2
+	spawn_positions = 2
+	email_domain = "foodstuffs.nt"
+	supervisors = "the city clerk"
+	selection_color = "#515151"
+	idtype = /obj/item/weapon/card/id/civilian/barista
+	access = list(access_coffee, access_bar, access_kitchen)
+	minimal_access = list("access_coffee")
+	minimum_character_age = 14
+	wage = 15
+	outfit_type = /decl/hierarchy/outfit/job/service/bartender/barista
+	alt_titles = list("Soda Jerk")
 
 /datum/job/chef
 	title = "Chef"
