@@ -305,10 +305,7 @@
 		return
 
 	return ..()
-// END FLESH ORGAN PRINTER
 
-
-/* Roboprinter is made obsolete by the system already in place and mapped into Robotics
 /obj/item/weapon/circuitboard/roboprinter
 	name = "roboprinter circuit"
 	build_path = /obj/machinery/organ_printer/robot
@@ -370,5 +367,4 @@
 			to_chat(user, "<span class='info'>You scan the blood sample into the bioprinter.</span>")
 		return
 	return ..()
-// END ROBOT ORGAN PRINTER
-*/
+
