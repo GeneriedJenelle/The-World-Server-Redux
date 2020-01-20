@@ -1,0 +1,4 @@
+/datum/erp
+  name = "erotic rp"
+  desc = "yes"
+  var/jesus_watching = FALSE
