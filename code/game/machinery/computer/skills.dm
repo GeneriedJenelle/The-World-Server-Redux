@@ -110,6 +110,7 @@
 						Fingerprint: <A href='?src=\ref[src];choice=Edit Field;field=fingerprint'>[active1.fields["fingerprint"]]</A><BR>\n	\
 						Physical Status: [active1.fields["p_stat"]]<BR>\n	\
 						Mental Status: [active1.fields["m_stat"]]<BR><BR>\n	\
+						Permit Level: <A href='?src=\ref[src];choice=Edit Field;field=permit'>[active1.fields["permit_level"]]</A><BR>\n	\
 						Employment/skills summary:<BR> [decode(active1.fields["notes"])]<BR><BR>\n	\
 						Known personal relations:<BR>"
 						if(active1.fields["connections"])

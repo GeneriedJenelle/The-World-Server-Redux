@@ -16,6 +16,8 @@
 	S["job_record"]				>> pref.job_record
 	S["criminal_status"]			>> pref.criminal_status
 
+	S["gun_permit_tier"]			>> pref.gun_permit_tier
+
 /datum/category_item/player_setup_item/general/background/save_character(var/savefile/S)
 	S["med_record"]				<< pref.med_record
 	S["sec_record"]				<< pref.sec_record
@@ -29,6 +31,8 @@
 	S["health_record"]				<< pref.health_record
 	S["job_record"]				<< pref.job_record
 	S["criminal_status"]			<< pref.criminal_status
+
+	S["gun_permit_tier"]			<< pref.gun_permit_tier
 
 /datum/category_item/player_setup_item/general/background/delete_character(var/savefile/S)
 	pref.med_record = null
@@ -46,6 +50,7 @@
 
 	pref.faction = null
 	pref.religion = null
+	pref.gun_permit_tier = null
 	pref.criminal_status = "None"
 
 /datum/category_item/player_setup_item/general/background/sanitize_character()
@@ -68,6 +73,8 @@
 		pref.social_class = pref.economic_status
 
 	pref.social_class = sanitize_inlist(pref.social_class, ECONOMIC_CLASS, initial(pref.social_class))
+	pref.gun_permit_tier			= sanitize_integer(pref.gun_permit_tier, NO_PERMIT, MAX_PERMIT, initial(pref.gun_permit_tier))
+
 
 
 // Moved from /datum/preferences/proc/copy_to()

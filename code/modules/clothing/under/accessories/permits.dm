@@ -38,7 +38,7 @@
 
 /obj/item/clothing/accessory/permit/gun
 	name = "tier 0 weapon permit"
-	desc = "A card indicating that the owner is allowed to carry a firearm."
+	desc = "A card indicating that the owner is... not eligible for anything at the moment."
 	tier = 0
 	price_tag = 200
 
@@ -82,7 +82,7 @@
 	name = "bar shotgun permit"
 	desc = "A card indicating that the owner is allowed to carry a shotgun in the bar."
 	tier = 3
-  
+
 /obj/item/clothing/accessory/permit/gun/planetside
 	name = "planetside gun permit"
 	desc = "A card indicating that the owner is allowed to carry a firearm while on the surface."
@@ -107,9 +107,9 @@
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "permit"
 	starts_with = list(
-	/obj/item/clothing/accessory/permit/gun = 5,
 	/obj/item/clothing/accessory/permit/gun/tier_one = 5,
 	/obj/item/clothing/accessory/permit/gun/tier_two = 5,
 	/obj/item/clothing/accessory/permit/gun/tier_three = 5,
-	/obj/item/clothing/accessory/permit/gun/tier_four = 5
+	/obj/item/clothing/accessory/permit/gun/tier_four = 5,
+	/obj/item/clothing/accessory/permit/gun/tier_five = 5
 	)

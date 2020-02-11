@@ -199,6 +199,7 @@
 		G.fields["faction"]		= H.personal_faction
 		G.fields["email"]		= H.mind.initial_email_login["login"]
 		G.fields["bank_account"]	= H.mind.initial_account.account_number
+		G.fields["permit_level"]	= H.mind.prefs.gun_permit_tier
 		G.fields["economic_status"]	= H.mind.prefs.economic_status
 		G.fields["religion"]	= H.religion
 		if(H.gen_record && !jobban_isbanned(H, "Records"))
@@ -228,6 +229,7 @@
 		S.fields["unique_id"]	= H.mind.prefs.unique_id // this is persistent
 		S.fields["crim_record"] = H.mind.prefs.crime_record
 		S.fields["criminal"] = H.mind.prefs.criminal_status
+		S.fields["permit_level"]	= H.mind.prefs.gun_permit_tier
 
 		//Locked Record
 		var/datum/data/record/L = new()
@@ -301,6 +303,7 @@
 	G.fields["bank_account"]	= "None"
 	G.fields["email"] = "Unspecified"
 	G.fields["economic_status"]	= "Unknown"
+	G.fields["permit_level"]	= 0
 	G.fields["photo_front"]	= front
 	G.fields["photo_side"]	= side
 	G.fields["notes"] = "No notes found."
@@ -324,6 +327,7 @@
 	R.fields["crim_record"]	= list()
 	R.fields["notes"]		= ""
 	R.fields["imprisoned_until"] = ""
+	R.fields["permit_level"]	= 0
 
 	data_core.security += R
 

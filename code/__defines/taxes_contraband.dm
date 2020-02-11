@@ -32,12 +32,16 @@
 #define CONTRABAND_KNIFELARGE persistent_economy.law_LARGEKNIVES
 #define CONTRABAND_EXPLOSIVES persistent_economy.law_EXPLOSIVES
 
+#define LEGAL "Legal"
 #define ILLEGAL "Illegal"
 #define PROFESSIONAL_ONLY "Professional Use Only"
 #define PERMIT_SELLING "Selling permit needed"
 #define PERMIT_POSSESSION "Possession and creation permit needed"
 
-#define LEGAL "Legal"
+#define NO_PERMIT 0
+#define MIN_PERMIT 1
+#define MAX_PERMIT 5
+
 
 /proc/get_tax_price(tax, price)
 	var/tax_amt
