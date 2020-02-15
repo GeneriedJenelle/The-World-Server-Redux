@@ -19,6 +19,54 @@
 	categories = list(PAPERWORK_LEGAL)
 	file_source = 'code/modules/paperwork/paperwork_templates/legal/divorcepapers.txt'
 
+/datum/paperwork_template/decision
+	name = "Court Decision Form"
+	title = "Court Decision"
+	categories = list(PAPERWORK_LEGAL)
+	file_source = 'code/modules/paperwork/paperwork_templates/legal/courtdec.txt'
+
+/datum/paperwork_template/motion
+	name = "Court Motion Form"
+	title = "Court Motion"
+	categories = list(PAPERWORK_LEGAL)
+	file_source = 'code/modules/paperwork/paperwork_templates/legal/courtmotion.txt'
+
+/datum/paperwork_template/corder
+	name = "Court Order Form"
+	title = "Court Order"
+	categories = list(PAPERWORK_LEGAL)
+	file_source = 'code/modules/paperwork/paperwork_templates/legal/courtorder.txt'
+
+/datum/paperwork_template/injunction
+	name = "Court Injunction Form"
+	title = "Court Injunction"
+	categories = list(PAPERWORK_LEGAL)
+	file_source = 'code/modules/paperwork/paperwork_templates/legal/injunction.txt'
+
+/datum/paperwork_template/deposition
+	name = "Deposition Form"
+	title = "Deposition"
+	categories = list(PAPERWORK_LEGAL)
+	file_source = 'code/modules/paperwork/paperwork_templates/legal/deposition.txt'
+
+/datum/paperwork_template/statementclaim
+	name = "Statement of Claim Form"
+	title = "Statement of Claim"
+	categories = list(PAPERWORK_LEGAL)
+	file_source = 'code/modules/paperwork/paperwork_templates/legal/statementclaim.txt'
+
+/datum/paperwork_template/NDA
+	name = "Non-Disclosure Agreement"
+	title = "NDA Contract"
+	categories = list(PAPERWORK_LEGAL)
+	file_source = 'code/modules/paperwork/paperwork_templates/legal/NDA.txt'
+
+/datum/paperwork_template/ceasedesist
+	name = "Cease and Desist Order"
+	title = "Cease and Desist"
+	categories = list(PAPERWORK_LEGAL)
+	file_source = 'code/modules/paperwork/paperwork_templates/legal/ceasedesist.txt'
+
 // COUNCIL PAPERWORK
 
 
@@ -45,6 +93,12 @@
 	title = "Card Replacement Form"
 	categories = list(PAPERWORK_COUNCIL)
 	file_source = 'code/modules/paperwork/paperwork_templates/council/replacementcard.txt'
+
+/datum/paperwork_template/ordinance
+	name = "City Ordinance Form"
+	title = "City Ordinance"
+	categories = list(PAPERWORK_COUNCIL)
+	file_source = 'code/modules/paperwork/paperwork_templates/council/ordinance.txt'
 
 // MEDICAL
 
@@ -77,3 +131,9 @@
 	title = "PDSI Report"
 	categories = list(PAPERWORK_GOVERNMENT)
 	file_source = 'code/modules/paperwork/paperwork_templates/government/pdsireport.txt'
+
+/datum/paperwork_template/court_rules
+	name = "Courtroom Rules"
+	title = "Courtroom Rules"
+	categories = list(PAPERWORK_GOVERNMENT)
+	file_source = 'code/modules/paperwork/paperwork_templates/government/courtrules.txt'
