@@ -157,4 +157,3 @@
 	outfit_type = /decl/hierarchy/outfit/job/heads/secretary
 	alt_titles = list("Council Bodyguard", "City Hall Security", "Bailiff")
 
-	clean_record_required = TRUE
