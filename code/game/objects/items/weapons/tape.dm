@@ -152,10 +152,11 @@
 /obj/item/weapon/ducttape/proc/attach(var/obj/item/weapon/W)
 	stuck = W
 	W.forceMove(src)
-	icon_state = W.icon_state + "_taped"
-	name = W.name + " (taped)"
-	overlays = W.overlays
 
+	var/icon/I = image('icons/obj/bureaucracy.dmi', "tape")
+	overlays["tape"] += I
+
+	name = W.name + " (taped)"
 /obj/item/weapon/ducttape/attack_self(mob/user)
 	if(!stuck)
 		return
@@ -166,7 +167,7 @@
 	stuck.forceMove(get_turf(src))
 	user.put_in_hands(stuck)
 	stuck = null
-	overlays = null
+	qdel(overlays["tape"])
 	qdel(src)
 
 /obj/item/weapon/ducttape/attackby(var/obj/item/I, var/mob/user)

@@ -52,6 +52,9 @@
 	var/min_age = 17
 	var/max_age = 70
 
+//	var/teeth_amount = 32								// How many teeth your species should have. 0 for none.
+//	var/teeth_type = /obj/item/stack/teeth
+
 	// Language/culture vars.
 	var/default_language = LANGUAGE_GALCOM					// Default language is used when 'say' is used without modifiers.
 	var/language = LANGUAGE_GALCOM							// Default racial language, if any.
