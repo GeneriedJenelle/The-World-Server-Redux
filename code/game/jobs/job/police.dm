@@ -151,8 +151,8 @@
 	minimal_player_age = 5
 	wage = 90
 	minimum_character_age = 25
-	access = list(access_heads, access_bodyguard, access_keycard_auth, access_security, access_legal)
-	minimal_access = list(access_heads, access_bodyguard, access_keycard_auth, access_security, access_legal)
+	access = list(access_heads, access_bodyguard, access_keycard_auth, access_legal)
+	minimal_access = list(access_heads, access_bodyguard, access_keycard_auth, access_legal)
 
 	outfit_type = /decl/hierarchy/outfit/job/heads/secretary
 	alt_titles = list("Council Bodyguard", "City Hall Security", "Bailiff")
