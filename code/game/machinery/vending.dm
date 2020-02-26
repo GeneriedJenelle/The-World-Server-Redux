@@ -750,8 +750,6 @@
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/pint = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/mug = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/wine = 10,
-					/obj/item/weapon/reagent_containers/food/drinks/glass2/carafe = 2,
-					/obj/item/weapon/reagent_containers/food/drinks/glass2/pitcher = 2,
 					/obj/item/weapon/reagent_containers/food/drinks/metaglass = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/gin = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/absinthe = 5,
@@ -772,6 +770,8 @@
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/whiskey = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/wine = 5,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/carafe = 2,
+					/obj/item/weapon/reagent_containers/food/drinks/glass2/pitcher = 2,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale = 15,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer = 15,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/orangejuice = 5,
@@ -1005,6 +1005,94 @@
 	charge_department = null
 	charge_free_to_department = null
 	vendor_department = "Public Healthcare"
+
+/obj/machinery/vending/medical/hospital/gcchgms
+	name = "NanoMed General Medical Supplies Vendor"
+	desc = "A patent pending, branded, NanoMed machine which holds general medical supplies. You feel the healthcare costs rising while looking at this machine."
+	req_access = list(access_medical)
+	products = list (/obj/item/clothing/glasses/hud/health = 6,
+					 /obj/item/weapon/storage/belt/medical = 6,
+					 /obj/item/roller = 6,
+					 /obj/item/weapon/storage/firstaid/regular = 4,
+					 /obj/item/weapon/storage/firstaid/adv = 4,
+					 /obj/item/weapon/storage/firstaid/toxin = 3,
+					 /obj/item/weapon/storage/firstaid/o2 = 3,
+					 /obj/item/weapon/storage/firstaid/fire = 3,
+					 /obj/item/weapon/storage/box/gloves = 2,
+					 /obj/item/weapon/storage/box/masks = 2,
+					 /obj/item/weapon/storage/box/syringes = 2,
+					 /obj/item/weapon/storage/box/beakers = 2,
+					 /obj/item/weapon/storage/box/bodybags = 2)
+	charge_department = null
+	charge_free_to_department = null
+	vendor_department = "Public Healthcare"
+
+/obj/machinery/vending/medical/hospital/gcchsms
+	name = "NanoMed Specialized Medical Supplies Vendor"
+	desc = "A patent pending, branded, NanoMed vendor which holds specialized medical supplies. Much like the bloodpressure of the mayor, the prices on healthcare are increasing exponentially."
+	req_access = list(access_medical)
+	products = list (/obj/item/bodybag/cryobag = 6,
+					 /obj/item/weapon/reagent_containers/spray/sterilizine = 5,
+					 /obj/item/device/defib_kit/loaded = 3,
+					 /obj/item/weapon/cane = 3,
+					 /obj/item/weapon/cane/crutch = 3,
+					 /obj/item/weapon/cane/whitecane = 3,
+					 /obj/item/weapon/storage/firstaid/surgery = 2,
+					 /obj/item/weapon/storage/box/rxglasses = 2,
+					 /obj/item/weapon/storage/box/autoinjectors = 1,
+					 /obj/item/weapon/storage/box/cdeathalarm_kit = 1)
+	charge_department = null
+	charge_free_to_department = null
+	vendor_department = "Public Healthcare"
+
+/obj/machinery/vending/medical/hospital/cvcrb
+	name = "C.V.C Refridgerated Bloodbank"
+	desc = "A fully stocked bloodbank, equipped with advanced cooling technology which keeps your blood extra cold. One bloodbag ah ah ah, two bloodbag ah ah ah, three bloodbag ah ah ah."
+	icon_state = "smartfridge"
+	req_access = list(access_medical)
+	products = list (/obj/item/weapon/reagent_containers/blood/empty = 8,
+					 /obj/item/weapon/reagent_containers/blood/OMinus = 6,
+					 /obj/item/weapon/reagent_containers/blood/APlus = 4,
+					 /obj/item/weapon/reagent_containers/blood/AMinus = 4,
+					 /obj/item/weapon/reagent_containers/blood/BPlus = 4,
+					 /obj/item/weapon/reagent_containers/blood/BMinus = 4,
+					 /obj/item/weapon/reagent_containers/blood/OPlus =4)
+	charge_department = null
+	charge_free_to_department = null
+	vendor_department = "Public Healthcare"
+
+/obj/machinery/vending/medical/hospital/chem
+	name = "Johnny's Chems"
+	desc = "A fully stocked chemistry machine designed for hospital use. You look at it and are reminded of a familiar theme song."
+	req_access = list(33)
+	products = list (/obj/item/weapon/reagent_containers/glass/beaker/large = 4,
+					 /obj/item/clothing/glasses/science = 4,
+					 /obj/item/stack/material/phoron = 3,
+					 /obj/item/weapon/reagent_containers/dropper/industrial = 2,
+					 /obj/item/device/mass_spectrometer/adv = 2,
+					 /obj/item/weapon/storage/box/autoinjectors = 2,
+					 /obj/item/weapon/storage/bag/chemistry = 2,
+					 /obj/item/weapon/storage/box/pillbottles = 2,
+					 /obj/item/weapon/storage/fancy/vials = 2,
+					 /obj/item/weapon/storage/lockbox/vials = 1)
+	charge_department = null
+	charge_free_to_department = null
+	vendor_department = "Public Healthcare"
+
+/obj/machinery/vending/medical/hospital/psych
+	name = "Mania Inc. Psychiatric Vendomat"
+	desc = "A vending machine which puts the man, back in mania. Stocks all manner of psychiatric supplies."
+	req_access = list(64)
+	products = list (/obj/item/weapon/storage/pill_bottle/citalopram = 2,
+					 /obj/item/weapon/reagent_containers/glass/bottle/stoxin = 2,
+					 /obj/item/weapon/reagent_containers/syringe = 2,
+					 /obj/item/clothing/suit/straight_jacket = 1,
+					 /obj/item/weapon/gun/launcher/syringe = 1,
+					 /obj/item/weapon/storage/box/syringegun = 1)
+	charge_department = null
+	charge_free_to_department = null
+	vendor_department = "Public Healthcare"
+
 
 /obj/machinery/vending/phoronresearch
 	name = "Toximate 3000"
@@ -2012,3 +2100,49 @@
 					/obj/item/clothing/glasses/sunglasses/sechud/tactical = 6,
 					/obj/item/clothing/mask/gas/half = 6
 					)
+
+
+/obj/machinery/vending/luxvend
+	name = "LuxVend"
+	desc = "LuxVend - For the Polluxian who has everything. This machine is sponsored by the fashion company, Obsidienne."
+	icon_state = "luxvend"
+	icon_deny = "luxvend-deny"
+	vend_delay = 8
+	vend_reply = "Money talks - and yours just said, \"Goodbye!\" Thank you for choosing LuxVend. Enjoy!"
+	products = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/amontillado = 3,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka/kora = 3,
+					/obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesewheel/pule = 5,
+					/obj/item/weapon/storage/box/multigrain = 5,
+					/obj/item/weapon/storage/box/caviar = 7,
+					/obj/item/weapon/storage/box/caviar/red = 7,
+					/obj/item/weapon/storage/briefcase/clutch/obsidienne = 5,
+					/obj/item/weapon/storage/wallet/obsidienne = 5,
+					/obj/item/weapon/storage/backpack/purse/obsidienne = 5,
+					/obj/item/weapon/storage/backpack/satchel/obsidienne = 5,
+					/obj/item/clothing/glasses/holovisor = 7,
+					/obj/item/toy/pet_rock/gold = 5,
+					/obj/item/weapon/flame/lighter/zippo/corgi = 5,
+					/obj/item/weapon/flame/lighter/zippo/capitalist = 5,
+					/obj/item/weapon/flame/lighter/zippo/royal = 5,
+					/obj/item/weapon/storage/fancy/cigarettes/professionals = 5,
+					/obj/item/clothing/accessory/badge/rich = 3
+					)
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/amontillado = 600,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka/kora = 550,
+					/obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesewheel/pule = 75,
+					/obj/item/weapon/storage/box/multigrain = 30,
+					/obj/item/weapon/storage/box/caviar = 90,
+					/obj/item/weapon/storage/box/caviar/red = 70,
+					/obj/item/weapon/storage/briefcase/clutch/obsidienne = 175,
+					/obj/item/weapon/storage/wallet/obsidienne = 150,
+					/obj/item/weapon/storage/backpack/purse/obsidienne = 185,
+					/obj/item/weapon/storage/backpack/satchel/obsidienne = 225,
+					/obj/item/clothing/glasses/holovisor = 100,
+					/obj/item/toy/pet_rock/gold = 250,
+					/obj/item/weapon/flame/lighter/zippo/corgi = 75,
+					/obj/item/weapon/flame/lighter/zippo/capitalist = 100,
+					/obj/item/weapon/flame/lighter/zippo/royal = 125,
+					/obj/item/weapon/storage/fancy/cigarettes/professionals = 25,
+					/obj/item/clothing/accessory/badge/rich = 75000
+					)
+	vendor_department = "Civilian"
