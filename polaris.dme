@@ -2672,8 +2672,6 @@
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
 #include "maps\Geminus\geminus.dm"
-#include "maps\Geminus\geminus_lot_areas.dm"
-#include "maps\Geminus\geminus_lots.dm"
 #include "maps\Geminus\turfs\outdoors.dm"
 #include "maps\submaps\_readme.dm"
 #include "maps\submaps\space_submaps\space.dm"
