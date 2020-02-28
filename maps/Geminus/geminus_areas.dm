@@ -247,6 +247,14 @@
 	name = "\improper City Hall Meeting Room"
 	icon_state = "conference"
 
+/area/planets/Geminus/indoor/headarchive
+	name = "\improper City Hall Archive"
+	icon_state = "yellow"
+
+/area/planets/Geminus/indoor/crispaperbistro
+	name = "\improper The Crisp Paper Bistro"
+	icon_state = "yellow"
+
 /area/planets/Geminus/indoor/cargo
 	name = "\improper Cargo"
 	icon_state = "quart"
