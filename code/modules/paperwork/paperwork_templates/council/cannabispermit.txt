@@ -1,0 +1,10 @@
+[center]Geminus City
+Cannabis Permit[/center][small]
+Pursuant to the Civil Code, this Permit is issued by [b]Geminus City[/b] to [b][field][/b], and authorizes:[list][[field]] Cannabis Production (800 Credits)
+[[field]] Cannabis Sales (800 Credits)
+[[field]] Cannabis Consumption (400 Credits)[/list]
+City Official's Signature: [field]
+City Official's Occupation: [field]
+Date: [field]
+[hr]
+[center]STAMP BELOW FOR NOTARIZATION[/center]

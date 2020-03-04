@@ -121,9 +121,15 @@
 
 /datum/paperwork_template/courtrules
 	name = "Courtroom Rules"
-	title = "Courtroom Rulest"
-	categories = list(PAPERWORK_GOVERNMENT)
+	title = "Courtroom Rules"
+	categories = list(PAPERWORK_COUNCIL)
 	file_source = 'code/modules/paperwork/paperwork_templates/council/courtrules.txt'
+
+/datum/paperwork_template/cannabispermit
+	name = "Cannabis Permit"
+	title = "Cannabis Permit"
+	categories = list(PAPERWORK_COUNCIL)
+	file_source = 'code/modules/paperwork/paperwork_templates/council/cannabispermit.txt'
 
 // MEDICAL
 
