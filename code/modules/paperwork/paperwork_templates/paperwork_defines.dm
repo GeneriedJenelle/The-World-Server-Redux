@@ -123,7 +123,7 @@
 	name = "City Clerk: Weapons Production Permit"
 	title = "Weapons Production Permit"
 	categories = list(PAPERWORK_COUNCIL)
-	file_source = 'code/modules/paperwork/paperwork_templates/council/weaponsproductionpermit.txt'
+	file_source = 'code/modules/paperwork/paperwork_templates/council/weaponproductionpermit.txt'
 
 /datum/paperwork_template/courtrules
 	name = "Courtroom Rules"
