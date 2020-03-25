@@ -82,7 +82,7 @@
 	name = "bar shotgun permit"
 	desc = "A card indicating that the owner is allowed to carry a shotgun in the bar."
 	tier = 3
-  
+
 /obj/item/clothing/accessory/permit/gun/planetside
 	name = "planetside gun permit"
 	desc = "A card indicating that the owner is allowed to carry a firearm while on the surface."
@@ -100,6 +100,12 @@
 	icon_state = "permit_drone"
 	tiered = FALSE
 
+/obj/item/clothing/accessory/permit/gun/production_permit
+	name = "Arms Production Permit"
+	desc = "A card indicating that the owner is permitted to manufacture and sell firearms, ammunitions, and gun accessories."
+	tier = 5
+	price_tag = 1000
+
 //Some spare gun permits in a box
 /obj/item/weapon/storage/box/gun_permits
 	name = "box of spare gun permits"
@@ -111,5 +117,6 @@
 	/obj/item/clothing/accessory/permit/gun/tier_one = 5,
 	/obj/item/clothing/accessory/permit/gun/tier_two = 5,
 	/obj/item/clothing/accessory/permit/gun/tier_three = 5,
-	/obj/item/clothing/accessory/permit/gun/tier_four = 5
+	/obj/item/clothing/accessory/permit/gun/tier_four = 5,
+	/obj/item/clothing/accessory/permit/gun/production_permit = 5
 	)
