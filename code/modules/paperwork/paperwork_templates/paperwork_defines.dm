@@ -119,6 +119,12 @@
 	categories = list(PAPERWORK_COUNCIL)
 	file_source = 'code/modules/paperwork/paperwork_templates/council/weaponpermit.txt'
 
+/datum/paperwork_template/weapons_permit
+	name = "City Clerk: Weapons Production Permit"
+	title = "Weapons Production Permit"
+	categories = list(PAPERWORK_COUNCIL)
+	file_source = 'code/modules/paperwork/paperwork_templates/council/weaponsproductionpermit.txt'
+
 /datum/paperwork_template/courtrules
 	name = "Courtroom Rules"
 	title = "Courtroom Rulest"
