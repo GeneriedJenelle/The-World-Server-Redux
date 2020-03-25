@@ -1,0 +1,22 @@
+[small][center]Geminus City Hall Weapon Production Permit Application Form[/center][hr]
+[b]Applicant Information[/b]
+Name: [field]
+Age: [field]
+Occupation: [field]
+
+[b]Reason for Permit Application[/b]
+[field]
+
+[b]Additional Requirements[/b]
+[[field]] Positive Psychological Assesment
+[[field]] Criminal Record Check
+[b]OR[/b]
+[[field]] Chief of Police Permission
+[[field]] Criminal Record Check
+[hr][center]FOR OFFICE USE ONLY[/center]Reviewing Authority: [field]
+Signature: [field]
+
+Application Decision:
+[[field]] Accepted
+[[field]] Denied
+[center]STAMP BELOW TO NOTARIZE[/center]
