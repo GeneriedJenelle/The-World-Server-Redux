@@ -28,11 +28,12 @@
 	cell_time = 30
 	fine = 1570
 
-	
+
 	notes = "Injuries can be generally considered serious if they require specialized medical \
 	care to treat them. Any object capable of inflicting deadly wounds is considered a weapon \
 	in this case. Guns, knives, improperly used stunbatons are considered a deadly weapon as \
-	well as toolboxes, oxygen canisters, glass shards, metal rods, screwdrivers, etc."
+	well as toolboxes, oxygen canisters, glass shards, metal rods, screwdrivers, etc. \
+	Carrying a weapon without a permit is considered Conspiracy to Commit Aggravated Assault."
 
 /datum/law/major/manslaughter
 	name = "Manslaughter"
@@ -101,22 +102,22 @@
 	name = "Impersonation of Government Officials"
 	description = "This will include any high ranking \
 	body from the rank of Mayor up to President in Chief, or any titles pertaining to the local Nanotrasen branch."
-    
+
 	fine = 2250
 	cell_time = 60
-	
+
 /datum/law/major/elec_fraud
 	name = "Electoral Fraud"
 	description = "Coercing voters via bribery or blackmail, to ensure \
 	they vote in the offender´s interest."
-    
+
 	fine = 50000
 	cell_time = 43710
-	
+
 /datum/law/major/civil_negl
 	name = "Civil Neglect"
 	description = "When a Council department collectively conspires or commits\
 	criminal offenses, utilising assets belonging or provided by The City"
-    
+
 	fine = 3000
 	cell_time = 30

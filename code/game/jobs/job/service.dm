@@ -73,7 +73,7 @@
 	access = list(access_janitor, access_maint_tunnels)
 	minimal_access = list(access_janitor, access_maint_tunnels)
 	minimum_character_age = 16 //Not making it any younger because being a janitor requires a lot of labor, or maybe it just means I'm very lazy? Oh well
-	wage = 18
+	wage = 20
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 	alt_titles = list("Recycling Technician", "Sanitation Engineer")
 
