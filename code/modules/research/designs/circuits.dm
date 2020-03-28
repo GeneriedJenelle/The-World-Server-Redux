@@ -102,8 +102,8 @@ CIRCUITS BELOW
 	id = "clonescanner"
 	req_tech = list(TECH_DATA = 3, TECH_BIO = 3)
 	build_path = /obj/item/weapon/circuitboard/clonescanner
-	sort_string = "FAGAG" 
-	
+	sort_string = "FAGAG"
+
 */
 
 /datum/design/circuit/crewconsole
@@ -209,6 +209,13 @@ CIRCUITS BELOW
 	id = "autolathe"
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/weapon/circuitboard/autolathe
+	sort_string = "HABAD"
+
+/datum/design/circuit/gunlathe
+	name = "gunlathe board"
+	id = "gunlathe"
+	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
+	build_path = /obj/item/weapon/circuitboard/gunlathe
 	sort_string = "HABAD"
 
 /datum/design/circuit/rdservercontrol

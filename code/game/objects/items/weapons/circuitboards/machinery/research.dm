@@ -94,3 +94,13 @@ obj/item/weapon/circuitboard/rdserver/attackby(obj/item/I as obj, mob/user as mo
 	origin_tech = list(TECH_DATA = 4)
 	req_components = list(
 							"/obj/item/stack/cable_coil" = 15)
+
+/obj/item/weapon/circuitboard/gunlathe
+	name = T_BOARD("gunlathe")
+	build_path = /obj/machinery/gunlathe
+	board_type = new /datum/frame/frame_types/machine
+	origin_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 2)
+	req_components = list(
+							/obj/item/weapon/stock_parts/matter_bin = 3,
+							/obj/item/weapon/stock_parts/manipulator = 1,
+							/obj/item/weapon/stock_parts/console_screen = 1)
