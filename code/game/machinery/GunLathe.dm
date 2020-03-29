@@ -15,6 +15,8 @@
 	var/mat_efficiency = 1
 	var/build_time = 50
 
+	var/busy = 0
+
 /obj/machinery/gunlathe/New()
 	..()
 	component_parts = list()
@@ -35,7 +37,7 @@
 /obj/machinery/gunlathe/interact(mob/user as mob)
 	update_recipe_list()
 	var/list/dat = list()
-	dat += "<center><h1>Autolathe Control Panel</h1><hr/>"
+	dat += "<center><h1>GunLathe Control Panel</h1><hr/>"
 	dat += "<table width = '100%'>"
 	var/list/material_top = list("<tr>")
 	var/list/material_bottom = list("<tr>")
@@ -47,7 +49,7 @@
 	dat += "[material_top.Join()]</tr>[material_bottom.Join()]</tr></table><hr>"
 	dat += "<h2>Printable Designs</h2><h3>Showing: <a href='?src=\ref[src];change_category=1'>[current_category]</a>.</h3></center><table width = '100%'>"
 
-	for(var/datum/category_item/autolathe/R in current_category.items)
+	for(var/datum/category_item/gunlathe/R in current_category.items)
 		var/can_make = 1
 		var/list/material_string = list()
 		var/list/multiplier_string = list()
@@ -83,3 +85,196 @@
 
 	user << browse(dat.Join(), "window=gunlathe")
 	onclose(user, "gunlathe")
+
+/obj/machinery/gunlathe/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	if(busy)
+		user << "<span class='notice'>\The [src] is busy. Please wait for completion of previous operation.</span>"
+		return
+
+	if(default_deconstruction_screwdriver(user, O))
+		updateUsrDialog()
+		return
+	if(default_deconstruction_crowbar(user, O))
+		return
+	if(default_part_replacement(user, O))
+		return
+
+	if(stat)
+		return
+
+	if(O.loc != user && !(istype(O,/obj/item/stack)))
+		return 0
+
+	if(is_robot_module(O))
+		return 0
+
+	if(istype(O,/obj/item/ammo_magazine/clip) || istype(O,/obj/item/ammo_magazine/s357) || istype(O,/obj/item/ammo_magazine/s38)) // Prevents ammo recycling exploit with speedloaders.
+		user << "\The [O] is too hazardous to recycle with the gunlathe!"
+		return
+		/*  ToDo: Make this actually check for ammo and change the value of the magazine if it's empty. -Spades
+		var/obj/item/ammo_magazine/speedloader = O
+		if(speedloader.stored_ammo)
+			user << "\The [speedloader] is too hazardous to put back into the autolathe while there's ammunition inside of it!"
+			return
+		else
+			speedloader.matter = list(DEFAULT_WALL_MATERIAL = 75) // It's just a hunk of scrap metal now.
+	if(istype(O,/obj/item/ammo_magazine)) // This was just for immersion consistency with above.
+		var/obj/item/ammo_magazine/mag = O
+		if(mag.stored_ammo)
+			user << "\The [mag] is too hazardous to put back into the autolathe while there's ammunition inside of it!"
+			return*/
+
+	//Resources are being loaded.
+	var/obj/item/eating = O
+	if(!eating.matter)
+		user << "\The [eating] does not contain significant amounts of useful materials and cannot be accepted."
+		return
+
+	var/filltype = 0       // Used to determine message.
+	var/total_used = 0     // Amount of material used.
+	var/mass_per_sheet = 0 // Amount of material constituting one sheet.
+
+	for(var/material in eating.matter)
+
+		if(isnull(stored_material[material]) || isnull(storage_capacity[material]))
+			continue
+
+		if(stored_material[material] >= storage_capacity[material])
+			continue
+
+		var/total_material = eating.matter[material]
+
+		//If it's a stack, we eat multiple sheets.
+		if(istype(eating,/obj/item/stack))
+			var/obj/item/stack/stack = eating
+			total_material *= stack.get_amount()
+
+		if(stored_material[material] + total_material > storage_capacity[material])
+			total_material = storage_capacity[material] - stored_material[material]
+			filltype = 1
+		else
+			filltype = 2
+
+		stored_material[material] += total_material
+		total_used += total_material
+		mass_per_sheet += eating.matter[material]
+
+	if(!filltype)
+		user << "<span class='notice'>\The [src] is full. Please remove material from the gunlathe in order to insert more.</span>"
+		return
+	else if(filltype == 1)
+		user << "You fill \the [src] to capacity with \the [eating]."
+	else
+		user << "You fill \the [src] with \the [eating]."
+
+	flick("autolathe_o", src) // Plays metal insertion animation. Work out a good way to work out a fitting animation. ~Z
+
+	if(istype(eating,/obj/item/stack))
+		var/obj/item/stack/stack = eating
+		stack.use(max(1, round(total_used/mass_per_sheet))) // Always use at least 1 to prevent infinite materials.
+	else
+		user.remove_from_mob(O)
+		qdel(O)
+
+	updateUsrDialog()
+	return
+
+	if(istype(O,/obj/item/clothing/accessory/permit/gun/production_permit))
+		user.set_machine(src)
+		interact(user)
+
+/obj/machinery/gunlathe/Topic(href, href_list)
+	if(..())
+		return
+
+	usr.set_machine(src)
+	add_fingerprint(usr)
+
+	if(busy)
+		usr << "<span class='notice'>The gunlathe is busy. Please wait for completion of previous operation.</span>"
+		return
+
+	if(href_list["change_category"])
+
+		var/choice = input("Which category do you wish to display?") as null|anything in machine_recipes.categories
+		if(!choice) return
+		current_category = choice
+
+	if(href_list["make"] && machine_recipes)
+		var/multiplier = text2num(href_list["multiplier"])
+		var/datum/category_item/autolathe/making = locate(href_list["make"]) in current_category.items
+
+
+		if(!making)
+			return
+		if(!making.is_stack && multiplier != 1)
+			return
+		sanitize_integer(multiplier, 1, 100, 1)
+
+		busy = 1
+		update_use_power(2)
+
+		//Check if we still have the materials.
+		for(var/material in making.resources)
+			if(!isnull(stored_material[material]))
+				if(stored_material[material] < round(making.resources[material] * mat_efficiency) * multiplier)
+					return
+
+		//Consume materials.
+		for(var/material in making.resources)
+			if(!isnull(stored_material[material]))
+				stored_material[material] = max(0, stored_material[material] - round(making.resources[material] * mat_efficiency) * multiplier)
+
+		update_icon() // So lid closes
+
+		sleep(build_time)
+
+		busy = 0
+		update_use_power(1)
+		update_icon() // So lid opens
+
+		//Sanity check.
+		if(!making || !src) return
+
+		//Create the desired item.
+		var/obj/item/I = new making.path(src.loc)
+		if(multiplier > 1 && istype(I, /obj/item/stack))
+			var/obj/item/stack/S = I
+			S.amount = multiplier
+
+	updateUsrDialog()
+
+/obj/machinery/gunlathe/update_icon()
+	if(busy)
+		icon_state = "autolathe_n"
+	else
+		if(icon_state == "autolathe_n")
+			flick("autolathe_u", src) // If lid WAS closed, show opening animation
+		icon_state = "autolathe"
+
+/obj/machinery/gunlathe/RefreshParts()
+	..()
+	var/mb_rating = 0
+	var/man_rating = 0
+	for(var/obj/item/weapon/stock_parts/matter_bin/MB in component_parts)
+		mb_rating += MB.rating
+	for(var/obj/item/weapon/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
+
+	storage_capacity[DEFAULT_WALL_MATERIAL] = mb_rating  * 25000
+	storage_capacity["glass"] = mb_rating  * 12500
+	build_time = 50 / man_rating
+	mat_efficiency = 1.1 - man_rating * 0.1// Normally, price is 1.25 the amount of material, so this shouldn't go higher than 0.8. Maximum rating of parts is 3
+
+/obj/machinery/gunlathe/dismantle()
+	for(var/mat in stored_material)
+		var/material/M = get_material_by_name(mat)
+		if(!istype(M))
+			continue
+		var/obj/item/stack/material/S = new M.stack_type(get_turf(src))
+		if(stored_material[mat] > S.perunit)
+			S.amount = round(stored_material[mat] / S.perunit)
+		else
+			qdel(S)
+	..()
+	return 1
