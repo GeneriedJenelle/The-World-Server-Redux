@@ -218,7 +218,8 @@ proc/get_radio_key_from_channel(var/channel)
 	//Whisper vars
 	var/w_scramble_range = 5	//The range at which you get ***as*th**wi****
 	var/w_adverb				//An adverb prepended to the verb in whispers
-	var/w_not_heard				//The message for people in watching range
+	var/w_not_heard
+		//The message for people in watching range
 
 	//Handle language-specific verbs and adverb setup if necessary
 	if(!whispering) //Just doing normal 'say' (for now, may change below)
@@ -276,8 +277,11 @@ proc/get_radio_key_from_channel(var/channel)
 		for(var/mob/living/M in hearers(5, src))
 			if((M != src) && msg)
 				M.show_message(msg)
+
 			if (speech_sound)
 				sound_vol *= 0.5
+
+
 
 	//Set vars if we're still whispering by this point
 	if(whispering)
@@ -287,13 +291,13 @@ proc/get_radio_key_from_channel(var/channel)
 
 	//Handle nonverbal and sign languages here
 	if (speaking)
-		if (speaking.flags & NONVERBAL)
-			if (prob(30))
-				src.custom_emote(1, "[pick(speaking.signlang_verb)].")
-
 		if (speaking.flags & SIGNLANG)
 			log_say("(SIGN) [message]", src)
 			return say_signlang(message, pick(speaking.signlang_verb), speaking)
+
+		if (speaking.flags & NONVERBAL)
+			if (prob(30))
+				src.custom_emote(1, "[pick(speaking.signlang_verb)].")
 
 	//These will contain the main receivers of the message
 	var/list/listening = list()
@@ -392,11 +396,19 @@ proc/get_radio_key_from_channel(var/channel)
 	return 1
 
 /mob/living/proc/say_signlang(var/message, var/verb="gestures", var/datum/language/language)
-	var/list/potentials = get_mobs_and_objs_in_view_fast(src, world.view)
-	var/list/mobs = potentials["mobs"]
-	for(var/hearer in mobs)
-		var/mob/M = hearer
-		M.hear_signlang(message, verb, language, src)
+	var/turf/T = get_turf(src)
+	//We're in something, gesture to people inside the same thing
+	if(loc != T)
+		for(var/mob/M in loc)
+			M.hear_signlang(message, verb, language, src)
+
+	//We're on a turf, gesture to visible as if we were a normal language
+	else
+		var/list/potentials = get_mobs_and_objs_in_view_fast(T, world.view)
+		var/list/mobs = potentials["mobs"]
+		for(var/hearer in mobs)
+			var/mob/M = hearer
+			M.hear_signlang(message, verb, language, src)
 	return 1
 
 /obj/effect/speech_bubble

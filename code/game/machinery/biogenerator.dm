@@ -15,6 +15,8 @@
 	var/build_eff = 1
 	var/eat_eff = 1
 
+	unique_save_vars = list("points")
+
 /obj/machinery/biogenerator/New()
 	..()
 	var/datum/reagents/R = new/datum/reagents(1000)
@@ -59,6 +61,7 @@
 	else if(processing)
 		user << "<span class='notice'>\The [src] is currently processing.</span>"
 	else if(istype(O, /obj/item/weapon/storage/bag/plants))
+		var/obj/item/weapon/storage/bag/P = O
 		var/i = 0
 		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents)
 			i++
@@ -66,6 +69,7 @@
 			user << "<span class='notice'>\The [src] is already full! Activate it.</span>"
 		else
 			for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in O.contents)
+				P.remove_from_storage(G)
 				G.loc = src
 				i++
 				if(i >= 10)

@@ -594,8 +594,8 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	item_state_slots = list(slot_r_hand_str = "denim_jacket", slot_l_hand_str = "denim_jacket")
 
 /obj/item/clothing/suit/storage/toggle/hoodie
-	name = "grey hoodie"
-	desc = "A warm, grey sweatshirt."
+	name = "hoodie"
+	desc = "A warm sweatshirt."
 	icon_state = "grey_hoodie"
 	item_state_slots = list(slot_r_hand_str = "suit_grey", slot_l_hand_str = "suit_grey")
 	min_cold_protection_temperature = T0C - 20
@@ -744,14 +744,14 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/suit/storage/hooded/wintercoat/captain
-	name = "colony director's winter coat"
+	name = "mayor's winter coat"
 	icon_state = "coatcaptain"
 	item_state_slots = list(slot_r_hand_str = "coatcaptain", slot_l_hand_str = "coatcaptain")
 	armor = list(melee = 20, bullet = 15, laser = 20, energy = 10, bomb = 15, bio = 0, rad = 0)
 	hoodtype = /obj/item/clothing/head/hood/winter/captain
 
 /obj/item/clothing/head/hood/winter/captain
-	name = "colony director's winter hood"
+	name = "mayor's winter hood"
 	armor = list(melee = 20, bullet = 15, laser = 20, energy = 10, bomb = 15, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/storage/hooded/wintercoat/security
@@ -1148,3 +1148,31 @@ obj/item/clothing/suit/storage/toggle/peacoat
 	icon_state = "kaneda"
 	flags_inv = HIDEHOLSTER
 	body_parts_covered = UPPER_TORSO
+
+/obj/item/clothing/suit/storage/poshblazer
+	name = "women's posh blazer"
+	desc = "This is a bit fancy, like the new recruit in a news office who is trying too hard to impress the managers."
+	icon_state = "poshblazer"
+	body_parts_covered = UPPER_TORSO|ARMS
+	index = 1
+
+/obj/item/clothing/suit/storage/formalblazer
+	name = "women's formal blazer"
+	desc = "This is the one who got promoted."
+	icon_state = "formalblazer"
+	body_parts_covered = UPPER_TORSO|ARMS
+	index = 1
+
+/obj/item/clothing/suit/storage/loosesleeveblazer
+	name = "loose sleeve blazer"
+	desc = "One of those hippie-formal wannabe blazers."
+	icon_state = "loosesleeve"
+	body_parts_covered = UPPER_TORSO|ARMS
+	index = 1
+
+/obj/item/clothing/suit/storage/peterpanblazer
+	name = "peter pan blazer"
+	desc = "For those grown ups that didn't wanna."
+	icon_state = "peterpanblazer"
+	body_parts_covered = UPPER_TORSO
+	index = 1
