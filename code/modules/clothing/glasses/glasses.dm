@@ -548,3 +548,9 @@ BLIND     // can't see anything
 	off_state = "holovisor"
 	toggleable = 1
 	action_button_name = "Toggle Holovisor"
+
+/obj/item/clothing/glasses/sunglasses/mirrorshades
+	name = "mirrorshades"
+	desc = "A set of polarized lenses that retract into one's skull when not in use."
+	icon_state = "jensenshades"
+	item_state_slots = list(slot_r_hand_str = "sunglasses", slot_l_hand_str = "sunglasses")

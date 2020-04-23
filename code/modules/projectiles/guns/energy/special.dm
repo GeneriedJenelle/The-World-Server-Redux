@@ -210,3 +210,27 @@ obj/item/weapon/gun/energy/staff/focus
 		list(mode_name="five shot burst", burst = 5, burst_accuracy = list(75,75,75,75,75), dispersion = list(1,1,1,1,1)),
 		list(mode_name="ten shot burst", burst = 10, burst_accuracy = list(75,75,75,75,75,75,75,75,75,75), dispersion = list(2,2,2,2,2,2,2,2,2,2)),
 		)
+
+/obj/item/weapon/gun/energy/tesla
+	name = "tesla cannon"
+	desc = "A cannon that fires dangerous bolts of unrestrained electrical energy."
+	icon_state = "dakkalaser"
+	item_state = "dakkalaser"
+	fire_sound = 'sound/effects/lightningshock.ogg'
+	projectile_type = /obj/item/projectile/beam/tesla
+	cell_type = /obj/item/weapon/cell/device/weapon/recharge
+	battery_lock = 1
+	fire_delay = 12
+	charge_cost = 144
+	slot_flags = SLOT_BELT|SLOT_BACK
+	w_class = ITEMSIZE_LARGE
+	force = 10
+	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
+	matter = list(DEFAULT_WALL_MATERIAL = 2000)
+
+/obj/item/weapon/gun/energy/tesla/augment
+	name = "integrated tesla cannon"
+	desc = "An electrical cannon designed to deploy from a cybernetic limb. It hums with barely contained energy."
+	use_external_power = FALSE
+	use_organic_power = TRUE
+	canremove = FALSE

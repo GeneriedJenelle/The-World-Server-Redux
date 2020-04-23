@@ -219,3 +219,16 @@
 	damage = 5
 	nodamage = 0
 	damage_type = BURN
+
+/obj/item/projectile/beam/tesla
+	name = "tesla beam"
+	icon_state = "lightning"
+	fire_sound = 'sound/effects/lightningshock.ogg'
+	agony = "30"
+	damage = 7
+	damage_type = BURN
+	light_color = "#93faff"
+
+	muzzle_type = /obj/effect/projectile/lightning/muzzle
+	tracer_type = /obj/effect/projectile/lightning/tracer
+	impact_type = /obj/effect/projectile/lightning/impact

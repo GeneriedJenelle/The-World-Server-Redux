@@ -89,6 +89,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/zippomes = "USER lights NAME with FLAME"
 	var/weldermes = "USER lights NAME with FLAME"
 	var/ignitermes = "USER lights NAME with FLAME"
+	var/augmentmes = "USER lights NAME with FLAME"
 	var/brand
 	blood_sprite_state = null //Can't bloody these
 
@@ -229,7 +230,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(blocked)
 			to_chat(H, "<span class='warning'>\The [blocked] is in the way!</span>")
 			return 1
-		to_chat(H, "<span class='notice'>You take a drag on your [name].</span>")
+		user.visible_message("<span class='notice'>\The [user] takes a drag on their [name].</span>",\
+			"<span class='notice'>You take a drag on your [name].</span>")
 		playsound(H, 'sound/items/cigs_lighters/inhale.ogg', 50, 0, -1)
 		smoke(5)
 		return 1
@@ -249,6 +251,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			text = weldermes
 		else if(istype(W, /obj/item/device/assembly/igniter))
 			text = ignitermes
+		else if(istype(src, /obj/item/weapon/flame/lighter/augment))
+			text = augmentmes
 		text = replacetext(text, "USER", "[user]")
 		text = replacetext(text, "NAME", "[name]")
 		text = replacetext(text, "FLAME", "[W.name]")
@@ -286,6 +290,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	zippomes = "<span class='rose'>With a flick of their wrist, USER lights their NAME with their FLAME.</span>"
 	weldermes = "<span class='notice'>USER casually lights the NAME with FLAME.</span>"
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME.</span>"
+	augmentmes = "<span class='notice'>USER holds their finger up to their NAME and lights it with their FLAME.</span>"
 
 	price_tag = 1
 
@@ -363,6 +368,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	zippomes = "<span class='rose'>With a flick of their wrist, USER lights their NAME with their FLAME.</span>"
 	weldermes = "<span class='notice'>USER insults NAME by lighting it with FLAME.</span>"
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME with the power of science.</span>"
+	augmentmes = "<span class='notice'>USER holds their finger up to their NAME and lights it with their FLAME.</span>"
 
 /obj/item/clothing/mask/smokable/cigarette/cigar/cohiba
 	name = "\improper Cohiba Robusto cigar"
@@ -421,6 +427,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	zippomes = "<span class='rose'>With much care, USER lights their NAME with their FLAME.</span>"
 	weldermes = "<span class='notice'>USER recklessly lights NAME with FLAME.</span>"
 	ignitermes = "<span class='notice'>USER fiddles with FLAME, and manages to light their NAME with the power of science.</span>"
+	augmentmes = "<span class='notice'>USER holds their finger over their NAME and lights it with their FLAME.</span>"
 	is_pipe = 1
 
 /obj/item/clothing/mask/smokable/pipe/New()
@@ -563,6 +570,15 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	activation_sound = 'sound/items/cigs_lighters/zippo_on.ogg'
 	deactivation_sound = 'sound/items/cigs_lighters/zippo_off.ogg'
 
+/obj/item/weapon/flame/lighter/augment
+	name = "\improper integrated finger lighter"
+	desc = "A handy lighter at the tip of your fingers. Literally!"
+	icon = 'icons/obj/augments.dmi'
+	icon_state = "augment_lighter"
+	item_state = "augment_lighter"
+	activation_sound = 'sound/items/cigs_lighters/zippo_on.ogg'
+	deactivation_sound = 'sound/items/cigs_lighters/zippo_off.ogg'
+
 /obj/item/weapon/flame/lighter/random
 	New()
 		icon_state = "lighter-[pick("r","c","y","g")]"
@@ -579,6 +595,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		playsound(src.loc, pick(activation_sound), 75, 1)
 		if(istype(src, /obj/item/weapon/flame/lighter/zippo) )
 			user.visible_message("<span class='rose'>Without even breaking stride, [user] flips open and lights [src] in one smooth movement.</span>")
+		else if(istype(src, /obj/item/weapon/flame/lighter/augment))
+			user.visible_message("<span class='rose'>[user]'s finger flips open and their [src] lights.</span>")
 		else
 			if(prob(95))
 				user.visible_message("<span class='notice'>After a few attempts, [user] manages to light the [src].</span>")
@@ -599,6 +617,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		playsound(src.loc, deactivation_sound, 75, 1)
 		if(istype(src, /obj/item/weapon/flame/lighter/zippo) )
 			user.visible_message("<span class='rose'>You hear a quiet click, as [user] shuts off [src] without even looking at what they're doing.</span>")
+		else if(istype(src, /obj/item/weapon/flame/lighter/augment))
+			user.visible_message("<span class='rose'>[user]'s finger flips closed with a click and their [src] extinguishes itself quietly.</span>")
 		else
 			user.visible_message("<span class='notice'>[user] quietly shuts off the [src].</span>")
 

@@ -907,6 +907,116 @@ other types of metals and chemistry for reagents).
 	materials = list(DEFAULT_WALL_MATERIAL = 1250, "phoron" = 500, "silver" = 50)
 	build_path = /obj/item/device/t_scanner/advanced
 	sort_string = "VASSB"
+
+//////////////////////
+// AUGMENTS BEGIN HERE
+//////////////////////
+/datum/design/item/weapon/augment
+	name = "Dud Augment"
+	desc = "This augment does nothing and is only useful for research purposes."
+	id = "aug"
+	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 6, TECH_MAGNET = 4, TECH_BIO = 6)
+	materials = list(DEFAULT_WALL_MATERIAL = 1000, "gold" = 100, "silver" = 50)
+	build_path = /obj/item/weapon/augment
+	sort_string = "WAAAA"
+
+/datum/design/item/weapon/augment/dermalplate
+	name = "Sub-Dermal Plating Augment"
+	desc = "An augment that reinforces the epidermis with flourinated polymers."
+	id = "aug_derm"
+	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 6, TECH_MAGNET = 4, TECH_BIO = 6, TECH_COMBAT = 4)
+	materials = list(DEFAULT_WALL_MATERIAL = 975, "gold" = 100, "silver" = 50, "fluorine" = 30)
+	build_path = /obj/item/weapon/augment/body/dermalplate
+	sort_string = "WAAAB"
+
+/datum/design/item/weapon/augment/hyperreflex
+	name = "Hyper-Reflex Repeater Augment"
+	desc = "An augment that enhances a subject's reflexes."
+	id = "aug_derm"
+	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 6, TECH_MAGNET = 4, TECH_BIO = 6, TECH_COMBAT = 2)
+	materials = list(DEFAULT_WALL_MATERIAL = 1000, "gold" = 250, "silver" = 150)
+	build_path = /obj/item/weapon/augment/body/hyperreflex
+	sort_string = "WAAAC"
+
+/datum/design/item/weapon/augment/laser
+	name = "Laser Cannon Augment"
+	desc = "An augment that deploys a laser-emitting array."
+	id = "aug_derm"
+	materials = list(DEFAULT_WALL_MATERIAL = 1000, "gold" = 100, "silver" = 50, "fluorine" = 30)
+	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 6, TECH_MAGNET = 4, TECH_BIO = 6, TECH_COMBAT = 7)
+	build_path = /obj/item/weapon/augment/limb/laser
+	sort_string = "WAAAD"
+
+/datum/design/item/weapon/augment/tesla
+	name = "Tesla Array Augment"
+	desc = "An augment that deploys a chaotic tesla array."
+	id = "aug_derm"
+	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 6, TECH_MAGNET = 4, TECH_BIO = 6, TECH_COMBAT = 7, TECH_ILLEGAL = 3)
+	materials = list(DEFAULT_WALL_MATERIAL = 1000, "gold" = 200, "silver" = 250, "uranium" = 250)
+	build_path = /obj/item/weapon/augment/limb/tesla
+	sort_string = "WAAAE"
+
+/datum/design/item/weapon/augment/superjump
+	name = "Hip Extensor Augment"
+	desc = "An augment that allows a subject to leap extreme distances."
+	id = "aug_derm"
+	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 6, TECH_MAGNET = 4, TECH_BIO = 6, TECH_COMBAT = 2)
+	materials = list(DEFAULT_WALL_MATERIAL = 1250, "gold" = 100, "silver" = 50)
+	build_path = /obj/item/weapon/augment/limb/superjump
+	sort_string = "WAAAF"
+
+/datum/design/item/weapon/augment/lighter
+	name = "Finger Lighter Augment"
+	desc = "An augment that deploys a lighter from a cybernetic hand."
+	id = "aug_derm"
+	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 2, TECH_BIO = 4)
+	materials = list(DEFAULT_WALL_MATERIAL = 750, "gold" = 50, "silver" = 25)
+	build_path = /obj/item/weapon/augment/limb/lighter
+	sort_string = "WAAAG"
+
+/datum/design/item/weapon/augment/dart
+	name = "Concealed Dart Launcher Augment"
+	desc = "An augment that deploys an inconspicious dart launcher from a synthetic wrist."
+	id = "aug_derm"
+	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 6, TECH_MAGNET = 4, TECH_BIO = 6, TECH_ILLEGAL = 7)
+	materials = list(DEFAULT_WALL_MATERIAL = 1250, "gold" = 100, "silver" = 50)
+	build_path = /obj/item/weapon/augment/limb/dart
+	sort_string = "WAAAH"
+
+/datum/design/item/weapon/augment/datajack
+	name = "Datajack Augment"
+	desc = "An augment that allows for interfacing with compatible technology."
+	req_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 4, TECH_MAGNET = 3, TECH_BIO = 5, TECH_DATA = 4)
+	id = "aug_derm"
+	build_path = /obj/item/weapon/augment/limb/datajack
+	sort_string = "WAAAI"
+
+/datum/design/item/weapon/augment/rebreather
+	name = "Sub-Dermal Plating Augment"
+	desc = "An augment that allows a subject to breath underwater."
+	id = "aug_derm"
+	req_tech = list(TECH_MATERIAL = 5, TECH_ENGINEERING = 3, TECH_MAGNET = 2, TECH_BIO = 6)
+	build_path = /obj/item/weapon/augment/rebreather
+	sort_string = "WAAAJ"
+
+/datum/design/item/weapon/augment/mirrorshades
+	name = "Rebreather Augment"
+	desc = "An augment that is implanted into the skull, allowing for a set of mirrored lenses that can retract into the skull"
+	id = "aug_derm"
+	req_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 3, TECH_MAGNET = 2, TECH_BIO = 4)
+	materials = list(DEFAULT_WALL_MATERIAL = 850, "gold" = 50, "silver" = 25, "glass" = 200)
+	build_path = /obj/item/weapon/augment/mirrorshades
+	sort_string = "WAAAK"
+
+/datum/design/item/weapon/augment/inputport
+	name = "Dataport Augment"
+	desc = "An augment that is required to control cybernetics. It allows for data transfer with a datajack."
+	req_tech = list(TECH_MATERIAL = 4, TECH_ENGINEERING = 5, TECH_MAGNET = 4, TECH_BIO = 5, TECH_DATA = 4)
+	id = "aug_derm"
+	build_path = /obj/item/weapon/augment/inputport
+	sort_string = "WAAAL"
+
+
 /*
 CIRCUITS BELOW
 */

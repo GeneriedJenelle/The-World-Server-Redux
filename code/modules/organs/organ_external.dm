@@ -51,6 +51,7 @@
 	var/list/internal_organs = list()  // Internal organs of this body part
 	var/sabotaged = 0                  // If a prosthetic limb is emagged, it will detonate when it fails.
 	var/list/implants = list()         // Currently implanted objects.
+	var/list/augments = list()		   // Augmentations applied to the organ.
 	var/organ_rel_size = 25            // Relative size of the organ.
 	var/base_miss_chance = 20          // Chance of missing.
 	var/atom/movable/splinted
@@ -457,7 +458,7 @@ This function completely restores a damaged organ to perfect condition.
 
 	// remove embedded objects and drop them on the floor
 	for(var/obj/implanted_object in implants)
-		if(!istype(implanted_object,/obj/item/weapon/implant))	// We don't want to remove REAL implants. Just shrapnel etc.
+		if(!istype(implanted_object,/obj/item/weapon/implant))	// We don't want to remove REAL implants or augments. Just shrapnel etc.
 			implanted_object.loc = get_turf(src)
 			implants -= implanted_object
 

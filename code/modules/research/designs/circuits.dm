@@ -102,8 +102,8 @@ CIRCUITS BELOW
 	id = "clonescanner"
 	req_tech = list(TECH_DATA = 3, TECH_BIO = 3)
 	build_path = /obj/item/weapon/circuitboard/clonescanner
-	sort_string = "FAGAG" 
-	
+	sort_string = "FAGAG"
+
 */
 
 /datum/design/circuit/crewconsole
@@ -597,6 +597,13 @@ CIRCUITS BELOW
 	build_path = /obj/item/weapon/circuitboard/chem_master
 	sort_string = "FAGAH"
 
+/datum/design/circuit/augmentmachine
+	name = "Augmentation Chamber"
+	id = "augmentmachine"
+	req_tech = list(TECH_DATA =3, TECH_ENGINEERING = 5, TECH_BIO = 5)
+//	build_path = /obj/item/weapon/circuitboard/augmentmachine
+	sort_string = "XADAA"
+	materials = list("glass" = 2000, "gold" = 100, "silver" = 100)
 
 /* I have no idea how this was even running before, but it doesn't seem to be necessary.
 ///////////////////////////////////

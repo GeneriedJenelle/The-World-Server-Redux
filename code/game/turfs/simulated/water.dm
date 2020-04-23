@@ -117,7 +117,11 @@
 
 /mob/living/carbon/human/can_breathe_water()
 	if(species)
-		return species.can_breathe_water()
+		for(var/obj/item/organ/internal/augment/aug in internal_organs)
+			if(istype(aug, /obj/item/organ/internal/augment/rebreather))
+				return TRUE
+			else
+				return species.can_breathe_water()
 	return ..()
 
 /mob/living/proc/check_submerged()

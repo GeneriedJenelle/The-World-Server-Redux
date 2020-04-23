@@ -204,3 +204,31 @@ the artifact triggers the rage.
 	accuracy = -75				// Aiming requires focus.
 	accuracy_dispersion = 3		// Ditto.
 	evasion = -45				// Too angry to dodge.
+
+/datum/modifier/dermalplate
+	name = "dermal plate augmentation"
+	desc = "Your skin has been strengthened by a synthetic polymer woven into it."
+	on_created_text ="<span class='notice'>Your skin feels taut for a moment as the fluorinated fibers braid themselves into your dermis and tighten.</span>"
+	on_expired_text ="<span class='notice'>Your skin relaxes as the fluorinated fibers unweave themselves in your dermis.</span>"
+	stacks = MODIFIER_STACK_EXTEND
+
+	incoming_brute_damage_percent = 0.85
+
+/datum/modifier/vasoconstrict
+	name = "vasoconstriction"
+	desc = "Your veins constrict rapidly in response to bleeding, preventing massive hemmorhaging. However, a lack of blood flow increases chances of oxygen deprivation in your body."
+	on_created_text="<span class='notice'>Your heart pulses momentarily as the nanomachines in your blood force your veins to contract.</span>"
+	on_expired_text="<span class='notice'>You feel somewhat warm as your veins dilate.</span>"
+	stacks = MODIFIER_STACK_EXTEND
+
+	bleeding_rate_percent = 0.85
+	incoming_oxy_damage_percent = 1.1
+
+/datum/modifier/hyperreflex
+	name = "hyperreflex"
+	desc = "Your reflexes are heightened and your nerves send and receive impulses at a faster rate."
+	on_created_text="<span class='notice'>Everything around you slows down briefly as your brain adjusts to your heightened reflexes.</span>"
+	on_expired_text="<span class='notice'>You feel a bit sluggish as your senses return to normal.</span>"
+	stacks = MODIFIER_STACK_EXTEND
+
+	evasion = 35

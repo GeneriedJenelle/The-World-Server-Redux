@@ -164,6 +164,8 @@
 
 // Augments
 #define O_AUG_EYES "occular augment"
+#define O_AUG_INPUTPORT "input port augment"
+#define O_AUG_DATAJACK "datajack augment"
 
 #define O_AUG_L_FOREARM "left forearm augment"
 #define O_AUG_R_FOREARM "right forearm augment"
@@ -171,7 +173,12 @@
 #define O_AUG_R_UPPERARM "right upperarm augment"
 #define O_AUG_L_HAND "left hand augment"
 #define O_AUG_R_HAND "right hand augment"
+#define O_AUG_L_LEG "left leg augment"
+#define O_AUG_R_LEG "right leg augment"
+#define O_AUG_L_FOOT "left foot augment"
+#define O_AUG_R_FOOT "right foot augment"
 
+#define O_AUG_BODY "body augment"
 #define O_AUG_RIBS "rib augment"
 #define O_AUG_SPINE "spinal augment"
 #define O_AUG_PELVIC "pelvic augment"

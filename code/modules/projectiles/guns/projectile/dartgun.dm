@@ -112,14 +112,14 @@
 					user << "<font color='blue'>[R.volume] units of [R.name]</font>"
 
 /obj/item/weapon/gun/projectile/dartgun/attackby(obj/item/I as obj, mob/user as mob)
-	if(istype(I, /obj/item/weapon/reagent_containers/glass))
+	if(istype(I, /obj/item/weapon/reagent_containers/glass/beaker/vial))
 		if(!istype(I, container_type))
 			user << "<font color='blue'>[I] doesn't seem to fit into [src].</font>"
 			return
 		if(beakers.len >= max_beakers)
 			user << "<font color='blue'>[src] already has [max_beakers] beakers in it - another one isn't going to fit!</font>"
 			return
-		var/obj/item/weapon/reagent_containers/glass/beaker/B = I
+		var/obj/item/weapon/reagent_containers/glass/beaker/vial/B = I
 		user.drop_item()
 		B.loc = src
 		beakers += B
@@ -238,3 +238,27 @@
 
 /obj/item/projectile/bullet/chemdart/small
 	reagent_amount = 10
+
+/obj/item/weapon/gun/projectile/dartgun/augment
+	name = "integrated dart launcher"
+	desc = "A discreet dart launcher that deploys from the wrist of a cybernetic arm."
+	description_info = "The integrated dart launcher is capable of storing three vials. In order to use the integrated dart launcher, you must first use it in-hand to open its mixing UI. The dart launcher will only draw from vials with mixing enabled. If multiple are enabled, the gun will draw from them in equal amounts."
+	icon_state = "augment_dart-empty"
+	base_state = "augment_dart"
+
+/obj/item/weapon/gun/projectile/dartgun/augment/attackby(obj/item/I as obj, mob/user as mob)
+	if(istype(I, /obj/item/weapon/reagent_containers/glass/beaker/vial))
+		if(!istype(I, container_type))
+			user << "<font color='blue'>[I] doesn't seem to fit into [src].</font>"
+			return
+		if(beakers.len >= max_beakers)
+			user << "<font color='blue'>[src] already has [max_beakers] vials in it - another one isn't going to fit!</font>"
+			return
+		var/obj/item/weapon/reagent_containers/glass/beaker/vial/B = I
+		user.drop_item()
+		B.loc = src
+		beakers += B
+		user << "<font color='blue'>You slot [B] into [src].</font>"
+		src.updateUsrDialog()
+		return 1
+	..()

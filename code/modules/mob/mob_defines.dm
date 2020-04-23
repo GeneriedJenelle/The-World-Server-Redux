@@ -110,6 +110,7 @@
 	var/cpr_time = 1.0//Carbon
 
 	var/bodytemperature = 310.055	//98.7 F
+	var/flying = 0
 	var/drowsyness = 0.0//Carbon
 	var/charges = 0.0
 	var/nutrition = 400//Carbon
