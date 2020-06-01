@@ -1089,7 +1089,6 @@
 /obj/machinery/vending/medical/hospital/chem
 	name = "Johnny's Chems"
 	desc = "A fully stocked chemistry machine designed for hospital use. You look at it and are reminded of a familiar theme song."
-	req_access = list(33)
 	products = list (/obj/item/weapon/reagent_containers/glass/beaker/large = 4,
 					 /obj/item/clothing/glasses/science = 4,
 					 /obj/item/stack/material/phoron = 3,
@@ -1106,7 +1105,6 @@
 /obj/machinery/vending/medical/hospital/psych
 	name = "Mania Inc. Psychiatric Vendomat"
 	desc = "A vending machine which puts the man, back in mania. Stocks all manner of psychiatric supplies."
-	req_access = list(64)
 	products = list (/obj/item/weapon/storage/pill_bottle/citalopram = 2,
 					 /obj/item/weapon/reagent_containers/glass/bottle/stoxin = 2,
 					 /obj/item/weapon/reagent_containers/syringe = 2,
