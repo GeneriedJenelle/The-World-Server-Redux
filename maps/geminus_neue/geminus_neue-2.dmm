@@ -2312,7 +2312,7 @@
 "aSx" = (/obj/structure/table/reinforced,/obj/item/device/defib_kit/loaded,/obj/effect/floor_decal/corner/paleblue{dir = 6},/turf/simulated/floor/tiled/lime,/area/medical/surgery2)
 "aSy" = (/obj/machinery/camera/network/civilian{icon_state = "camera"; dir = 9},/turf/simulated/floor/pavement/empty,/area/planets/Geminus/outdoor/east)
 "aSz" = (/turf/simulated/floor/tiled/white,/area/medical/patient_a)
-"aSA" = (/obj/machinery/light/colored/blue{tag = "icon-blue1 (NORTH)"; icon_state = "blue1"; dir = 1},/obj/effect/floor_decal/corner/paleblue{dir = 10},/obj/structure/flora/pottedplant/decorative,/turf/simulated/floor/tiled,/area/medical/medbay2)
+"aSA" = (/obj/machinery/light/colored/blue{tag = "icon-blue1 (NORTH)"; icon_state = "blue1"; dir = 1},/obj/effect/floor_decal/corner/paleblue{dir = 10},/obj/structure/flora/pottedplant/decorative,/obj/machinery/computer/security/telescreen/entertainment{icon_state = "frame"; pixel_x = 0; pixel_y = 32},/turf/simulated/floor/tiled,/area/medical/medbay2)
 "aSB" = (/obj/machinery/button/crematorium{pixel_x = -32},/obj/machinery/camera/network/civilian{icon_state = "camera"; dir = 5},/turf/simulated/floor/tiled/dark,/area/chapel/chapel_morgue)
 "aSC" = (/turf/simulated/floor/tiled/white,/area/medical/patient_b)
 "aSD" = (/obj/structure/sign/chemistry{pixel_y = 28},/obj/effect/floor_decal/corner/paleblue{dir = 10},/turf/simulated/floor/tiled,/area/medical/medbay2)
