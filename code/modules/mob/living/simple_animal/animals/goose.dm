@@ -29,6 +29,9 @@
 	attacktext = list("pecked")
 	attack_sound = 'sound/weapons/bite.ogg'
 
+	//SPACE GEESE USE A BIKEHORN
+	speak_sound = list("sound/items/bikehorn.ogg")
+
 	//SPACE geese aren't affected by atmos.
 	min_oxy = 0
 	max_oxy = 0
