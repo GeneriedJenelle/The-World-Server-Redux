@@ -2,6 +2,7 @@
 
 //Talky things
 #define try_say_list(L) if(L.len) say(pick(L))
+#define try_sound_list(L) if(L.len) playsound(loc, pick(L),30,1)
 
 /mob/living/simple_animal
 	name = "animal"
@@ -50,6 +51,7 @@
 	var/list/say_maybe_target = list()// List of things to say when they spot something barely
 	var/list/say_got_target = list()// List of things to say when they engage a target
 	var/list/reactions = list() 	// List of "string" = "reaction" and things they hear will be searched for string.
+	var/list/speak_sound = list() // list of sound files to play if I talk (see var/list/speak)
 
 	//Mob movement settings
 	var/wander = 1					// Does the mob wander around when idle?
@@ -421,6 +423,7 @@
 				var/randomValue = rand(1,length)
 				if(randomValue <= speak.len)
 					try_say_list(speak)
+					try_sound_list(speak_sound)
 				else
 					randomValue -= speak.len
 					if(emote_see && randomValue <= emote_see.len)
@@ -429,6 +432,7 @@
 						audible_emote("[pick(emote_hear)].")
 			else
 				try_say_list(speak)
+				try_sound_list(speak_sound)
 		else
 			if(!(emote_hear && emote_hear.len) && (emote_see && emote_see.len))
 				visible_emote("[pick(emote_see)].")
