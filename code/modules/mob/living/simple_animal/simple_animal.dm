@@ -52,6 +52,7 @@
 	var/list/say_got_target = list()// List of things to say when they engage a target
 	var/list/reactions = list() 	// List of "string" = "reaction" and things they hear will be searched for string.
 	var/list/speak_sound = list() // list of sound files to play if I talk (see var/list/speak)
+	var/list/audible_emote_sound = list() // list of sound files to play if I audibly emote
 
 	//Mob movement settings
 	var/wander = 1					// Does the mob wander around when idle?
@@ -430,6 +431,7 @@
 						visible_emote("[pick(emote_see)].")
 					else
 						audible_emote("[pick(emote_hear)].")
+						try_sound_list(audible_emote_sound)
 			else
 				try_say_list(speak)
 				try_sound_list(speak_sound)
