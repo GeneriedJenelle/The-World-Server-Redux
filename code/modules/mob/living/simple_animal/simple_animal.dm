@@ -1,3 +1,4 @@
+//TODO:> BETTER SOUND PROCESSING FOR REDD'S FUNCTIONS
 #define ai_log(M,V)	if(debug_ai) ai_log_output(M,V)
 
 //Talky things
