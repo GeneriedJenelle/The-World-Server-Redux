@@ -47,6 +47,7 @@
 	speak_chance = 10
 	speak = list("HONK!")
 	emote_hear = list("honks loudly!")
+	audible_emote_sound = list("sound/items/bikehorn.ogg")
 	emote_see = list()
 	say_understood = list()
 	say_cannot = list()
