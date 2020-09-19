@@ -17,6 +17,10 @@
 	name = "mayor's rubber stamp"
 	icon_state = "stamp-cap"
 
+/obj/item/weapon/stamp/president
+	name = "President's rubber Stamp"
+	icon_state = "stamp-cent"
+
 /obj/item/weapon/stamp/hop
 	name = "city clerk's rubber stamp"
 	icon_state = "stamp-hop"
