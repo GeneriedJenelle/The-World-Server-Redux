@@ -32,6 +32,8 @@ other types of metals and chemistry for reagents).
 	var/category = null 			//Primarily used for Mech Fabricators, but can be used for anything.
 	var/sort_string = "ZZZZZ"		//Sorting order
 
+	var/protected = TRUE			//If this is protected, it will spawn in a redemption box for payment.
+
 /datum/design/New()
 	..()
 	item_name = name
