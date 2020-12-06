@@ -38,6 +38,12 @@
 	max_components = IC_COMPONENTS_BASE * 1.5
 	max_complexity = IC_COMPLEXITY_BASE * 1.5
 
+/obj/item/device/electronic_assembly/spiderdroid
+	name = "electronic spider"
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "spiderling"
+	desc = "It's a compact case, for building mobile electronics with."
+
 /obj/item/device/electronic_assembly/implant
 	name = "electronic implant"
 	icon_state = "setup_implant"
@@ -176,6 +182,9 @@
 	return FALSE
 
 /obj/item/device/electronic_assembly/drone/can_move()
+	return TRUE
+
+/obj/item/device/electronic_assembly/spiderdroid/can_move()
 	return TRUE
 
 /obj/item/device/electronic_assembly/update_icon()
