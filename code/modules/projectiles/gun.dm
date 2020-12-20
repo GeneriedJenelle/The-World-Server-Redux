@@ -95,6 +95,8 @@
 
 	price_tag = 3500	// at a BASE, it should cost at least this.
 
+	var/reliability = 100
+
 /obj/item/weapon/gun/get_tax()
 	return WEAPONS_TAX
 
@@ -327,6 +329,10 @@
 	user.break_cloak()
 
 	if(!special_check(user))
+		return
+
+	if(reliability < 100 && prob(100-reliability))
+		handle_reliability_fail(user)
 		return
 
 	if(world.time < next_fire_time)
@@ -753,3 +759,29 @@
 	else
 		user.visible_message("<span class='notice'>[user] pulls out \the [G], pointing it at the ground.</span>",)
 	//user.SetWeaponDrawDelay(max((4 * G.weapon_weight + 1),(user.AmountWeaponDrawDelay())))
+
+
+/obj/item/weapon/gun/proc/handle_reliability_fail(var/mob/user)
+	var/severity = 1
+	if(prob(100-reliability))
+		severity = 2
+		if(prob(100-reliability))
+			severity = 3
+	switch(severity)
+		if(1)
+			small_fail()
+		if(2)
+			medium_fail()
+		if(3)
+			critical_fail()
+		else
+			critical_fail()
+
+/obj/item/weapon/gun/proc/small_fail()
+	return
+
+/obj/item/weapon/gun/proc/medium_fail()
+	return
+
+/obj/item/weapon/gun/proc/critical_fail()
+	return
