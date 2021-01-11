@@ -49,6 +49,7 @@ datum/track/New(var/title_name, var/audio)
 		new/datum/track("Syn", 'sound/music/disco/Syn.ogg'),
 		new/datum/track("System Collapse", 'sound/music/disco/System_Collapse.ogg'),
 		new/datum/track("This is Rain", 'sound/music/disco/This is Rain.ogg'),
+		new/datum/track("Chippin In[2022 Version]", 'sound/music/disco/Chippin In [2022].ogg'),
 		new/datum/track("Chippin In", 'sound/music/disco/Chippin In.ogg'),
 		new/datum/track("A Like Supreme", 'sound/music/disco/Like A Supreme.ogg'),
 		new/datum/track("Never Fade Away", 'sound/music/disco/Never Fade Away.ogg'),
@@ -57,6 +58,12 @@ datum/track/New(var/title_name, var/audio)
 		new/datum/track("Spacedman", 'sound/music/disco/spacedman.ogg'),
 		new/datum/track("Phortitude", 'sound/music/disco/phortitude.ogg'),
 		new/datum/track("Nightchaser", 'sound/music/disco/nightchaser.ogg'),
+		new/datum/track("The Place where there is no darkness", 'sound/music/disco/The Place Where There Is No Darkness.ogg'),
+		new/datum/track("Hikings Song", 'sound/music/disco/The Hiking Song.ogg'),
+		new/datum/track("Duel of the Fates", 'sound/music/disco/Duel of the Fates.ogg'),
+		new/datum/track("The Bounty Hunter", 'sound/music/disco/The Mandalorian OST - Main Theme.ogg'),
+		new/datum/track("The Rebel Path", 'sound/music/disco/The Rebel Path.ogg'),
+		new/datum/track("Yacht Song", 'sound/music/disco/Yacht Song.ogg'),
 		new/datum/track("The Man Who Sold the World", 'sound/music/disco/The Man Who Sold the World.ogg'),
 		new/datum/track("Space Oddity", 'sound/music/disco/Space Oddity.ogg')
 
@@ -64,7 +71,8 @@ datum/track/New(var/title_name, var/audio)
 
 	// Only visible if hacked
 	var/list/datum/track/secret_tracks = list(
-		new/datum/track("#$@^^/:|~", 'sound/music/Despacito.ogg'),
+		new/datum/track("The Forbidden One", 'sound/music/Despacito.ogg'),
+		new/datum/track("The Sex Defender Shuffle, 'sound/music/Sex Defender Shuffle.ogg'),
 		new/datum/track("Play Me", 'sound/music/disco/Rick Astley.ogg')
 	)
 
