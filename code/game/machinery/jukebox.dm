@@ -72,7 +72,7 @@ datum/track/New(var/title_name, var/audio)
 	// Only visible if hacked
 	var/list/datum/track/secret_tracks = list(
 		new/datum/track("The Forbidden One", 'sound/music/Despacito.ogg'),
-		new/datum/track("The Sex Defender Shuffle, 'sound/music/Sex Defender Shuffle.ogg'),
+		new/datum/track("The Sex Defender Shuffle, 'sound/music/disco/Sex Defender Shuffle.ogg'),
 		new/datum/track("Play Me", 'sound/music/disco/Rick Astley.ogg')
 	)
 
