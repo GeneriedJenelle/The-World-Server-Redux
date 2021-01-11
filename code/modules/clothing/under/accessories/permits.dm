@@ -104,6 +104,12 @@ GLOBAL_LIST_INIT(permit_types, list(
 	desc = "A card indicating that the owner is allowed to carry a firearm while on the surface."
 	tiered = FALSE
 
+/obj/item/clothing/accessory/permit/gun/proc/get_tier()
+	if(!tier)
+		return 0
+	else
+		return tier
+
 /obj/item/clothing/accessory/permit/drone
 	name = "drone identification card"
 	desc = "A card issued by the government, indicating that the owner is a Drone Intelligence. Drones are mandated to carry this card on PolGov colonies, by law."
@@ -125,6 +131,12 @@ GLOBAL_LIST_INIT(permit_types, list(
 	tiered = FALSE
 	dont_save = TRUE
 
+/obj/item/clothing/accessory/permit/vatborn
+	name = "mass produced vatborn identification card"
+	desc = "A card issued by the government, indicating that the owner is a Mass Produced Vatborn. Mass Produced are mandated to carry this card on PolGov colonies, by law."
+	icon_state = "permit_5"
+	tiered = FALSE
+	dont_save = TRUE
 
 //Some spare gun permits in a box
 /obj/item/weapon/storage/box/gun_permits

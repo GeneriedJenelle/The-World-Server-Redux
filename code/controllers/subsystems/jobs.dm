@@ -84,6 +84,9 @@ SUBSYSTEM_DEF(jobs)
 			return 0
 		if((player.client.prefs.criminal_status == "Incarcerated") && job.title != "Prisoner")
 			return 0
+		if(player.client.prefs.is_synth() && !job.allows_synths)
+			return 0
+
 		var/position_limit = job.total_positions
 		if(!latejoin)
 			position_limit = job.spawn_positions
@@ -129,9 +132,16 @@ SUBSYSTEM_DEF(jobs)
 		if(flag && (!player.client.prefs.be_special & flag))
 			Debug("FOC flag failed, Player: [player], Flag: [flag], ")
 			continue
+
+		if(player.client.prefs.is_synth() && !job.allows_synths)
+			Debug("FOC job does not allow synths, Player: [player]")
+			continue
+
 		if(player.client.prefs.GetJobDepartment(job, level) & job.flag)
 			Debug("FOC pass, Player: [player], Level:[level]")
 			candidates += player
+
+
 
 	return candidates
 
@@ -165,6 +175,11 @@ SUBSYSTEM_DEF(jobs)
 		if(!is_hard_whitelisted(player, job))
 			Debug("GRJ not hard whitelisted failed, Player: [player]")
 			continue
+
+		if(player.client.prefs.is_synth() && !job.allows_synths)
+			Debug("GRJ job does not allow synths, Player: [player]")
+			continue
+
 		if((job.current_positions < job.spawn_positions) || job.spawn_positions == -1)
 			Debug("GRJ Random job given, Player: [player], Job: [job]")
 			AssignRole(player, job.title)
@@ -318,6 +333,11 @@ SUBSYSTEM_DEF(jobs)
 				if((player.client.prefs.criminal_status == "Incarcerated") && job.title != "Prisoner") //CASSJUMP
 					Debug("DO player is prisoner, Player: [player], Job:[job.title]")
 					continue
+
+				if(player.client.prefs.is_synth() && !job.allows_synths)
+					Debug("DO job does not allow synths, Player: [player]")
+					continue
+
 				// If the player wants that job on this level, then try give it to him.
 				if(player.client.prefs.GetJobDepartment(job, level) & job.flag)
 
@@ -423,7 +443,7 @@ SUBSYSTEM_DEF(jobs)
 						continue
 
 					// Implants get special treatment
-					if(G.slot == "implant")
+					if(G.sort_category == "Cyberware")
 						var/obj/item/weapon/implant/I = G.spawn_item(H)
 						I.invisibility = 100
 						I.implant_loadout(H)
@@ -788,6 +808,7 @@ SUBSYSTEM_DEF(jobs)
 	if(!H.mind || !H.mind.prefs) return
 
 	var/synth_type = H.get_FBP_type()
+	var/is_mpl_vatborn = (H.get_species() == SPECIES_HUMAN_VATBORN_MPL)
 	var/obj/item/clothing/uniform = H.w_uniform
 	var/obj/item/clothing/accessory/permit/permit
 
@@ -808,6 +829,15 @@ SUBSYSTEM_DEF(jobs)
 	if(permit)
 		permit.set_name(H.real_name)
 
+		if(uniform && uniform.can_attach_accessory(permit)) // attaches permit to uniform
+			uniform.attach_accessory(null, permit)
+		else
+			H.equip_to_slot_or_del(permit, slot_in_backpack) // otherwise puts it in your backpack
+
+	if(is_mpl_vatborn)
+		permit = new/obj/item/clothing/accessory/permit/vatborn
+
+		permit.set_name(H.real_name)
 		if(uniform && uniform.can_attach_accessory(permit)) // attaches permit to uniform
 			uniform.attach_accessory(null, permit)
 		else

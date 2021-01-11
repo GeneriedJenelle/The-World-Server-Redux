@@ -1166,13 +1166,14 @@
 	icon_state = "wallmed"
 	icon_deny = "wallmed-deny"
 	density = 0 //It is wall-mounted, and thus, not dense. --Superxpdude
-	products = list(/obj/item/stack/medical/bruise_pack = 2,/obj/item/stack/medical/ointment = 2,/obj/item/weapon/reagent_containers/hypospray/autoinjector = 4,/obj/item/device/healthanalyzer = 1)
+	products = list(/obj/item/stack/medical/bruise_pack = 2,/obj/item/stack/medical/ointment = 2,/obj/item/weapon/reagent_containers/hypospray/autoinjector = 4,/obj/item/device/healthanalyzer = 1, /obj/item/device/defib_kit/loaded = 5)
 	contraband = list(/obj/item/weapon/reagent_containers/syringe/antitoxin = 4,/obj/item/weapon/reagent_containers/syringe/antiviral = 4,/obj/item/weapon/reagent_containers/pill/tox = 1)
 	req_log_access = access_cmo
 	has_logs = 1
 
 	charge_free_department = DEPT_HEALTHCARE
 	block_persistence = TRUE
+	req_access = list(access_medical)
 
 /obj/machinery/vending/wallmed1/gcch
 	vendor_department = DEPT_HEALTHCARE
@@ -1184,13 +1185,13 @@
 	icon_deny = "wallmed-deny"
 	density = 0 //It is wall-mounted, and thus, not dense. --Superxpdude
 	products = list(/obj/item/weapon/reagent_containers/hypospray/autoinjector = 10,/obj/item/weapon/reagent_containers/syringe/antitoxin = 10,/obj/item/stack/medical/bruise_pack = 10,
-					/obj/item/stack/medical/ointment = 10, /obj/item/device/healthanalyzer = 2)
+					/obj/item/stack/medical/ointment = 10, /obj/item/device/healthanalyzer = 2, /obj/item/device/defib_kit/loaded = 5)
 	contraband = list(/obj/item/weapon/reagent_containers/pill/tox = 3)
 	req_log_access = access_cmo
 	has_logs = 1
 
 	prices = list(/obj/item/weapon/reagent_containers/hypospray/autoinjector = 15, /obj/item/weapon/reagent_containers/syringe/antitoxin = 10,/obj/item/stack/medical/bruise_pack = 15,
-					/obj/item/stack/medical/ointment = 15,/obj/item/device/healthanalyzer = 10)
+					/obj/item/stack/medical/ointment = 15,/obj/item/device/healthanalyzer = 10, /obj/item/device/defib_kit/loaded = 200)
 
 	vendor_department = DEPT_HEALTHCARE
 	block_persistence = FALSE
@@ -1222,7 +1223,8 @@
 	/obj/item/device/hailer = 6,
 	/obj/item/device/holowarrant = 8,
 	/obj/item/device/breathalyzer = 8,
-	/obj/item/device/retail_scanner/police = 8
+	/obj/item/device/retail_scanner/police = 8,
+	/obj/item/device/radio = 6
 	)
 
 
@@ -1257,7 +1259,7 @@
 	/obj/item/clothing/head/beret/police = 6,
 	/obj/item/clothing/suit/armor/pcarrier/medium/police = 6,
 	/obj/item/clothing/head/helmet/police = 6,
-	//obj/item/clothing/suit/storage/hooded/wintercoat/security = 6,
+	/obj/item/clothing/suit/storage/hooded/wintercoat/security = 6,
 	/obj/item/clothing/accessory/holster/waist = 6,
 	/obj/item/clothing/accessory/holster/armpit = 6,
 	/obj/item/clothing/accessory/holster/hip = 6,
@@ -1267,7 +1269,7 @@
 	/obj/item/clothing/suit/storage/toggle/policejacket = 6,
 	/obj/item/clothing/suit/storage/toggle/hazardvest/brightgreen = 6,
 	/obj/item/clothing/accessory/badge/holo/police = 6,
-
+	/obj/item/device/retail_scanner/police = 8
 	)
 
 /obj/machinery/vending/security/detective
@@ -1275,6 +1277,7 @@
 	desc = "A government refurbished SecTech vendor, recent additions include an overwhelming amount of red tape and a critical lack of funding."
 	req_access = list(access_forensics_lockers)
 	products = list(
+	/obj/item/weapon/storage/bag/forensics = 5,
 	/obj/item/weapon/storage/box/csi_markers = 3,
 	/obj/item/weapon/storage/box/evidence = 6,
 	/obj/item/weapon/storage/briefcase/crimekit = 2,
@@ -1304,9 +1307,53 @@
 	/obj/item/clothing/head/soft/policecdetective = 4,
 	/obj/item/clothing/head/beret/policered = 4,
 	/obj/item/clothing/suit/storage/toggle/policejacket = 4,
+	/obj/item/clothing/under/det = 2,
+	/obj/item/clothing/under/det/grey = 2,
+	/obj/item/clothing/under/det/black = 2,
+	/obj/item/clothing/under/det/waistcoat = 2,
+	/obj/item/clothing/under/det/grey/waistcoat = 2,
+	/obj/item/clothing/under/det/skirt = 2,
 	/obj/item/clothing/suit/storage/toggle/hazardvest/brightgreen = 4,
-	
 	)
+
+/obj/machinery/vending/security/warden
+	name = "Warden Equipment Vendotron"
+	req_access = list(access_forensics_lockers)
+	products = list(
+	/obj/item/device/retail_scanner/police = 2,
+	/obj/item/weapon/storage/backpack/security = 2,
+	/obj/item/weapon/storage/backpack/satchel/sec = 2,
+	/obj/item/weapon/storage/backpack/dufflebag/sec = 2,
+	/obj/item/clothing/suit/armor/pcarrier/medium/police = 2,
+	/obj/item/clothing/head/beret/policegold = 2,
+	/obj/item/clothing/head/soft/policewarden = 2,
+	/obj/item/clothing/head/police/policewardencap = 2,
+	/obj/item/clothing/under/rank/wardenalt = 2,
+	/obj/item/clothing/suit/storage/vest/wardencoat = 2,
+	/obj/item/clothing/suit/storage/vest/wardencoat/alt = 2,
+	/obj/item/clothing/suit/storage/toggle/policejacket = 2,
+	/obj/item/clothing/head/helmet/dermal = 2,
+	/obj/item/clothing/head/helmet/police = 2,
+	/obj/item/weapon/cartridge/security = 2,
+	/obj/item/device/radio/headset/headset_sec = 2,
+	/obj/item/device/radio/headset/headset_sec/alt = 2,
+	/obj/item/clothing/glasses/sunglasses/sechud = 2,
+	/obj/item/taperoll/police = 2,
+	/obj/item/weapon/bodycam = 2,
+	/obj/item/clothing/accessory/badge/holo/warden = 2,
+	/obj/item/weapon/storage/box/flashbangs = 2,
+	/obj/item/weapon/storage/belt/security = 2,
+	/obj/item/weapon/reagent_containers/spray/pepper = 2,
+	/obj/item/weapon/melee/baton/loaded = 2,
+	/obj/item/weapon/gun/energy/gun = 2,
+	/obj/item/weapon/cell/device/weapon = 2,
+	/obj/item/weapon/storage/box/holobadge,
+	/obj/item/clothing/shoes/boots/winter/security = 2,
+	/obj/item/device/flashlight/maglight = 2,
+	/obj/item/device/megaphone = 2,
+	/obj/item/clothing/mask/gas/half = 2,
+	/obj/item/weapon/grenade/flashbang/clusterbang/geminus = 2)
+
 
 /obj/machinery/vending/security/prisoner
 	name = "Prisoner Equipment"
@@ -2349,8 +2396,9 @@
 					/obj/item/weapon/melee/baton = 4,
 					/obj/item/clothing/glasses/sunglasses/sechud/tactical = 6,
 					/obj/item/clothing/mask/gas/half = 6,
-					/obj/item/clothing/head/helmet/tac = 8,
-					/obj/item/clothing/suit/armor/pcarrier/tan/policetactical = 8,
+					/obj/item/clothing/head/helmet/tacnav = 8,
+					/obj/item/clothing/suit/armor/pcarrier/navy/policetactical = 8,
+					/obj/item/clothing/under/rank/security = 8
 					)
 
 
