@@ -1,3 +1,5 @@
+// Comment this out if the bugs around recursion errors are fixed and you want to avoid a small amount of overhead associated with detailed logs.
+#define INVTRI_DIAGNOSTICS 1
 
 /obj/machinery/inventory_machine
 	name = "inv-tri"
@@ -268,11 +270,38 @@
 			var/list/objects_to_search = list(I)
 			var/has_illegal_things = FALSE
 
+			#ifdef INVTRI_DIAGNOSTICS
+			var/list/diagnostic_lines = list()
+			var/i = 0
+			#endif
 			while(objects_to_search.len)
 				if(--safety <= 0) // Just in case.
 					message_admins("Recursion limit hit when trying to parse contraband status of the contents of \the [I].")
+
+					#ifdef INVTRI_DIAGNOSTICS
+					message_admins("Detailed information has been dumped to debug log. Please give it to a coder.")
+					log_debug("InvTri Recursion Error:")
+					log_debug("User: [user] ([user.key])")
+					log_debug("Container: [I.name] ([I.type])")
+					var/list/full_contents = recursive_content_check(I, full_contents, 5, FALSE, FALSE, FALSE, TRUE, FALSE)
+					log_debug("Full contents: [english_list(full_contents)]")
+					log_debug("Trace:")
+					for(var/line in diagnostic_lines)
+						log_debug(line)
+					#endif
+
 					return
 				var/atom/movable/AM = objects_to_search[1]
+
+				#ifdef INVTRI_DIAGNOSTICS
+				diagnostic_lines += " - [i++]:[AM.name] ([AM.type])"
+				diagnostic_lines += "   saveable contents = [english_list(AM.get_saveable_contents())]"
+				diagnostic_lines += "   true contents = [english_list(AM.contents)]"
+				diagnostic_lines += "   search queue = [english_list(objects_to_search)]"
+				diagnostic_lines += "   queue length = [objects_to_search.len]"
+				diagnostic_lines += "   contraband = [AM.is_contraband()]"
+				diagnostic_lines += "   don't save = [AM.dont_save]"
+				#endif
 
 				var/contraband_status = AM.is_contraband()
 				if(!(!contraband_status || contraband_status == LEGAL) )
