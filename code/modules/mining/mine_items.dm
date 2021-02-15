@@ -392,6 +392,7 @@
 	presculpted = TRUE
 	anchored = FALSE
 	icon = 'icons/obj/statue.dmi'
+	unique_save_vars = list()
 
 /obj/structure/sculpting_block/sculpted/bust
 	icon_state = "bust"
