@@ -36,6 +36,7 @@
 	var/business						// if this is linked to a business, business ID is here.
 	var/list/exclusive_employees = list()	// if this job has uids in it, only people of these UIDs can become employees.
 
+	var/list/skill_templates = list()
 	var/wage = 20					    // Per Hour
 	var/synth_wage = null				// if set to null, it defaults synth pay to normal wage. if 0 and over, they are paid this wage
 	var/mpv_wage = null					// if set to null, it defaults mass produced vatborn pay to normal wage. if 0 and over, they are paid this wage

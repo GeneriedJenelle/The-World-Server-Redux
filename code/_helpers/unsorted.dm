@@ -1682,6 +1682,7 @@ var/mob/dview/dview_mob = new
 				return "\[[url_encode(thing.tag)]\]"
 	return "\ref[input]"
 
+
 // Painlessly creates an <a href=...> element.
 // First argument is where to send the Topic call to when clicked. Should be a reference to an object. This is generally src, but not always.
 // Second one is for all the params that will be sent. Uses an assoc list (e.g. "value" = "5").
