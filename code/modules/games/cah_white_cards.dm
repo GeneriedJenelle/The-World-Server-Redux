@@ -56,7 +56,6 @@
 	"An irritatingly chipper robot",
 	"Androids hanging out in the bar drinking beer",
 	"Gear harnesses",
-	"A seventeen-year-old Mayor",
 	"The throbbing erection that the CoP gets at the thought of shooting something",
 	"Trying to stab someone and hugging them instead",
 	"Waking up naked in the maintenance tunnels",

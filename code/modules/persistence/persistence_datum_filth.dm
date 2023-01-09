@@ -18,7 +18,7 @@
 	var/_path = tokens["path"]
 	return (locate(_path) in T) ? FALSE : TRUE
 
-/datum/persistent/filth/CreateEntryInstance(var/turf/creating, var/list/tokens)
+/datum/persistent/filth/CreatryInstance(var/turf/creating, var/list/tokens)
 	var/_path = tokens["path"]
 	new _path(creating, tokens["age"]+1)
 

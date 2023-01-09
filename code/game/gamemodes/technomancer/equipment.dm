@@ -1,13 +1,11 @@
 /datum/technomancer/equipment/default_core
 	name = "Manipulation Core"
-//	desc = "The default core that you most likely already have.  This is here in-case you change your mind after buying \
-//	another core, don't forget to refund the old core.  This has a capacity of 10,000 units of energy, and recharges at a \
-//	rate of 50 units.  It also reduces incoming instability from functions by 20%."
 	desc = "The default core that you most likely already have.  This is here in-case you change your mind after buying \
-	another core, don't forget to refund the old core.<br>\
-	Capacity: 10k<br>\
-	Recharge: 50/s<br>\
-	Instability Modifier: 80%<br>\
+	another core, don't forget to refund the old core.  This has a capacity of 10,000 units of energy, and recharges at a \
+	rate of 50 units.  It also reduces incoming instability from functions by 20%. \
+	<font color='red'>Capacity: 10k<br>\
+	<font color='red'>Recharge: 50/s<br>\
+	<font color='red'>Instability Modifier: 80%<br>\
 	Energy Cost Modifier: 100%<br>\
 	Spell Power: 100%"
 	cost = 100

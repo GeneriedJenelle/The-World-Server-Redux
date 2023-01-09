@@ -118,4 +118,4 @@ CREATE TABLE `erro_privacy` (
   `option` varchar(128) NOT NULL,
   `consent` int(1) NOT NULL, 
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET= ;proc

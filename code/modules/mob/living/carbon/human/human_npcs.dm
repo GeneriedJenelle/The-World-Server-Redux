@@ -269,20 +269,6 @@ proc/random_outfit(var/mob/living/carbon/human/M)
 
 	random_outfit(src)
 
-/mob/living/carbon/human/dummy/npc/random/child/New()
-	..()
-	age = rand(8,12)
-	set_species("Human Child")
-	h_style = random_hair_style(gender, "Human Child")
-
-
-/mob/living/carbon/human/dummy/npc/random/teen/New()
-	..()
-	age = rand(13,17)
-	h_style = random_hair_style(gender, "Human Child")
-	f_style = random_facial_hair_style(gender, "Human Adolescent")
-	set_species("Human Adolescent")
-
 /mob/living/carbon/human/dummy/npc/random/moving/
 	stop_automated_movement = 0
 
@@ -299,19 +285,6 @@ proc/random_outfit(var/mob/living/carbon/human/M)
 					Move(get_step(src,moving_to))
 					turns_since_move = 0
 
-/mob/living/carbon/human/dummy/npc/random/moving/child/New()
-	..()
-	age = rand(8,12)
-	set_species("Human Child")
-	h_style = random_hair_style(gender, "Human Child")
-
-
-/mob/living/carbon/human/dummy/npc/random/moving/teen/New()
-	..()
-	age = rand(13,17)
-	h_style = random_hair_style(gender, "Human Child")
-	f_style = random_facial_hair_style(gender, "Human Adolescent")
-	set_species("Human Adolescent")
 
 
 

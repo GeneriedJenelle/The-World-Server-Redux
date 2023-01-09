@@ -48,7 +48,7 @@
 		tokens["age"] <= entries_expire_at \
 	)
 
-/datum/persistent/proc/CreateEntryInstance(var/turf/creating, var/list/tokens)
+/datum/persistent/proc/CreatryInstance(var/turf/creating, var/list/tokens)
 	return
 
 /datum/persistent/proc/ProcessAndApplyTokens(var/list/tokens)
@@ -76,7 +76,7 @@
 	if(_z in using_map.station_levels)
 		. = GetValidTurf(locate(tokens["x"], tokens["y"], _z), tokens)
 		if(.)
-			CreateEntryInstance(., tokens)
+			CreatryInstance(., tokens)
 
 /datum/persistent/proc/IsValidEntry(var/atom/entry)
 	if(!istype(entry))

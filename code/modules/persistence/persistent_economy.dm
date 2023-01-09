@@ -50,11 +50,11 @@ var/datum/economy/bank_accounts/persistent_economy = new()
 	var/law_EXPLOSIVES = ILLEGAL
 
 
-	var/voting_age = 13
-	var/drinking_age = 18
+	var/voting_age = 18
+	var/drinking_age = 21
 	var/smoking_age = 18
 	var/gambling_age = 18
-	var/sentencing_age = 13
+	var/sentencing_age = 18
 	var/synth_vote = TRUE			// Are FBPs allowed to vote?
 	var/citizenship_vote = TRUE		// Are starsystem immigrants allowed to vote?
 	var/criminal_vote = TRUE			// Can people with criminal records vote? (unimplemented)

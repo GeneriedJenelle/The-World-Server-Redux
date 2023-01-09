@@ -19,7 +19,7 @@
 		new /obj/structure/noticeboard(T)
 	. = ..()
 
-/datum/persistent/paper/CreateEntryInstance(var/turf/creating, var/list/tokens)
+/datum/persistent/paper/CreatryInstance(var/turf/creating, var/list/tokens)
 	var/obj/structure/noticeboard/board = locate() in creating
 	if(requires_noticeboard && LAZYLEN(board.notices) >= board.max_notices)
 		return

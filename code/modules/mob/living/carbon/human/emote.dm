@@ -290,16 +290,12 @@
 				if (!muzzled)
 					message = "makes a struggling, painful gasp."
 					m_type = 2
-					if(get_species() == SPECIES_HUMAN_CHILD || get_species() == SPECIES_HUMAN_TEEN)
-						playsound(src.loc, 'sound/voice/human/femalegasp5.ogg', 50, 1, 0)
+					var/gasp
+					if(get_gender() == FEMALE)
+						gasp = pick('sound/voice/human/femalegasp1.ogg', 'sound/voice/human/femalegasp2.ogg', 'sound/voice/human/femalegasp3.ogg', 'sound/voice/human/femalegasp4.ogg', 'sound/voice/human/femalegasp5.ogg')
 					else
-						var/gasp
-						if(get_gender() == FEMALE)
-							gasp = pick('sound/voice/human/femalegasp1.ogg', 'sound/voice/human/femalegasp2.ogg', 'sound/voice/human/femalegasp3.ogg', 'sound/voice/human/femalegasp4.ogg', 'sound/voice/human/femalegasp5.ogg')
-						else
-							gasp = pick('sound/voice/human/malegasp1.ogg', 'sound/voice/human/malegasp2.ogg', 'sound/voice/human/malegasp3.ogg', 'sound/voice/human/malegasp4.ogg')
-
-						playsound(src.loc, gasp, 50, 1, 0)
+						gasp = pick('sound/voice/human/malegasp1.ogg', 'sound/voice/human/malegasp2.ogg', 'sound/voice/human/malegasp3.ogg', 'sound/voice/human/malegasp4.ogg')
+					playsound(src.loc, gasp, 50, 1, 0)
 
 				else
 					message = "makes a weak noise."
@@ -334,32 +330,19 @@
 					message = "giggles."
 					m_type = 2
 					var/use_sound
-					if(get_species() == SPECIES_HUMAN_CHILD || get_species() == SPECIES_HUMAN_TEEN)
-						if(get_gender() == FEMALE)
-							use_sound = pick(
-							'sound/voice/human/girllaugh.ogg',
-							'sound/voice/human/teengirlgiggle1.ogg',
-							'sound/voice/human/teengirlgiggle2.ogg')
-							playsound(src.loc, use_sound, 50)
-						else
-							use_sound = pick(
-							'sound/voice/human/childlaugh1.ogg')
-							playsound(src.loc, use_sound, 50, 0)
-							m_type = 2
-					else
-						if(get_gender() == FEMALE)
-							use_sound = pick(
-							'sound/voice/human/womanlaugh1.ogg',
-							'sound/voice/human/womanlaugh2.ogg',
-							'sound/voice/human/womanlaugh3.ogg')
+					if(get_gender() == FEMALE)
+						use_sound = pick(
+						'sound/voice/human/womanlaugh1.ogg',
+						'sound/voice/human/womanlaugh2.ogg',
+						'sound/voice/human/womanlaugh3.ogg')
 
-							playsound(src.loc, use_sound, 50)
-						else
-							use_sound = pick(
-							'sound/voice/human/mangiggle1.ogg',
-							'sound/voice/human/mangiggle2.ogg')
-							playsound(src.loc, use_sound, 50, 0)
-							m_type = 2
+						playsound(src.loc, use_sound, 50)
+					else
+						use_sound = pick(
+						'sound/voice/human/mangiggle1.ogg',
+						'sound/voice/human/mangiggle2.ogg')
+						playsound(src.loc, use_sound, 50, 0)
+						m_type = 2
 				else
 					message = "makes a noise."
 					m_type = 2
@@ -423,32 +406,21 @@
 				if (!muzzled)
 					message = "cries."
 					var/use_sound
-					if(get_species() == SPECIES_HUMAN_CHILD || get_species() == SPECIES_HUMAN_TEEN)
-						if(get_gender() == FEMALE)
-							use_sound = pick(
-							'sound/voice/human/f_cry_4.ogg')
-							playsound(src.loc, use_sound, 50)
-						else
-							use_sound = pick(
-							'sound/voice/human/m_kid_cry.ogg')
-							playsound(src.loc, use_sound, 50, 0)
-							m_type = 2
+					if(get_gender() == FEMALE)
+						use_sound = pick(
+						'sound/voice/human/f_cry_1.ogg',
+						'sound/voice/human/f_cry_2.ogg',
+						'sound/voice/human/f_cry_3.ogg',
+						'sound/voice/human/f_cry_4.ogg',
+						'sound/voice/human/f_cry_5.ogg')
+						playsound(src.loc, use_sound, 50)
 					else
-						if(get_gender() == FEMALE)
-							use_sound = pick(
-							'sound/voice/human/f_cry_1.ogg',
-							'sound/voice/human/f_cry_2.ogg',
-							'sound/voice/human/f_cry_3.ogg',
-							'sound/voice/human/f_cry_4.ogg',
-							'sound/voice/human/f_cry_5.ogg')
-							playsound(src.loc, use_sound, 50)
-						else
-							use_sound = pick(
-							'sound/voice/human/m_cry_1.ogg',
-							'sound/voice/human/m_cry_2.ogg',
-							'sound/voice/human/m_cry_3.ogg')
-							playsound(src.loc, use_sound, 50, 0)
-							m_type = 2
+						use_sound = pick(
+						'sound/voice/human/m_cry_1.ogg',
+						'sound/voice/human/m_cry_2.ogg',
+						'sound/voice/human/m_cry_3.ogg')
+						playsound(src.loc, use_sound, 50, 0)
+						m_type = 2
 				else
 					message = "makes a weak noise. [T.he] [get_visible_gender() == NEUTER ? "frown" : "frowns"]." // no good, non-unwieldy alternative to this ternary at the moment
 					m_type = 2
@@ -474,30 +446,19 @@
 					message = "laughs."
 					m_type = 2
 					var/use_sound
-					if(get_species() == SPECIES_HUMAN_CHILD || get_species() == SPECIES_HUMAN_TEEN)
-						if(get_gender() == FEMALE)
-							use_sound = pick(
-							'sound/voice/human/girllaugh.ogg')
-							playsound(src.loc, use_sound, 50)
-						else
-							use_sound = pick(
-							'sound/voice/human/childlaugh1.ogg')
-							playsound(src.loc, use_sound, 50, 0)
-							m_type = 2
-					else
-						if(get_gender() == FEMALE)
-							use_sound = pick(
-							'sound/voice/human/womanlaugh1.ogg',
-							'sound/voice/human/womanlaugh2.ogg',
-							'sound/voice/human/womanlaugh2.ogg')
+					if(get_gender() == FEMALE)
+						use_sound = pick(
+						'sound/voice/human/womanlaugh1.ogg',
+						'sound/voice/human/womanlaugh2.ogg',
+						'sound/voice/human/womanlaugh2.ogg')
 
-							playsound(src.loc, use_sound, 50)
-						else
-							use_sound = pick(
-							'sound/voice/human/manlaugh1.ogg',
-							'sound/voice/human/manlaugh2.ogg')
-							playsound(src.loc, use_sound, 50, 0)
-							m_type = 2
+						playsound(src.loc, use_sound, 50)
+					else
+						use_sound = pick(
+						'sound/voice/human/manlaugh1.ogg',
+						'sound/voice/human/manlaugh2.ogg')
+						playsound(src.loc, use_sound, 50, 0)
+						m_type = 2
 
 				else
 					message = "makes a noise."

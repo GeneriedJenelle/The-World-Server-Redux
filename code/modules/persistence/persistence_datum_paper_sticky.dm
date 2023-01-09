@@ -12,7 +12,7 @@
 	labelled_tokens["color"] =    tokens[entries+3]
 	return labelled_tokens
 
-/datum/persistent/paper/sticky/CreateEntryInstance(var/turf/creating, var/list/tokens)
+/datum/persistent/paper/sticky/CreatryInstance(var/turf/creating, var/list/tokens)
 	var/atom/paper = ..()
 	if(paper)
 		paper.pixel_x = text2num(tokens["offset_x"])

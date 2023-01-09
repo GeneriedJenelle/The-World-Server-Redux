@@ -24,7 +24,7 @@
 			return FALSE
 	return TRUE
 
-/datum/persistent/graffiti/CreateEntryInstance(var/turf/creating, var/list/tokens)
+/datum/persistent/graffiti/CreatryInstance(var/turf/creating, var/list/tokens)
 	new /obj/effect/decal/writing(creating, tokens["age"]+1, tokens["message"], tokens["author"])
 
 /datum/persistent/graffiti/IsValidEntry(var/atom/entry)
